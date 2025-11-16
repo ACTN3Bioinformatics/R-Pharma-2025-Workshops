@@ -1,0 +1,107 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "R/Pharma 2025"
+  page-navigation: true
+  
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Workshops"
+        href: workshops/index.qmd
+      - text: "Presentations"
+        href: presentations/index.qmd
+      - text: "Insights"
+        menu:
+          - text: "Trends & Analysis"
+            href: summary/trends-insights.qmd
+          - text: "Tools Catalog"
+            href: summary/tools-catalog.qmd
+          - text: "Career Insights"
+            href: summary/career-insights.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops
+        aria-label: GitHub
+  
+  sidebar:
+    - id: workshops-sidebar
+      title: "Workshops"
+      style: "floating"
+      collapse-level: 2
+      contents:
+        - workshops/index.qmd
+        - section: "🤖 AI & Large Language Models"
+          contents:
+            - workshops/ai-llm/getting-started-llm-apis.qmd
+            - workshops/ai-llm/guided-tour-llm-tooling.qmd
+            - workshops/ai-llm/llm-clinical-data-privacy.qmd
+        - section: "📊 Clinical Reporting & Analysis"
+          contents:
+            - workshops/clinical-reporting/cardinal-tlgs.qmd
+            - workshops/clinical-reporting/officer-flextable.qmd
+            - workshops/clinical-reporting/branded-quarto.qmd
+            - workshops/clinical-reporting/polars-python.qmd
+            - workshops/clinical-reporting/pointblank.qmd
+        - section: "🔧 Development & Validation"
+          contents:
+            - workshops/development-validation/building-r-packages.qmd
+            - workshops/development-validation/r-validation-discussion.qmd
+            - workshops/development-validation/datasetjson.qmd
+        - section: "📈 Statistical Methods & Modeling"
+          contents:
+            - workshops/statistical-methods/rpact-trial-design.qmd
+            - workshops/statistical-methods/debugging-stan.qmd
+            - workshops/statistical-methods/r-classification-tidymodels.qmd
+            - workshops/statistical-methods/bayesian-survival.qmd
+        - section: "🧬 Specialized Applications"
+          contents:
+            - workshops/specialized/sdtm-oak.qmd
+            - workshops/specialized/python-csr-submission.qmd
+            - workshops/specialized/hpc-cluster-shiny.qmd
+            - workshops/specialized/teal-framework.qmd
+    
+    - id: presentations-sidebar
+      title: "Presentations"
+      contents:
+        - presentations/index.qmd
+        - presentations/europe-us-sessions.qmd
+        - presentations/asia-pacific-sessions.qmd
+
+  page-footer:
+    left: "© 2025 [Szymon Myrta](https://www.linkedin.com/in/myrta/)"
+    right: 
+      - icon: linkedin
+        href: https://www.linkedin.com/in/myrta/
+      - icon: github
+        href: https://github.com/ACTN3
+      - text: "{{< ai orcid >}}"
+        href: https://orcid.org/0000-0003-1714-6105
+
+format:
+  html:
+    theme: 
+      light: [cosmo, styles.css]
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    code-fold: show
+    code-tools: true
+    code-copy: true
+    smooth-scroll: true
+    anchor-sections: true
+    link-external-newwindow: true
+    link-external-icon: true
+    citations-hover: true
+    footnotes-hover: true
+
+execute:
+  freeze: auto

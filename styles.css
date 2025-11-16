@@ -1,0 +1,218 @@
+/* R Blue accent color */
+:root {
+  --r-blue: #276DC2;
+  --r-blue-light: #4A90E2;
+  --r-blue-dark: #1E5A9B;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--r-blue) !important;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f0f0f0 !important;
+}
+
+/* Badges */
+.badge {
+  padding: 0.35em 0.65em;
+  font-size: 0.85em;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.badge-beginner {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-intermediate {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge-advanced {
+  background-color: #dc3545;
+  color: white;
+}
+
+.badge-category {
+  background-color: var(--r-blue);
+  color: white;
+}
+
+/* Cards */
+.workshop-card, .presentation-card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.workshop-card:hover, .presentation-card:hover {
+  box-shadow: 0 4px 12px rgba(39, 109, 194, 0.15);
+  transform: translateY(-2px);
+  border-color: var(--r-blue-light);
+}
+
+.workshop-card h3, .presentation-card h3 {
+  color: var(--r-blue);
+  margin-top: 0;
+}
+
+/* Stats boxes */
+.stats-box {
+  background: linear-gradient(135deg, var(--r-blue) 0%, var(--r-blue-light) 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.stats-box h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stats-box p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* Callout customization */
+.callout-tip {
+  border-left-color: var(--r-blue);
+}
+
+.callout-tip .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23276DC2" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>');
+}
+
+/* Tables */
+.table {
+  margin-bottom: 2rem;
+}
+
+.table thead th {
+  background-color: var(--r-blue);
+  color: white;
+  border-color: var(--r-blue-dark);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(39, 109, 194, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(39, 109, 194, 0.1);
+}
+
+/* Links */
+a {
+  color: var(--r-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--r-blue-dark);
+  text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, var(--r-blue) 0%, var(--r-blue-light) 100%);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+/* Tool tags */
+.tool-tag {
+  display: inline-block;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  font-size: 0.9rem;
+  color: #495057;
+  transition: all 0.2s;
+}
+
+.tool-tag:hover {
+  background-color: var(--r-blue);
+  color: white;
+  border-color: var(--r-blue);
+  cursor: pointer;
+}
+
+/* Author info */
+.author-info {
+  font-style: italic;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+/* Requirements section */
+.requirements {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--r-blue);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.25rem;
+}
+
+/* Timeline */
+.timeline-item {
+  border-left: 3px solid var(--r-blue);
+  padding-left: 1.5rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--r-blue);
+  border: 2px solid white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .stats-box h2 {
+    font-size: 2rem;
+  }
+}

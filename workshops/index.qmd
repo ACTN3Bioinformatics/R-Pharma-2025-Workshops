@@ -1,0 +1,334 @@
+---
+title: "Workshops"
+subtitle: "16 hands-on sessions from R/Pharma 2025"
+toc: false
+---
+
+Explore all workshops from the R/Pharma 2025 conference, organized by theme. Each workshop includes detailed descriptions, prerequisites, key learning outcomes, and links to materials.
+
+## 🤖 AI & Large Language Models
+
+::::: columns
+::: {.column width="48%"}
+### [Getting Started with LLM APIs in R](ai-llm/getting-started-llm-apis.qmd)
+
+**Sara Altman** (Posit PBC)
+
+[Beginner]{.badge .badge-beginner}
+
+Learn to integrate LLMs into R workflows using `{ellmer}`. Build chatbots, implement tool calling, and design effective system prompts. No AI background required!
+
+**Key Tools:** `{ellmer}`, `{shinychat}`
+:::
+
+::: {.column width="48%"}
+### [Guided Tour to Building LLM-Based Tooling](ai-llm/guided-tour-llm-tooling.qmd)
+
+**Devin Pastoor, Xu Fei, Aathira Anil Kumar** (A2-AI)
+
+[Intermediate]{.badge .badge-intermediate}
+
+From prototypes to production: Build enterprise AI solutions bridging R and Python. GxP-compliant workflows with AWS Bedrock and MCP servers.
+
+**Key Tools:** `{ellmer}`, AWS Bedrock, MCP
+:::
+:::::
+
+::: workshop-card
+### [Integrating LLM with Clinical Data Review](ai-llm/llm-clinical-data-privacy.qmd)
+
+**Zhen Wu, Peng Zhang** (CIMS Global)
+
+[Intermediate]{.badge .badge-intermediate}
+
+Build **{DataChat}** - an R Shiny app for conversational clinical data exploration. Emphasis on data privacy, statistical validity, and RAG implementation.
+
+**Key Tools:** `{ellmer}`, `{shinychat}`, `{ragnar}`
+:::
+
+------------------------------------------------------------------------
+
+## 📊 Clinical Reporting & Analysis
+
+::::: columns
+::: {.column width="48%"}
+### [Cardinal: Harmonizing Clinical Reporting](clinical-reporting/cardinal-tlgs.qmd)
+
+**Abinaya Yogasekaram, Emily De La Rua**
+
+[Beginner]{.badge .badge-beginner}
+
+Hands-on with standardized TLG templates using `{gtsummary}`. CDISC-aligned outputs for meta-analysis and regulatory submissions.
+
+**Key Tools:** `{cardinal}`, `{gtsummary}`, `{cards}`
+:::
+
+::: {.column width="48%"}
+### [Advanced Clinical Reporting](clinical-reporting/officer-flextable.qmd)
+
+**David Gohel** (Ardata)
+
+[Intermediate]{.badge .badge-intermediate}
+
+Create sophisticated Word reports programmatically. Complex tables, ggplot2 integration, and complete CSR generation.
+
+**Key Tools:** `{officer}`, `{flextable}`
+:::
+:::::
+
+::::: columns
+::: {.column width="48%"}
+### [Polished, Branded Documents with Quarto](clinical-reporting/branded-quarto.qmd)
+
+**Isabella Velásquez** (Posit)
+
+[Beginner]{.badge .badge-beginner}
+
+Create websites, PDFs, presentations, and dashboards with consistent branding using `brand.yml`.
+
+**Key Tools:** Quarto, brand.yml
+:::
+
+::: {.column width="48%"}
+### [Polars: Blazing Fast Python Framework](clinical-reporting/polars-python.qmd)
+
+**Michael Chow, Jeroen Janssens** (Posit)
+
+[Intermediate]{.badge .badge-intermediate}
+
+High-performance clinical trial data exploration with Apache Arrow and Great Tables integration.
+
+**Key Tools:** Polars, Apache Arrow, Great Tables
+:::
+:::::
+
+::: workshop-card
+### [pointblank: Understand, Validate, Document Data](clinical-reporting/pointblank.qmd)
+
+**Rich Iannone** (Posit)
+
+[Intermediate]{.badge .badge-intermediate}
+
+Data quality workflows that scale from quick checks to validating 35+ database tables daily. Beautiful automated documentation.
+
+**Key Tools:** `{pointblank}`
+:::
+
+------------------------------------------------------------------------
+
+## 🔧 Development & Validation
+
+::::: columns
+::: {.column width="48%"}
+### [Introduction to Building R Packages](development-validation/building-r-packages.qmd)
+
+**Nicola Rennie**
+
+[Beginner]{.badge .badge-beginner}
+
+Transform scripts into packages! Learn structure, documentation, testing, and sharing. **You'll build your own package!**
+
+**Key Tools:** `{devtools}`, `{usethis}`, `{testthat}`
+:::
+
+::: {.column width="48%"}
+### [R Validation Discussion](development-validation/r-validation-discussion.qmd)
+
+**Doug Kelkhoff** (R Validation Hub)
+
+[Advanced]{.badge .badge-advanced}
+
+Discussion on Metric Repository for open quality assessment. Standardization and industry adoption strategies.
+
+**Key Tools:** `{riskmetric}`, `{riskassessment}`
+:::
+:::::
+
+::: workshop-card
+### [datasetjson: Read and Write CDISC Dataset JSON](development-validation/datasetjson.qmd)
+
+**Michael Stackhouse, Sam Hume, Nick Masel, Eli Miller**
+
+[Intermediate]{.badge .badge-intermediate}
+
+Work with Dataset-JSON format in R and Python. Modern data sharing for pharma workflows.
+
+**Key Tools:** `{datasetjson}`, Python datasetjson
+:::
+
+------------------------------------------------------------------------
+
+## 📈 Statistical Methods & Modeling
+
+::::: columns
+::: {.column width="48%"}
+### [Flexible Trial Design with rpact](statistical-methods/rpact-trial-design.qmd)
+
+**Daniel Sabanes Bove, Friedrich Pahlke**
+
+[Intermediate]{.badge .badge-intermediate}
+
+Clinical trial planning and simulation. Group sequential, adaptive designs, and p-value combination tests.
+
+**Key Tools:** `{rpact}`, RPACT Cloud
+:::
+
+::: {.column width="48%"}
+### [Debugging Stan Programs](statistical-methods/debugging-stan.qmd)
+
+**Daniel Lee**
+
+[Advanced]{.badge .badge-advanced}
+
+Practical strategies for debugging Stan models. From non-identifiable parameters to runtime performance.
+
+**Key Tools:** Stan, CmdStan
+:::
+:::::
+
+::::: columns
+::: {.column width="48%"}
+### [R Classification with tidymodels](statistical-methods/r-classification-tidymodels.qmd)
+
+**Harshavardhan Bajoria**
+
+[Beginner]{.badge .badge-beginner}
+
+Machine learning classification using the tidymodels framework. Preprocessing, training, and evaluation.
+
+**Key Tools:** `{tidymodels}`, `{recipes}`, `{parsnip}`
+:::
+
+::: {.column width="48%"}
+### [Bayesian Survival & Multistate Models](statistical-methods/bayesian-survival.qmd)
+
+**Eric Novik, Jacqueline Buros-Novik, Juho Timonen** (Generable)
+
+[Advanced]{.badge .badge-advanced}
+
+Bayesian time-to-event analysis with Stan. Multistate models for competing risks in clinical trials.
+
+**Key Tools:** Stan, `{bmstate}`
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 🧬 Specialized Applications
+
+::::: columns
+::: {.column width="48%"}
+### [SDTM Programming with {sdtm.oak}](specialized/sdtm-oak.qmd)
+
+**Rammprasad Ganapathy**
+
+[Intermediate]{.badge .badge-intermediate}
+
+EDC-agnostic SDTM dataset creation. Modular programming framework with reusable algorithms.
+
+**Key Tools:** `{sdtm.oak}`
+:::
+
+::: {.column width="48%"}
+### [Python for Clinical Study Report](specialized/python-csr-submission.qmd)
+
+**Nan Xiao, Yilong Zhang**
+
+[Intermediate]{.badge .badge-intermediate}
+
+Python workflows for TFLs and eCTD packages. Modern toolchain with uv, polars, and plotnine.
+
+**Key Tools:** Python, polars, plotnine, rtflite
+:::
+:::::
+
+::::: columns
+::: {.column width="48%"}
+### [Supercharge Shiny with HPC Cluster](specialized/hpc-cluster-shiny.qmd)
+
+**Michael Mayer** (Posit)
+
+[Advanced]{.badge .badge-advanced}
+
+Offload computations to HPC clusters from Shiny apps. Remote job submission and resource management.
+
+**Key Tools:** Shiny, HPC, Posit Connect
+:::
+
+::: {.column width="48%"}
+### [From Data to Insights with {teal}](specialized/teal-framework.qmd)
+
+**Nina Qi, Dony Unardi** (Genentech)
+
+[Intermediate]{.badge .badge-intermediate}
+
+Interactive clinical trial data exploration with the `{teal}` 1.0 framework. Build scalable, reproducible apps.
+
+**Key Tools:** `{teal}`, Shiny
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 📋 Workshop Statistics
+
+::::::: {layout-ncol="4"}
+::: stats-box
+**3**
+
+AI/LLM
+:::
+
+::: stats-box
+**5**
+
+Clinical Reporting
+:::
+
+::: stats-box
+**3**
+
+Development
+:::
+
+::: stats-box
+**5**
+
+Statistical/Specialized
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+## 🎯 Find Your Workshop
+
+**By Experience Level:**
+
+-   🟢 **Beginner** (5 workshops) - No prior specialized knowledge required
+-   🟡 **Intermediate** (9 workshops) - Some experience with topic area
+-   🔴 **Advanced** (3 workshops) - Significant experience recommended
+
+**By Topic:**
+
+-   Looking for **AI/ML**? → Start with [Getting Started with LLM APIs](ai-llm/getting-started-llm-apis.qmd)
+-   Need **clinical reporting**? → Try [Cardinal TLGs](clinical-reporting/cardinal-tlgs.qmd) or [officer/flextable](clinical-reporting/officer-flextable.qmd)
+-   Want to **build packages**? → [Building R Packages](development-validation/building-r-packages.qmd)
+-   Interested in **Bayesian methods**? → [Bayesian Survival Models](statistical-methods/bayesian-survival.qmd)
+
+**Popular Combinations:**
+
+-   **AI Pathway**: Getting Started → Guided Tour → Clinical Data Privacy
+-   **Reporting Pathway**: Cardinal → officer/flextable → Quarto
+-   **Developer Pathway**: Building Packages → Validation Discussion
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## Pro Tip
+
+Many workshops have associated GitHub repositories with code examples and exercises. Look for the "Resources" section in each workshop page for direct links!
+:::
+
+------------------------------------------------------------------------
+
+*All workshops from R/Pharma 2025 Conference \| Last updated: November 2025*

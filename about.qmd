@@ -1,0 +1,140 @@
+---
+title: "About This Project"
+toc: false
+---
+
+## Overview
+
+This repository provides comprehensive documentation of the **R/Pharma 2025 conference**, including detailed workshop summaries, presentation insights, trend analysis, and a complete catalog of tools and packages discussed.
+
+### What's Inside
+
+-   **16 Workshop Pages** - Detailed documentation with prerequisites, learning outcomes, and resources
+-   **30+ Presentations** - Summaries from 8 Europe/US sessions and Asia/Pacific presentations
+-   **Trend Analysis** - Key themes, future directions, and industry insights
+-   **Tools Catalog** - A-Z reference of all mentioned packages and technologies
+-   **Career Guidance** - Skills, strategies, and opportunities for R professionals in pharma
+
+------------------------------------------------------------------------
+
+## Purpose
+
+This project was created to:
+
+1.  **Preserve conference knowledge** for future reference
+2.  **Help attendees** review and reinforce learning
+3.  **Share insights** with those who couldn't attend
+4.  **Showcase industry trends** to recruiters and hiring managers
+5.  **Build a resource** for the R pharma community
+
+------------------------------------------------------------------------
+
+## Technology Stack
+
+This site is built using modern web technologies:
+
+-   **Quarto** - Scientific publishing system
+-   **GitHub Pages** - Free hosting
+-   **GitHub Actions** - Automated deployment
+-   **Custom CSS** - R blue branding (#276DC2)
+-   **Responsive design** - Mobile-friendly layout
+
+------------------------------------------------------------------------
+
+## About the Author
+
+::::: columns
+::: {.column width="70%"}
+### Szymon Myrta
+
+I'm passionate about applying data science and bioinformatics to advance pharmaceutical research and precision medicine. This repository reflects my commitment to continuous learning, knowledge sharing, and contributing to the open-source R community in pharma.
+
+**Interests:**
+
+-   Bioinformatics and computational biology
+-   Data science in pharmaceutical research
+-   Open-source tool development
+-   Reproducible research and documentation
+-   AI-driven bioinformatics solutions
+-   Data visualization
+
+**Connect with me:**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/myrta/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ACTN3) [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0000-0003-1714-6105)
+:::
+
+::: {.column width="30%"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Acknowledgments
+
+**R/Pharma 2025 Conference:** - Conference organizers and speakers - Workshop instructors who shared their expertise - Presentation authors and their organizations
+
+**Open-Source Community:** - Pharmaverse initiative - R Validation Hub - Posit PBC - All package developers
+
+------------------------------------------------------------------------
+
+## Contributing
+
+Found an error or have suggestions for improvements?
+
+1.  **Open an issue** on [GitHub](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops/issues)
+2.  **Submit a pull request** with corrections or enhancements
+3.  **Share feedback** via LinkedIn
+
+All contributions are welcome and appreciated!
+
+------------------------------------------------------------------------
+
+## License
+
+This project is licensed under the **MIT License**.
+
+Content is based on publicly available information from the R/Pharma 2025 conference. All credit for original materials goes to the respective authors and organizations.
+
+------------------------------------------------------------------------
+
+## Future Plans
+
+This repository will continue to evolve:
+
+-   ✅ Complete all workshop documentation
+-   ✅ Add presentation summaries
+-   🔄 Include video links (when available)
+-   🔄 Create blog posts on key topics
+-   🔄 Develop interactive tools catalog
+-   🔄 Add code examples and templates
+
+------------------------------------------------------------------------
+
+## Contact
+
+For questions, feedback, or collaboration opportunities:
+
+-   **GitHub Issues:** [Report an issue](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops/issues)
+-   **LinkedIn:** [Message me](https://www.linkedin.com/in/myrta/)
+-   **Email:** Via LinkedIn
+
+------------------------------------------------------------------------
+
+## Support This Project
+
+If you find this resource valuable:
+
+-   ⭐ **Star the repository** on GitHub
+-   🔗 **Share** with your network
+-   💬 **Provide feedback** for improvements
+-   🤝 **Contribute** documentation or corrections
+
+------------------------------------------------------------------------
+
+*Thank you for visiting! I hope this resource helps you in your R pharma journey.*
+
+------------------------------------------------------------------------
+
+**Last updated:** November 2025\
+**Repository:** [github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops)\
+**Website:** [actn3bioinformatics.github.io/R-Pharma-2025-Workshops](https://actn3bioinformatics.github.io/R-Pharma-2025-Workshops/)

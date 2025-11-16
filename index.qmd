@@ -1,0 +1,209 @@
+---
+title: "R/Pharma 2025 Conference Materials"
+subtitle: "Comprehensive collection from workshops, presentations, and key insights"
+page-layout: full
+toc: false
+---
+
+::: hero
+# R/Pharma 2025
+
+**Comprehensive Conference Materials Repository**
+
+Your guide to the cutting-edge of R in pharmaceutical research and development
+:::
+
+## 📊 Conference at a Glance
+
+::::::: {layout-ncol="4"}
+::: stats-box
+**16**
+
+Workshops
+:::
+
+::: stats-box
+**8**
+
+EU/US Sessions
+:::
+
+::: stats-box
+**30+**
+
+Presentations
+:::
+
+::: stats-box
+**Nov 2025**
+
+Event Date
+:::
+:::::::
+
+## 🔥 Top Highlights
+
+:::::: columns
+::: {.column width="30%"}
+### 🤖 AI Revolution
+
+8+ sessions focused on LLM integration with R, including practical implementations with `{ellmer}`, `{shinychat}`, and enterprise AI solutions.
+:::
+
+::: {.column width="30%"}
+### 📊 Open Source Momentum
+
+GSK's journey to 50%+ R code, industry-wide shift from SAS to open-source tools, and collaborative development through pharmaverse.
+:::
+
+::: {.column width="30%"}
+### ✅ Regulatory Acceptance
+
+Multiple talks on validation in GxP contexts, FDA guidance implementation, and production-ready AI applications in clinical trials.
+:::
+::::::
+
+## 🎯 Quick Navigation
+
+::::: columns
+::: {.column width="48%"}
+### [📚 Workshops](workshops/index.qmd) {.workshop-card}
+
+**16 hands-on sessions** covering:
+
+-   🤖 **AI & LLM Integration** (3 workshops)
+-   📊 **Clinical Reporting** (5 workshops)
+-   🔧 **Package Development** (3 workshops)
+-   📈 **Statistical Methods** (4 workshops)
+-   🧬 **Specialized Applications** (4 workshops)
+
+[Browse all workshops →](workshops/index.qmd)
+:::
+
+::: {.column width="48%"}
+### [🎤 Presentations](presentations/index.qmd) {.presentation-card}
+
+**30+ talks** organized in:
+
+-   8 Europe/US thematic sessions
+-   13 Asia/Pacific presentations
+-   Topics from AI agents to clinical study reporting
+
+[Explore presentations →](presentations/index.qmd)
+:::
+:::::
+
+## 💡 Key Insights & Analysis
+
+::: workshop-card
+### [📈 Trends & Analysis](summary/trends-insights.qmd)
+
+Comprehensive analysis of emerging trends, including:
+
+-   The AI/LLM revolution in pharma R programming
+-   Open-source adoption patterns and success stories
+-   Regulatory landscape evolution
+-   Future directions for R in clinical development
+
+[Read full analysis →](summary/trends-insights.qmd)
+:::
+
+::: workshop-card
+### [🛠️ Tools Catalog](summary/tools-catalog.qmd)
+
+Complete A-Z reference of packages and tools mentioned across workshops and presentations:
+
+-   **Most mentioned:** `{gtsummary}`, `{ellmer}`, `{teal}`, `{officer}`, `{flextable}`
+-   **Emerging stars:** `{cards}`, `{crane}`, `{admiral}`, `{polars}`
+-   **AI ecosystem:** `{ellmer}`, `{shinychat}`, `{ragnar}`, `{mcpr}`
+
+[Browse complete catalog →](summary/tools-catalog.qmd)
+:::
+
+::: workshop-card
+### [💼 Career Insights](summary/career-insights.qmd)
+
+Practical guidance for R professionals in pharma:
+
+-   Skills in high demand
+-   Transitioning from SAS to R
+-   Building validation expertise
+-   Contributing to open source
+
+[View career guidance →](summary/career-insights.qmd)
+:::
+
+## 🌟 Featured Workshops
+
+::::: columns
+::: {.column width="48%"}
+### [Getting Started with LLM APIs in R](workshops/ai-llm/getting-started-llm-apis.qmd)
+
+**Sara Altman** (Posit PBC)
+
+Learn to integrate LLMs into R workflows using `{ellmer}`. Build chatbots, implement tool calling, and design effective system prompts.
+
+[Beginner Friendly]{.badge .badge-beginner} [AI/LLM]{.badge .badge-category}
+:::
+
+::: {.column width="48%"}
+### [Advanced Clinical Reporting with officer and flextable](workshops/clinical-reporting/officer-flextable.qmd)
+
+**David Gohel** (Ardata)
+
+Master sophisticated clinical reports in Word format using R. From complex tables to complete pharmaceutical report generation.
+
+[Intermediate]{.badge .badge-intermediate} [Clinical Reporting]{.badge .badge-category}
+:::
+:::::
+
+::::: columns
+::: {.column width="48%"}
+### [Introduction to Building (Better) R Packages](workshops/development-validation/building-r-packages.qmd)
+
+**Nicola Rennie** (Data Viz Specialist)
+
+Transform scripts into packages. Learn documentation, testing, and best practices. By the end, you'll have created your own R package!
+
+[Beginner Friendly]{.badge .badge-beginner} [Development]{.badge .badge-category}
+:::
+
+::: {.column width="48%"}
+### [From Data to Insights: Hands-On with {teal}](workshops/specialized/teal-framework.qmd)
+
+**Nina Qi & Dony Unardi** (Genentech)
+
+Build interactive clinical trial data exploration apps with the `{teal}` framework. Based on the latest 1.0 release.
+
+[Intermediate]{.badge .badge-intermediate} [Shiny/Apps]{.badge .badge-category}
+:::
+:::::
+
+## 📌 About This Repository
+
+This repository provides comprehensive documentation of the R/Pharma 2025 conference, including:
+
+-   Detailed workshop descriptions with prerequisites and learning objectives
+-   Presentation summaries and key takeaways
+-   Trend analysis and industry insights
+-   Complete catalog of tools and packages
+-   Career guidance for R professionals in pharma
+
+All materials are organized for easy navigation and reference, suitable for:
+
+-   🎓 **Attendees** reviewing conference materials
+-   🔍 **Researchers** exploring R solutions for pharma workflows
+-   💼 **Hiring managers** assessing industry trends and skills
+-   🚀 **Developers** discovering new tools and best practices
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## Contributing & Feedback
+
+This is a living repository. If you notice errors or have suggestions for improvements, please feel free to open an issue or submit a pull request on [GitHub](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops).
+:::
+
+------------------------------------------------------------------------
+
+*Compiled and curated by [Szymon Myrta](https://www.linkedin.com/in/myrta/) \| Last updated: November 2025*

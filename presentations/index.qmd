@@ -1,0 +1,323 @@
+---
+title: "Presentations"
+subtitle: "30+ talks from R/Pharma 2025 across 8 thematic sessions"
+toc: false
+---
+
+## Overview
+
+The R/Pharma 2025 conference featured over 30 presentations organized into 8 Europe/US thematic sessions and an Asia/Pacific session. These talks covered the latest innovations, case studies, and strategic insights in using R for pharmaceutical research and development.
+
+------------------------------------------------------------------------
+
+## 📍 Browse by Region
+
+::::: columns
+::: {.column width="48%"}
+### [🌍 Europe/US Sessions](europe-us-sessions.qmd) {.presentation-card}
+
+**8 thematic sessions** covering:
+
+-   🤖 Practical AI for data science
+-   📊 Advanced analytics and tools
+-   🏢 Enterprise transformations
+-   ✅ Validation approaches
+-   🚀 Innovation case studies
+
+**Featured presentations:**
+
+-   GSK's Journey to Open Source
+-   Mosaic: ARS-Driven TFL Automation
+-   {llumen}: Agentic LLM Framework
+-   GenAI in Production
+
+[Explore Europe/US sessions →](europe-us-sessions.qmd)
+:::
+
+::: {.column width="48%"}
+### [🌏 Asia/Pacific Presentations](asia-pacific-sessions.qmd) {.presentation-card}
+
+**13 presentations** featuring:
+
+-   🏛️ Open-source culture and strategy
+-   ⚙️ Automation and efficiency tools
+-   🤖 AI and LLM implementations
+-   📋 Regulatory compliance (PMDA)
+-   🔬 Specialized applications
+
+**Highlights:**
+
+-   SHIONOGI's Open-Source Strategy
+-   {meRlin}: AI Assistant for Clinical Programming
+-   Dynamic K-M Plots with Shiny
+-   PMDA e-CRT Creation
+
+[Explore Asia/Pacific presentations →](asia-pacific-sessions.qmd)
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 🔥 Top Themes
+
+### 🤖 AI & LLM Integration
+
+**8+ presentations** on artificial intelligence:
+
+-   Practical AI for secure deployments
+-   Agentic frameworks ({llumen}, {mcpr})
+-   LLM-powered clinical data review
+-   Multi-agent R copilots
+-   AI assistants for programming
+
+### 📊 Clinical Reporting Automation
+
+**10+ presentations** on streamlining TFLs and reports:
+
+-   ARS-driven automation (Mosaic)
+-   {crane} extending {gtsummary}
+-   autoslideR for slide generation
+-   Template-based DMC materials
+-   Interactive Shiny applications
+
+### ✅ Validation & Compliance
+
+**6+ presentations** on GxP and regulatory topics:
+
+-   Shiny apps in regulated environments
+-   R library validation with ATDD
+-   Risk assessment frameworks
+-   Code review best practices
+-   Metric repositories for quality assessment
+
+### 🚀 Enterprise Adoption
+
+**5+ presentations** on organizational transformation:
+
+-   GSK's 50%+ open-source journey
+-   Beyond training: R support models
+-   SAS to R migration strategies
+-   Pfizer's RWD programming infrastructure
+-   Collaborative programming with traceability
+
+### 📈 Advanced Methods
+
+**8+ presentations** on statistical and ML approaches:
+
+-   Bayesian exposure-response analysis
+-   TabPFN for tabular data
+-   Synthetic data generation
+-   NCA software implementation
+-   Survival analysis automation
+
+------------------------------------------------------------------------
+
+## 📊 Session Breakdown
+
+### Europe/US Sessions
+
+::: timeline-item
+**Session 1: Practical AI & Industry Adoption**
+
+-   Practical AI for Data Science (Posit)
+-   duckplyr: DuckDB with dplyr (Cynkra)
+-   Beyond Training: R Adoption (GSK)
+-   Validating Shiny Apps (Jumping Rivers)
+-   Beyond {gtsummary}: {crane} (Genentech)
+:::
+
+::: timeline-item
+**Session 2: Advanced AI Systems**
+
+-   {llumen}: Agentic Framework (Merck KGaA)
+-   MCP Servers in R (Opifex)
+:::
+
+::: timeline-item
+**Session 3: Automation & Innovation**
+
+-   Mosaic: ARS-Driven TFLs (Novartis)
+-   Collaborative Programming (Graticule)
+:::
+
+::: timeline-item
+**Session 4: Machine Learning & Tools**
+
+-   TabPFN for Tabular Data (Posit)
+-   LLM Lounge with Databot (Posit)
+-   LLM-Powered {gtsummary} (Roche)
+-   Post-Approval Exposure (AstraZeneca)
+-   End-to-End NCA (Lucid Analytics)
+-   {admiral}'s Journey (Roche)
+:::
+
+::: timeline-item
+**Session 5: Enterprise Transformation**
+
+-   GSK's Open Source Journey (GSK)
+:::
+
+::: timeline-item
+**Session 6: AI Integration Case Studies**
+
+-   ellmer + GPT in Shiny (Moderna)
+-   autoslideR (Roche)
+-   R in RWD (Pfizer)
+-   Synthetic Data (Abbott)
+:::
+
+::: timeline-item
+**Session 7: Advanced Innovation**
+
+-   GenAI in Production (A2-AI)
+-   Ultimate R AI Assistant (Roche)
+-   Dependency Whisperer (Eli Lilly)
+-   BayesERtools (Genentech)
+:::
+
+::: timeline-item
+**Session 8: Regulatory & Methods**
+
+-   Covariate Adjustment (Novartis)
+-   R Library Validation (ex-Novartis)
+:::
+
+### Asia/Pacific Session
+
+13 presentations covering strategic initiatives, automation tools, AI implementations, and regional regulatory requirements (especially PMDA).
+
+------------------------------------------------------------------------
+
+## 🏢 Organizations Represented
+
+Major pharmaceutical companies and organizations presenting:
+
+::: {layout-ncol="3"}
+-   **Posit** (6+ presentations)
+-   **Roche/Genentech** (5+ presentations)
+-   **GSK** (2 presentations)
+-   **Novartis** (2 presentations)
+-   **Eli Lilly** (2 presentations)
+-   **Pfizer** (1 presentation)
+-   **Moderna** (1 presentation)
+-   **AstraZeneca** (1 presentation)
+-   **Merck KGaA** (1 presentation)
+-   **Abbott** (1 presentation)
+-   **SHIONOGI** (1 presentation)
+-   **A2-AI** (1 presentation)
+-   **Jumping Rivers** (1 presentation)
+-   **Cynkra** (1 presentation)
+-   **Opifex** (1 presentation)
+-   **Lucid Analytics** (1 presentation)
+-   **Graticule** (1 presentation)
+-   **CIMS Global** (2 presentations)
+-   **Amaris Consulting** (1 presentation)
+:::
+
+------------------------------------------------------------------------
+
+## 🎯 Quick Links by Topic
+
+**Looking for specific topics?**
+
+### AI & LLM
+
+-   [Practical AI for Data Science](europe-us-sessions.qmd#practical-ai-for-data-science)
+-   [{llumen}: Agentic Framework](europe-us-sessions.qmd#llumen-agentic-llm-framework-for-biomedical-documents)
+-   [LLM-Powered {gtsummary}](europe-us-sessions.qmd#llm-powered-gtsummary-qc-ready-tables)
+-   [GenAI in Production](europe-us-sessions.qmd#genai-in-production)
+-   [Ultimate R AI Assistant](europe-us-sessions.qmd#building-the-ultimate-r-ai-assistant)
+
+### Clinical Reporting
+
+-   [Mosaic: ARS-Driven Automation](europe-us-sessions.qmd#mosaic-ars-driven-automation-of-standard-tfls)
+-   [Beyond {gtsummary}: {crane}](europe-us-sessions.qmd#beyond-gtsummary-the-crane-package)
+-   [autoslideR](europe-us-sessions.qmd#autoslider-streamlining-slide-deck-generation)
+-   [officer/flextable workshop details](../workshops/clinical-reporting/officer-flextable.qmd)
+
+### Validation
+
+-   [Validating Shiny Apps](europe-us-sessions.qmd#validating-shiny-apps-in-regulated-environments)
+-   [R Library Validation ATDD](europe-us-sessions.qmd#r-library-validation-using-atdd)
+-   [Risk Assessment Deep Dive](asia-pacific-sessions.qmd#risk-assessment-deep-dive)
+
+### Enterprise Adoption
+
+-   [GSK's Open Source Journey](europe-us-sessions.qmd#gsks-journey-to-clinical-study-reporting-using-open-source)
+-   [Beyond Training at GSK](europe-us-sessions.qmd#beyond-training-teaching-r-adoption-at-gsk)
+-   [Pfizer R in RWD](europe-us-sessions.qmd#putting-the-r-in-rwd)
+
+------------------------------------------------------------------------
+
+## 📈 Presentation Statistics
+
+::::::: {layout-ncol="4"}
+::: stats-box
+**30+**
+
+Total Presentations
+:::
+
+::: stats-box
+**8**
+
+EU/US Sessions
+:::
+
+::: stats-box
+**13**
+
+Asia/Pacific
+:::
+
+::: stats-box
+**20+**
+
+Organizations
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+## 💡 Key Takeaways
+
+### Industry Transformation
+
+-   GSK leading with **50%+ R code** target achieved
+-   Major pharma embracing open-source workflows
+-   SAS to R migration gaining momentum
+
+### AI Revolution
+
+-   Practical, production-ready implementations
+-   Privacy-preserving approaches for clinical data
+-   Agentic systems and tool orchestration
+
+### Standards Adoption
+
+-   CDISC ARS/ARM driving automation
+-   Harmonized outputs across organizations
+-   Machine-readable analysis results
+
+### Validation Maturity
+
+-   Risk-based approaches becoming standard
+-   Shared metric repositories emerging
+-   GxP-ready Shiny applications feasible
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## Want More Details?
+
+Most presentations include links to GitHub repositories, slides, or additional resources. Check the individual session pages for:
+
+-   📎 Links to materials
+-   🔗 GitHub repositories
+-   📊 Presentation slides
+-   📧 Speaker contact information
+:::
+
+------------------------------------------------------------------------
+
+*All presentations from R/Pharma 2025 Conference \| Last updated: November 2025*
