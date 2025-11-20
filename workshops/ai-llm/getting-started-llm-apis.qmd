@@ -1,0 +1,185 @@
+---
+title: "Getting Started with LLM APIs in R"
+subtitle: "Building AI-powered applications with {ellmer}"
+author: "Sara Altman (Posit PBC)"
+categories: [AI, LLM, Beginner]
+---
+
+## Overview
+
+[Beginner Friendly]{.badge .badge-beginner} [AI/LLM]{.badge .badge-category} [Shiny]{.badge .badge-category}
+
+LLMs are transforming how we write code, build tools, and analyze data, but getting started with directly working with LLM APIs can feel daunting. This workshop introduces participants to programming with LLM APIs in R using **{ellmer}**, an open-source package that makes it easy to work with LLMs from R.
+
+### What You'll Learn
+
+-   📡 **Calling LLMs from R** - Basic API integration and response handling
+-   🎯 **System Prompt Design** - Crafting effective prompts for specific tasks
+-   🔧 **Tool Calling** - Enabling LLMs to execute R functions
+-   💬 **Building Chatbots** - Creating interactive conversational interfaces
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Basic R familiarity
+-   No AI or machine learning background needed
+
+**Setup:**
+
+-   R environment with internet access
+-   API keys (will be provided during workshop)
+:::
+
+## Key Packages & Tools
+
+::: tool-tag
+{ellmer}
+:::
+
+::: tool-tag
+{shinychat}
+:::
+
+::: tool-tag
+OpenAI API
+:::
+
+::: tool-tag
+Anthropic API
+:::
+
+## Workshop Content
+
+### 1. Introduction to LLM APIs
+
+Understanding how to interact with large language models programmatically:
+
+-   API authentication and configuration
+-   Request/response structure
+-   Token management and costs
+-   Error handling and best practices
+
+### 2. The {ellmer} Package
+
+**{ellmer}** provides a unified interface for working with multiple LLM providers:
+
+``` r
+library(ellmer)
+
+# Connect to an LLM
+chat <- chat_openai(
+  model = "gpt-4",
+  system_prompt = "You are a helpful R programming assistant."
+)
+
+# Send a message
+response <- chat$chat("How do I read a CSV file in R?")
+```
+
+### 3. System Prompt Engineering
+
+Learn to design effective system prompts that guide LLM behavior:
+
+-   Defining role and expertise
+-   Setting tone and style
+-   Providing context and constraints
+-   Examples of good vs. bad prompts
+
+### 4. Tool Calling
+
+Enable LLMs to execute R functions and interact with your data:
+
+-   Defining tool schemas
+-   Registering R functions as tools
+-   Handling tool execution
+-   Multi-turn conversations with tools
+
+Example use case: LLM that can read files, perform calculations, and generate plots.
+
+### 5. Building Basic Chatbots
+
+Create interactive conversational applications:
+
+-   Using `{shinychat}` for UI
+-   Managing conversation state
+-   Streaming responses
+-   Adding context and memory
+
+## Practical Applications in Pharma
+
+-   📊 **Data exploration assistants** - Natural language queries on clinical data
+-   📝 **Report generation** - Automated narrative generation from analysis results
+-   🔍 **Code review helpers** - Explain complex statistical code
+-   📚 **Documentation assistants** - Generate function documentation
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**Workshop Link:** <https://skaltman.github.io/r-pharma-llm/>
+
+**GitHub:** <https://github.com/posit-dev/ellmer>
+
+**Instructor:** Sara Altman is a Data Science Educator at Posit PBC, focusing on making AI tools accessible to R users.
+:::
+
+## Example: Simple LLM-Powered Data Assistant
+
+``` r
+library(ellmer)
+library(dplyr)
+
+# Create a chat interface with tools
+chat <- chat_openai(
+  model = "gpt-4",
+  system_prompt = "You are a data analysis assistant. 
+                   Use the provided tools to answer questions about data."
+)
+
+# Register tools
+chat <- chat %>%
+  register_tool(
+    "summarize_data",
+    function(data) {
+      summary(data)
+    },
+    description = "Get summary statistics of a dataset"
+  )
+
+# Use it
+response <- chat$chat(
+  "Can you summarize the mtcars dataset?",
+  data = mtcars
+)
+```
+
+## Learning Outcomes
+
+By the end of this workshop, you will be able to:
+
+✅ Set up and configure LLM API connections in R\
+✅ Design effective system prompts for specific tasks\
+✅ Implement tool calling to extend LLM capabilities\
+✅ Build basic chatbot interfaces with `{shinychat}`\
+✅ Understand best practices for LLM integration in pharma workflows
+
+## Next Steps
+
+After this workshop, consider:
+
+-   [Guided Tour to Building LLM-Based Tooling](guided-tour-llm-tooling.qmd) - More advanced MCP and agentic systems
+-   [Integrating LLM with Clinical Data](llm-clinical-data-privacy.qmd) - Privacy and validation considerations
+-   Explore `{ellmer}` documentation for advanced features
+
+## Additional Resources
+
+-   **ellmer documentation:** [posit-dev.github.io/ellmer](https://posit-dev.github.io/ellmer)
+-   **OpenAI API reference:** [platform.openai.com/docs](https://platform.openai.com/docs)
+-   **Prompt engineering guide:** [Anthropic prompt engineering](https://docs.anthropic.com/claude/docs/prompt-engineering)
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

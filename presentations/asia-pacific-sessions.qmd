@@ -8,369 +8,419 @@ toc: true
 
 The Asia/Pacific session featured 13 presentations covering a wide range of topics from open-source culture and data strategy to AI implementation and clinical reporting automation. These presentations showcase the growing adoption of R and innovative applications across pharmaceutical companies in the region.
 
----
+------------------------------------------------------------------------
 
 ## Strategic & Cultural Topics
 
 ### Open-Source Culture and Data Strategy in SHIONOGI
+
 **Yoshitake Kitanishi** (SHIONOGI)
 
 Presentation on creating value through open-source adoption and data strategy implementation at SHIONOGI.
 
 **Topics likely covered:**
-- Open-source adoption strategy
-- Data-driven decision making
-- Creating organizational value
-- Cultural transformation
 
----
+-   Open-source adoption strategy
+-   Data-driven decision making
+-   Creating organizational value
+-   Cultural transformation
+
+------------------------------------------------------------------------
 
 ### Strategically Assisting Statistical Programmers (SAS2R)
+
 **KuenHung Lin**
 
 Framework for supporting statistical programmers transitioning from SAS to R.
 
 **Focus areas:**
-- Migration strategies
-- Training approaches
-- Support systems
-- Success metrics
 
----
+-   Migration strategies
+-   Training approaches
+-   Support systems
+-   Success metrics
+
+------------------------------------------------------------------------
 
 ## Technical Implementations
 
 ### Side-by-Side by Design: Pharma Data Handling
+
 **Yutaka Morioka, Yuki Nakagawa**
 
 Comprehensive comparison of data handling approaches in pharma using merge, join, match, and hash operations in R.
 
 **Key concepts:**
-- Data merging strategies
-- Join operations optimization
-- Hash table implementations
-- Performance comparisons
 
----
+-   Data merging strategies
+-   Join operations optimization
+-   Hash table implementations
+-   Performance comparisons
+
+------------------------------------------------------------------------
 
 ### Risk Assessment Deep Dive
+
 **Ryo Nakaya**
 
 In-depth exploration of risk assessment methodologies and tools for pharmaceutical R packages.
 
 **Topics:**
-- Package risk evaluation
-- Validation frameworks
-- Quality metrics
-- Decision criteria
 
----
+-   Package risk evaluation
+-   Validation frameworks
+-   Quality metrics
+-   Decision criteria
+
+------------------------------------------------------------------------
 
 ## Automation & Efficiency
 
 ### Leverage Template-Based Automated Reporting on DMC Materials
+
 **Nina Han, Peng Zhang**
 
 Automation of Data Monitoring Committee (DMC) materials preparation using template-based approaches.
 
 **Benefits:**
-- Reduced preparation time
-- Consistency across reports
-- Error reduction
-- Reproducibility
 
----
+-   Reduced preparation time
+-   Consistency across reports
+-   Error reduction
+-   Reproducibility
+
+------------------------------------------------------------------------
 
 ### Dynamic Creation of Kaplan-Meier Plots and Summary Tables
+
 **Takumi Imamura, Takahiro Hasegawa**
 
 R Shiny application for interactive survival data visualization and table generation.
 
 **Features:**
-- Interactive K-M plots
-- Dynamic summary measures
-- User-friendly interface
-- Export capabilities
 
----
+-   Interactive K-M plots
+-   Dynamic summary measures
+-   User-friendly interface
+-   Export capabilities
+
+------------------------------------------------------------------------
 
 ### autoslideR: Streamlining Slide Deck Generation
+
 **Yolanda Zhou, Joe Zhu** (Roche)
 
 R package for automating clinical reporting slide decks (also presented in EU/US sessions).
 
 **Key advantages:**
-- 0.5-4 days time savings
-- Multiple event types supported
-- Customizable layouts
-- Placeholder functionality
+
+-   0.5-4 days time savings
+-   Multiple event types supported
+-   Customizable layouts
+-   Placeholder functionality
 
 **Resources:** [pharmaverse.github.io/examples/digit_files/autoslider.html](https://pharmaverse.github.io/examples/digit_files/autoslider.html)
 
----
+------------------------------------------------------------------------
 
 ## R Adoption & Strategy
 
 ### From Harmony to Hybrid: Charting a Course for R Adoption
+
 **Joe Zhu**
 
 Practical strategies for R adoption in pharmaceutical organizations.
 
 **Topics:**
-- Adoption frameworks
-- Hybrid approaches (SAS + R)
-- Change management
-- Success factors
 
----
+-   Adoption frameworks
+-   Hybrid approaches (SAS + R)
+-   Change management
+-   Success factors
+
+------------------------------------------------------------------------
 
 ### Emerging Trend of LLM Development in R
+
 **Mia Chen, Peng Zhang**
 
 Overview of Large Language Model implementation trends in R ecosystem.
 
 **Coverage:**
-- Current LLM packages in R
-- Integration patterns
-- Use cases in pharma
-- Future directions
 
----
+-   Current LLM packages in R
+-   Integration patterns
+-   Use cases in pharma
+-   Future directions
+
+------------------------------------------------------------------------
 
 ## Specialized Applications
 
 ### An R Package for Pretest Probability Models for CAD
+
 **Jeremy Selva**
 
 Package consolidating pretest probability models and guidelines for Coronary Artery Disease.
 
 **Features:**
-- Multiple model implementations
-- Guideline integration
-- Clinical utility
-- Validation support
 
----
+-   Multiple model implementations
+-   Guideline integration
+-   Clinical utility
+-   Validation support
+
+------------------------------------------------------------------------
 
 ### Enhancing e-CRT Creation for PMDA with Vibe Coding
+
 **Naoki Yoshida**
 
 R Shiny app development for PMDA (Japan's regulatory agency) electronic Case Report Tabulation using innovative "Vibe Coding" approach.
 
 **Innovation:**
-- Rapid development methodology
-- Regulatory-ready outputs
-- User-friendly interface
-- Efficiency gains
 
----
+-   Rapid development methodology
+-   Regulatory-ready outputs
+-   User-friendly interface
+-   Efficiency gains
+
+------------------------------------------------------------------------
 
 ## AI & Advanced Methods
 
 ### {meRlin}: Context-Aware AI Assistant for Clinical Programming
+
 **Steven Brooks, Pietro Mascheroni, Xiecheng Gu**
 
 AI assistant specifically designed for clinical programming workflows.
 
 **Capabilities:**
-- Context-aware code suggestions
-- Clinical programming patterns
-- Integration with development environment
-- Domain-specific knowledge
 
----
+-   Context-aware code suggestions
+-   Clinical programming patterns
+-   Integration with development environment
+-   Domain-specific knowledge
+
+------------------------------------------------------------------------
 
 ### Improving Precision Healthcare for Under-Represented Populations
+
 **Jimmy Breen**
 
 Application of R in advancing precision healthcare for genetically diverse and under-represented global populations.
 
 **Focus:**
-- Genetic diversity considerations
-- Population-specific analyses
-- Healthcare equity
-- Precision medicine approaches
 
----
+-   Genetic diversity considerations
+-   Population-specific analyses
+-   Healthcare equity
+-   Precision medicine approaches
+
+------------------------------------------------------------------------
 
 ### Exploring AI Tools in Clinical Trial Data Analysis
+
 **Terry Zhang**
 
 Survey and exploration of AI tools applicable to clinical trial data analysis.
 
 **Coverage:**
-- Available AI tools
-- Use case demonstrations
-- Integration strategies
-- Practical applications
 
----
+-   Available AI tools
+-   Use case demonstrations
+-   Integration strategies
+-   Practical applications
+
+------------------------------------------------------------------------
 
 ### cgmguru: Automated Glycemic Event Detection
+
 **Sang Ho Park**
 
 R package for automated detection of glycemic events from continuous glucose monitoring data.
 
 **Features:**
-- Event detection algorithms
-- Automated analysis
-- Clinical relevance
-- Validation metrics
 
----
+-   Event detection algorithms
+-   Automated analysis
+-   Clinical relevance
+-   Validation metrics
+
+------------------------------------------------------------------------
 
 ## Reporting & Documentation
 
 ### Interactive and Reproducible Reports with Quarto
+
 **Jaspreet Pabla**
 
 Creating interactive, reproducible clinical reports using Quarto.
 
 **Advantages:**
-- Multi-format output
-- Interactivity options
-- Reproducibility
-- Modern publishing
 
----
+-   Multi-format output
+-   Interactivity options
+-   Reproducibility
+-   Modern publishing
+
+------------------------------------------------------------------------
 
 ### Using ARD with {cards} for PMDA Oncology Inquiries
+
 **Shunsuke Goto**
 
 Application of Analysis Results Data using `{cards}` package for responding to PMDA oncology regulatory inquiries.
 
 **Benefits:**
-- Structured data approach
-- Rapid response capability
-- Consistency
-- Traceability
 
----
+-   Structured data approach
+-   Rapid response capability
+-   Consistency
+-   Traceability
+
+------------------------------------------------------------------------
 
 ## Practical Tips & Tools
 
 ### Reach for R Low Hanging Fruit for Faster Results
+
 **Sunil Gupta**
 
 Identifying and implementing quick wins with R for immediate productivity gains.
 
 **Topics:**
-- Quick wins identification
-- Practical implementations
-- Efficiency improvements
-- Getting started tips
 
----
+-   Quick wins identification
+-   Practical implementations
+-   Efficiency improvements
+-   Getting started tips
+
+------------------------------------------------------------------------
 
 ### MedxR Package: Bridging FDA and Health Canada Drug Data
+
 **Renzo Cáceres Rossi**
 
 R package providing access to regulatory drug data from FDA and Health Canada.
 
 **Features:**
-- Unified data access
-- API integration
-- Data standardization
-- Research facilitation
 
----
+-   Unified data access
+-   API integration
+-   Data standardization
+-   Research facilitation
+
+------------------------------------------------------------------------
 
 ### risk.assessr: Extending Package Validation
+
 **Hugo Bottois**
 
 Extension of risk assessment tools for package validation processes.
 
 **Enhancements:**
-- Validation workflow support
-- Extended metrics
-- Integration capabilities
-- Reporting features
 
----
+-   Validation workflow support
+-   Extended metrics
+-   Integration capabilities
+-   Reporting features
+
+------------------------------------------------------------------------
 
 ### Code Review for Compliance: Validated R Workflows
+
 **Alexandros Kouretsis**
 
 Best practices for code review in validated R workflows for pharmaceutical compliance.
 
 **Topics:**
-- Review strategies
-- Compliance requirements
-- Quality assurance
-- Documentation
 
----
+-   Review strategies
+-   Compliance requirements
+-   Quality assurance
+-   Documentation
+
+------------------------------------------------------------------------
 
 ### Web-Based R Application for Patient Enrollment Forecasting
+
 **Akifumi Okayama, Motoki Oe, Nobushige Matsuoka**
 
 Shiny application for forecasting patient enrollment in clinical trials.
 
 **Features:**
-- Forecasting models
-- Interactive interface
-- Scenario planning
-- Decision support
 
----
+-   Forecasting models
+-   Interactive interface
+-   Scenario planning
+-   Decision support
+
+------------------------------------------------------------------------
 
 ## 🔑 Regional Themes
 
 ### 1. Regulatory Focus
+
 Strong emphasis on PMDA (Japan) regulatory requirements with specialized tools and approaches.
 
 ### 2. Practical Implementation
+
 Focus on real-world applications and efficiency improvements in daily workflows.
 
 ### 3. AI Adoption
+
 Growing interest in AI/LLM tools tailored for clinical programming and analysis.
 
 ### 4. Open Source Movement
+
 Increasing adoption of open-source culture and collaborative development.
 
 ### 5. Cultural Considerations
-Presentations addressing unique challenges and opportunities in Asia/Pacific markets including:
-- Under-represented populations
-- Regional regulatory requirements
-- Local healthcare systems
-- Genetic diversity
 
----
+Presentations addressing unique challenges and opportunities in Asia/Pacific markets including:
+
+-   Under-represented populations
+-   Regional regulatory requirements
+-   Local healthcare systems
+-   Genetic diversity
+
+------------------------------------------------------------------------
 
 ## 📊 Topic Distribution
 
-::: {layout-ncol=3}
-::: {.stats-box}
+:::::: {layout-ncol="3"}
+::: stats-box
 **5**
 
 Automation & Tools
 :::
 
-::: {.stats-box}
+::: stats-box
 **4**
 
 AI & Advanced Methods
 :::
 
-::: {.stats-box}
+::: stats-box
 **4**
 
 Strategy & Culture
 :::
-:::
+::::::
 
----
+------------------------------------------------------------------------
 
 ## 🌏 Geographic Insights
 
 The Asia/Pacific presentations demonstrate:
 
-- **Strong R adoption** across major pharma companies in the region
-- **Innovation in automation** for regulatory compliance (especially PMDA)
-- **Focus on practical tools** addressing regional-specific needs
-- **Growing AI integration** in clinical workflows
-- **Emphasis on efficiency** and time-saving solutions
+-   **Strong R adoption** across major pharma companies in the region
+-   **Innovation in automation** for regulatory compliance (especially PMDA)
+-   **Focus on practical tools** addressing regional-specific needs
+-   **Growing AI integration** in clinical workflows
+-   **Emphasis on efficiency** and time-saving solutions
 
----
+------------------------------------------------------------------------
 
-*Asia/Pacific Presentations from R/Pharma 2025 Conference | Last updated: November 2025*
+*Asia/Pacific Presentations from R/Pharma 2025 Conference \| Last updated: November 2025*

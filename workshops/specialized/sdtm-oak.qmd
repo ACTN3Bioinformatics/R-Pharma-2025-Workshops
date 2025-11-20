@@ -7,39 +7,46 @@ categories: [CDISC, SDTM, Intermediate]
 
 ## Overview
 
-<span class="badge badge-intermediate">Intermediate</span> <span class="badge badge-category">SDTM</span> <span class="badge badge-category">CDISC</span>
+[Intermediate]{.badge .badge-intermediate} [SDTM]{.badge .badge-category} [CDISC]{.badge .badge-category}
 
 **{sdtm.oak}** is an EDC and data standard-agnostic solution designed to empower pharmaceutical programmers to develop CDISC SDTM datasets using R. The package offers a modular programming framework with reusable algorithms that can potentially automate SDTM creation based on standard specifications.
 
 ### What You'll Learn
 
-- 🌳 **{sdtm.oak} fundamentals** - V0.1 package overview
-- 🔧 **Modular programming** - Reusable algorithm approach
-- 📊 **SDTM creation** - From raw data to standard domains
-- 📝 **EDC-agnostic design** - Works with any data source
-- 🎯 **Automation potential** - Standards-based generation
+-   🌳 **{sdtm.oak} fundamentals** - V0.1 package overview
+-   🔧 **Modular programming** - Reusable algorithm approach
+-   📊 **SDTM creation** - From raw data to standard domains
+-   📝 **EDC-agnostic design** - Works with any data source
+-   🎯 **Automation potential** - Standards-based generation
 
 ## Prerequisites
 
-::: {.requirements}
+::: requirements
 **Required Knowledge:**
-- Intermediate R programming
-- CDISC SDTM standards familiarity
-- Clinical trial data structure understanding
+
+-   Intermediate R programming
+-   CDISC SDTM standards familiarity
+-   Clinical trial data structure understanding
 
 **Helpful:**
-- Experience with SDTM programming
-- Knowledge of EDC systems
+
+-   Experience with SDTM programming
+-   Knowledge of EDC systems
 :::
 
 ## Key Package
 
-<div class="tool-tag">{sdtm.oak}</div>
-<div class="tool-tag">Pharmaverse</div>
+::: tool-tag
+{sdtm.oak}
+:::
+
+::: tool-tag
+Pharmaverse
+:::
 
 ## Workshop Materials
 
-::: {.callout-note}
+::: callout-note
 ## Resources
 
 **Workshop Slides:** [pharmaverse.github.io/rinpharma-SDTM-workshop](https://pharmaverse.github.io/rinpharma-SDTM-workshop/#/title-slide)
@@ -52,32 +59,35 @@ categories: [CDISC, SDTM, Intermediate]
 ### EDC-Agnostic Approach
 
 Works with data from any source:
-- ✅ Medidata Rave
-- ✅ Oracle Clinical
-- ✅ Veeva Vault
-- ✅ Custom EDC systems
-- ✅ CSV files
+
+-   ✅ Medidata Rave
+-   ✅ Oracle Clinical
+-   ✅ Veeva Vault
+-   ✅ Custom EDC systems
+-   ✅ CSV files
 
 ### Reusable Algorithms
 
 Instead of custom code for each study:
-- Define once, use many times
-- Standards-based transformations
-- Metadata-driven approach
+
+-   Define once, use many times
+-   Standards-based transformations
+-   Metadata-driven approach
 
 ### Modular Framework
 
 Break SDTM creation into components:
-- Data reading
-- Domain mapping
-- Variable derivation
-- Standardization
+
+-   Data reading
+-   Domain mapping
+-   Variable derivation
+-   Standardization
 
 ## Key Features
 
 ### 1. Domain Creation
 
-```r
+``` r
 library(sdtm.oak)
 
 # Create Demographics (DM) domain
@@ -90,64 +100,68 @@ dm <- create_dm(
 ### 2. Variable Mapping
 
 Automatic mapping from raw to SDTM:
-- USUBJID derivation
-- Date standardization
-- Controlled terminology
-- Unit conversions
+
+-   USUBJID derivation
+-   Date standardization
+-   Controlled terminology
+-   Unit conversions
 
 ### 3. Validation
 
 Built-in checks for:
-- Required variables
-- Data types
-- Value constraints
-- SDTM conformance
+
+-   Required variables
+-   Data types
+-   Value constraints
+-   SDTM conformance
 
 ### 4. Metadata-Driven
 
 Use SDTM specifications as input:
-- Excel specification sheets
-- Standard templates
-- Reusable across studies
+
+-   Excel specification sheets
+-   Standard templates
+-   Reusable across studies
 
 ## Workshop Content
 
 ### Module 1: Package Introduction
 
-- {sdtm.oak} architecture
-- Installation and setup
-- Key functions overview
-- Integration with pharmaverse
+-   {sdtm.oak} architecture
+-   Installation and setup
+-   Key functions overview
+-   Integration with pharmaverse
 
 ### Module 2: Simple Domain Creation
 
 **Hands-on: Demographics (DM)**
 
 Create DM domain from raw subject data:
-- Subject identifiers
-- Demographics variables
-- Dates formatting
-- Controlled terminology
+
+-   Subject identifiers
+-   Demographics variables
+-   Dates formatting
+-   Controlled terminology
 
 ### Module 3: Complex Domains
 
 **Hands-on: Adverse Events (AE)**
 
-- Multiple records per subject
-- Start/end dates
-- Severity grading
-- Relationship coding
+-   Multiple records per subject
+-   Start/end dates
+-   Severity grading
+-   Relationship coding
 
 ### Module 4: Automation
 
-- Using specifications to drive creation
-- Batch processing multiple domains
-- Quality checks
-- Documentation generation
+-   Using specifications to drive creation
+-   Batch processing multiple domains
+-   Quality checks
+-   Documentation generation
 
 ## Practical Example
 
-```r
+``` r
 library(sdtm.oak)
 library(dplyr)
 
@@ -180,49 +194,50 @@ write_xpt(ae, "ae.xpt")
 
 ### For Programmers
 
-- **Less custom coding** - Reuse algorithms
-- **Faster development** - Metadata-driven
-- **Fewer errors** - Automated validation
-- **Better documentation** - Standards-based
+-   **Less custom coding** - Reuse algorithms
+-   **Faster development** - Metadata-driven
+-   **Fewer errors** - Automated validation
+-   **Better documentation** - Standards-based
 
 ### For Organizations
 
-- **Consistency** across studies
-- **Efficiency** gains
-- **Quality** improvements  
-- **Compliance** with CDISC
+-   **Consistency** across studies
+-   **Efficiency** gains
+-   **Quality** improvements
+-   **Compliance** with CDISC
 
 ### For Industry
 
-- **Open-source** collaboration
-- **Shared algorithms**
-- **Best practices** dissemination
+-   **Open-source** collaboration
+-   **Shared algorithms**
+-   **Best practices** dissemination
 
 ## Learning Outcomes
 
-✅ Understand {sdtm.oak} architecture  
-✅ Create simple SDTM domains  
-✅ Handle complex domain mappings  
-✅ Use specifications to drive automation  
-✅ Validate SDTM datasets  
+✅ Understand {sdtm.oak} architecture\
+✅ Create simple SDTM domains\
+✅ Handle complex domain mappings\
+✅ Use specifications to drive automation\
+✅ Validate SDTM datasets\
 ✅ Integrate with pharmaverse ecosystem
 
 ## Future Roadmap
 
 **Planned Features:**
-- More domain templates
-- Enhanced automation
-- Integration with {admiral}
-- Specification validator
-- Machine learning-assisted mapping
+
+-   More domain templates
+-   Enhanced automation
+-   Integration with {admiral}
+-   Specification validator
+-   Machine learning-assisted mapping
 
 ## Getting Help
 
-- **GitHub Issues:** Report bugs and requests
-- **Pharmaverse Slack:** #sdtm-oak channel
-- **Documentation:** Package website
-- **Examples:** Vignettes and demos
+-   **GitHub Issues:** Report bugs and requests
+-   **Pharmaverse Slack:** #sdtm-oak channel
+-   **Documentation:** Package website
+-   **Examples:** Vignettes and demos
 
----
+------------------------------------------------------------------------
 
-*Last updated: November 2025 | R/Pharma 2025 Conference*
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

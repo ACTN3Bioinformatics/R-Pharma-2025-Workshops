@@ -1,0 +1,379 @@
+---
+title: "Hands on with Cardinal: Harmonizing Clinical Reporting"
+subtitle: "Open-Source TLGs with {gtsummary}"
+author:
+  - "Abinaya Yogasekaram (Amaris Consulting)"
+  - "Emily De La Rua (Roche)"
+categories: [Clinical Reporting, TLGs, Beginner]
+---
+
+## Overview
+
+[Beginner Friendly]{.badge .badge-beginner} [Clinical Reporting]{.badge .badge-category} [TLGs]{.badge .badge-category}
+
+**Cardinal** is an open-source collection of standardized table, listing, and graph (TLG) templates designed to streamline the process of clinical output review, comparison, and meta-analysis—promoting efficient communication to stakeholders while aligning with CDISC's ARD/ARM efforts.
+
+### What You'll Learn
+
+-   📊 **{gtsummary} fundamentals** for table creation
+-   📚 **Cardinal's TLG catalog** and template library
+-   🔧 **Hands-on practice** generating key clinical outputs
+-   🤝 **Contributing** to the Cardinal project
+-   🎯 **Integration** into your own workflows
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Basic R programming
+-   Familiarity with clinical trial data (CDISC preferred)
+-   No prior experience with {gtsummary} required
+
+**Recommended:**
+
+-   Understanding of common TLG types
+-   Experience with clinical study reports
+:::
+
+## Key Packages & Tools
+
+::: tool-tag
+{gtsummary}
+:::
+
+::: tool-tag
+{cardinal}
+:::
+
+::: tool-tag
+{gt}
+:::
+
+::: tool-tag
+{cards}
+:::
+
+::: tool-tag
+CDISC ADaM
+:::
+
+## Why Cardinal?
+
+### The Problem
+
+-   🔄 **Inconsistent formatting** across studies and organizations
+-   ⏱️ **Time-consuming** manual table creation
+-   🔍 **Difficult to compare** outputs across trials
+-   📝 **Repetitive coding** for standard analyses
+
+### The Solution
+
+Cardinal provides:
+
+-   ✅ **Standardized templates** for common TLGs
+-   ✅ **Quality-controlled** outputs aligned with CDISC
+-   ✅ **Reusable code** reducing development time
+-   ✅ **Harmonized formats** for meta-analysis
+
+## Introduction to {gtsummary}
+
+**{gtsummary}** is the foundation for creating publication-ready tables:
+
+``` r
+library(gtsummary)
+library(dplyr)
+
+# Simple demographic table
+trial %>%
+  select(age, grade, trt) %>%
+  tbl_summary(
+    by = trt,
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    )
+  ) %>%
+  add_p() %>%
+  add_overall()
+```
+
+### Key Features
+
+-   Intuitive syntax for common analyses
+-   Flexible customization options
+-   Built-in statistical tests
+-   Export to multiple formats (Word, HTML, LaTeX)
+
+## Cardinal TLG Catalog
+
+### Tables
+
+#### 1. **Demographics and Baseline Characteristics**
+
+-   Subject disposition
+-   Demographics (age, sex, race, ethnicity)
+-   Baseline disease characteristics
+-   Medical history
+
+#### 2. **Efficacy Tables**
+
+-   Primary/secondary endpoints
+-   Subgroup analyses
+-   Time-to-event summaries
+-   Response rates
+
+#### 3. **Safety Tables**
+
+-   Adverse events (by SOC, PT, severity)
+-   Laboratory values
+-   Vital signs
+-   Deaths and serious AEs
+
+#### 4. **Disposition Tables**
+
+-   Study completion
+-   Protocol deviations
+-   Exposure duration
+
+### Listings
+
+-   Patient profiles
+-   Adverse event listings
+-   Laboratory abnormalities
+-   Concomitant medications
+
+### Graphs
+
+-   Kaplan-Meier survival curves
+-   Forest plots (subgroup analysis)
+-   Swimmer plots (treatment duration)
+-   Waterfall plots (tumor response)
+
+## Workshop Content
+
+### Session 1: Getting Started with {gtsummary}
+
+**Basic Table Creation:**
+
+``` r
+library(gtsummary)
+library(cardinal)
+
+# Load example CDISC data
+data("adsl", package = "cardinal")
+
+# Demographic table
+demo_table <- adsl %>%
+  select(AGE, SEX, RACE, ARM) %>%
+  tbl_summary(
+    by = ARM,
+    label = list(
+      AGE ~ "Age (years)",
+      SEX ~ "Sex",
+      RACE ~ "Race"
+    )
+  ) %>%
+  add_p() %>%
+  add_overall() %>%
+  modify_header(label ~ "**Characteristic**") %>%
+  bold_labels()
+```
+
+### Session 2: Cardinal Templates
+
+**Using Pre-built Templates:**
+
+``` r
+# Cardinal provides ready-to-use templates
+template_demographics(
+  data = adsl,
+  treatment_var = "ARM"
+)
+
+template_ae_summary(
+  data = adae,
+  treatment_var = "ARM",
+  ae_vars = c("AESOC", "AEDECOD")
+)
+```
+
+### Session 3: Customization
+
+**Adapting Templates to Your Needs:**
+
+-   Modifying statistical summaries
+-   Custom formatting rules
+-   Adding footnotes and titles
+-   Styling for different audiences (clinical vs. regulatory)
+
+### Session 4: Advanced Topics
+
+**Complex Tables:**
+
+-   Multi-level headers
+-   Nested statistics
+-   Cross-tabulations
+-   Survival analysis tables
+
+### Session 5: Contributing to Cardinal
+
+**How to Get Involved:**
+
+1.  Submit new template ideas
+2.  Contribute code improvements
+3.  Report issues and bugs
+4.  Share use cases and examples
+
+## Hands-On Exercises
+
+### Exercise 1: Basic Demographics Table
+
+Create a standard demographics table using your own data or provided examples.
+
+### Exercise 2: Adverse Events Summary
+
+Generate a treatment-emergent adverse events (TEAE) table by system organ class.
+
+### Exercise 3: Efficacy Analysis
+
+Build a primary endpoint analysis table with statistical comparisons.
+
+### Exercise 4: Custom Template
+
+Modify an existing Cardinal template to match your organization's standards.
+
+## Practical Applications
+
+### Clinical Study Reports (CSRs)
+
+-   Consistent formatting across studies
+-   Rapid generation of standard tables
+-   Easy updates during review cycles
+
+### Meta-Analysis
+
+-   Harmonized outputs from multiple trials
+-   Simplified data extraction
+-   Comparable statistics across studies
+
+### Regulatory Submissions
+
+-   CDISC-aligned outputs
+-   Traceable and reproducible code
+-   Audit-ready documentation
+
+## Cardinal vs. Other Approaches
+
+| Feature | Cardinal + {gtsummary} | Traditional Approach | Other Tools |
+|-----------------|--------------------|-------------------|-----------------|
+| **Standardization** | ✅ High | ❌ Low | ⚠️ Medium |
+| **Learning Curve** | ✅ Gentle | ❌ Steep | ⚠️ Moderate |
+| **Flexibility** | ✅ High | ✅ High | ❌ Limited |
+| **Open Source** | ✅ Yes | ⚠️ Varies | ❌ Often proprietary |
+| **CDISC Alignment** | ✅ Built-in | ❌ Manual | ⚠️ Varies |
+| **Cost** | ✅ Free | ⚠️ Varies | ❌ Often expensive |
+
+## ARD/ARM Integration
+
+Cardinal aligns with **CDISC Analysis Results Data (ARD)** and **Analysis Results Metadata (ARM)** standards:
+
+-   Structured output metadata
+-   Machine-readable results
+-   Facilitates automation
+-   Supports regulatory review
+
+## Learning Outcomes
+
+By the end of this workshop, you will be able to:
+
+✅ Create professional clinical tables with {gtsummary}\
+✅ Use Cardinal templates for standard TLGs\
+✅ Customize outputs to match your organization's needs\
+✅ Generate CDISC-aligned, reproducible tables\
+✅ Contribute to the Cardinal project\
+✅ Accelerate your clinical reporting workflows
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**Cardinal Website:** <https://pharmaverse.github.io/cardinal/>
+
+**GitHub:** <https://github.com/pharmaverse/cardinal>
+
+**{gtsummary} Documentation:** <https://www.danieldsjoberg.com/gtsummary/>
+:::
+
+## Example: Complete Workflow
+
+``` r
+library(cardinal)
+library(gtsummary)
+library(gt)
+
+# 1. Load data
+data("adsl")
+data("adae")
+
+# 2. Create demographics table
+demo <- template_demographics(adsl, treatment_var = "ARM")
+
+# 3. Create AE summary
+ae_summary <- template_ae_summary(
+  adae,
+  treatment_var = "ARM",
+  soc_var = "AESOC",
+  pt_var = "AEDECOD"
+)
+
+# 4. Export to Word
+demo %>%
+  as_gt() %>%
+  gt::gtsave("demographics.docx")
+
+ae_summary %>%
+  as_gt() %>%
+  gt::gtsave("adverse_events.docx")
+```
+
+## Future of Cardinal
+
+**Roadmap:**
+
+-   Expanded template library
+-   More graph types
+-   Enhanced CDISC integration
+-   Integration with {teal} and other pharmaverse tools
+-   Machine learning-assisted table suggestions
+
+## Getting Help
+
+-   **Documentation:** Comprehensive guides on the website
+-   **GitHub Issues:** Report bugs and request features
+-   **Slack:** pharmaverse Slack channel
+-   **Email:** Contact maintainers directly
+
+## Next Steps
+
+After this workshop:
+
+-   Explore the full Cardinal template catalog
+-   Try Cardinal in your next project
+-   Join the pharmaverse community
+-   Consider contributing a template
+
+::: callout-tip
+## Pro Tips
+
+1.  **Start with templates** - Don't reinvent the wheel
+2.  **Customize gradually** - Master basics before advanced features
+3.  **Document your modifications** - Make it reproducible
+4.  **Share back** - Your improvements can help others
+5.  **Stay updated** - Cardinal is actively developed
+:::
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

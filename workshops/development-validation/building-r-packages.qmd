@@ -1,0 +1,344 @@
+---
+title: "Introduction to Building (Better) R Packages"
+subtitle: "From scripts to packages: Making your code reusable and shareable"
+author: "Nicola Rennie (Data Visualisation Specialist)"
+categories: [Development, Packages, Beginner]
+---
+
+## Overview
+
+[Beginner Friendly]{.badge .badge-beginner} [Package Development]{.badge .badge-category} [Best Practices]{.badge .badge-category}
+
+Transform your R scripts into professional packages! Learn the fundamentals of package development, from basic structure to documentation, testing, and sharing. **By the end of this workshop, you will have made an R package!**
+
+### What You'll Learn
+
+-   📦 **Package structure** - Essential components
+-   🔧 **Writing functions** - Package-friendly style
+-   📝 **Documentation** - roxygen2 and examples
+-   ✅ **Testing** - Ensuring code quality
+-   🌐 **Sharing** - GitHub and CRAN
+-   💡 **Best practices** - Professional development
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Basic R programming
+-   No prior package development experience needed!
+-   No function writing experience required!
+
+**Setup:**
+
+-   R and RStudio
+-   `{devtools}` and `{usethis}` packages
+:::
+
+## Key Packages
+
+::: tool-tag
+{devtools}
+:::
+
+::: tool-tag
+{usethis}
+:::
+
+::: tool-tag
+{roxygen2}
+:::
+
+::: tool-tag
+{testthat}
+:::
+
+::: tool-tag
+{pkgdown}
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**Slides:** [nrennie.rbind.io/r-pharma-2025-r-packages](https://nrennie.rbind.io/r-pharma-2025-r-packages/#/title-slide)
+:::
+
+## Why Build Packages?
+
+### Benefits
+
+-   ♻️ **Reusability** - Use your code across projects
+-   🤝 **Sharing** - Collaborate easily with others
+-   📚 **Documentation** - Built-in help pages
+-   ✅ **Testing** - Ensure code reliability
+-   🎯 **Organization** - Structured project layout
+
+## Workshop Structure
+
+### Part 1: Package Basics (45 min)
+
+**Creating Your First Package:**
+
+``` r
+library(usethis)
+
+# Create package structure
+create_package("~/mypackage")
+
+# Your package now has:
+# - DESCRIPTION file
+# - NAMESPACE file
+# - R/ directory
+# - .Rproj file
+```
+
+**Essential Components:**
+
+1.  **DESCRIPTION** - Package metadata
+2.  **NAMESPACE** - Function exports
+3.  **R/** - Function code
+4.  **man/** - Documentation (auto-generated)
+
+### Part 2: Writing Functions (45 min)
+
+**Package-Friendly Function Style:**
+
+``` r
+# R/my_function.R
+
+#' Calculate Summary Statistics
+#'
+#' @param x A numeric vector
+#' @param na.rm Logical. Should missing values be removed?
+#'
+#' @return A named vector of summary statistics
+#' @export
+#'
+#' @examples
+#' calculate_summary(c(1, 2, 3, 4, 5))
+#' calculate_summary(c(1, 2, NA, 4), na.rm = TRUE)
+calculate_summary <- function(x, na.rm = FALSE) {
+  if (!is.numeric(x)) {
+    stop("`x` must be numeric")
+  }
+  
+  c(
+    mean = mean(x, na.rm = na.rm),
+    sd = sd(x, na.rm = na.rm),
+    min = min(x, na.rm = na.rm),
+    max = max(x, na.rm = na.rm)
+  )
+}
+```
+
+**Best Practices:**
+
+-   ✅ Clear function names
+-   ✅ Input validation
+-   ✅ Informative error messages
+-   ✅ Consistent parameter names
+-   ✅ Return predictable output
+
+### Part 3: Documentation (30 min)
+
+**roxygen2 Documentation:**
+
+``` r
+# Use roxygen2 comments above functions
+#' (starts with #')
+#' 
+#' @param parameter_name Description
+#' @return What the function returns
+#' @export Makes function available to users
+#' @examples Usage examples
+
+# Generate documentation
+devtools::document()
+```
+
+**Creating README:**
+
+``` r
+use_readme_md()
+```
+
+### Part 4: Testing (30 min)
+
+**Setting Up Tests:**
+
+``` r
+# Initialize testing infrastructure
+usethis::use_testthat()
+
+# Create test file
+usethis::use_test("my_function")
+```
+
+**Writing Tests:**
+
+``` r
+# tests/testthat/test-my_function.R
+
+test_that("calculate_summary works correctly", {
+  x <- c(1, 2, 3, 4, 5)
+  result <- calculate_summary(x)
+  
+  expect_equal(result["mean"], 3)
+  expect_equal(result["sd"], sd(x))
+  expect_length(result, 4)
+})
+
+test_that("calculate_summary handles NA values", {
+  x <- c(1, 2, NA, 4)
+  
+  expect_true(is.na(calculate_summary(x)["mean"]))
+  expect_false(is.na(calculate_summary(x, na.rm = TRUE)["mean"]))
+})
+
+test_that("calculate_summary validates input", {
+  expect_error(calculate_summary("not numeric"))
+})
+```
+
+### Part 5: Sharing Your Package (30 min)
+
+**GitHub:**
+
+``` r
+# Initialize git
+usethis::use_git()
+
+# Connect to GitHub
+usethis::use_github()
+```
+
+**Package Website:**
+
+``` r
+# Create pkgdown site
+usethis::use_pkgdown()
+pkgdown::build_site()
+```
+
+**CRAN Preparation:**
+
+``` r
+# Check package
+devtools::check()
+
+# Spell check
+devtools::spell_check()
+
+# Check for CRAN policies
+rcmdcheck::rcmdcheck()
+```
+
+## Pharmaceutical Package Considerations
+
+### Validation Requirements
+
+-   📋 **Documentation** - Comprehensive function docs
+-   ✅ **Testing** - High test coverage (aim for 80%+)
+-   🔒 **Version control** - Track all changes
+-   📝 **Change log** - Document updates
+-   🏷️ **Releases** - Tagged versions
+
+### Example Structure for Pharma Package
+
+```         
+mypharmapackage/
+├── DESCRIPTION          # Package metadata
+├── NAMESPACE            # Auto-generated
+├── R/                   # Function code
+│   ├── data_processing.R
+│   ├── statistical_tests.R
+│   └── plotting.R
+├── tests/
+│   └── testthat/       # Unit tests
+├── vignettes/          # Long-form documentation
+├── data/               # Example datasets
+├── inst/
+│   └── validation/     # Validation documents
+└── README.md
+```
+
+## Hands-On Exercise
+
+**Build a Clinical Trial Utility Package:**
+
+Create a package with functions for:
+
+1.  **Subject disposition summary**
+2.  **Adverse event frequency table**
+3.  **Demographic summary table**
+
+Include:
+
+-   Proper documentation
+-   Input validation
+-   Unit tests
+-   Examples
+-   README
+
+## Best Practices Summary
+
+### Do's ✅
+
+-   Write clear, focused functions
+-   Document everything with roxygen2
+-   Test your functions thoroughly
+-   Use meaningful names
+-   Include examples
+-   Keep dependencies minimal
+-   Version control with git
+
+### Don'ts ❌
+
+-   Don't use `library()` inside functions
+-   Don't modify user's options/settings
+-   Don't write to user's file system without permission
+-   Don't use non-standard evaluation carelessly
+-   Don't skip documentation
+
+## Advanced Topics (Time Permitting)
+
+-   **Vignettes** - Long-form documentation
+-   **Data in packages** - Including example datasets
+-   **Package dependencies** - Managing imports
+-   **S3 methods** - Object-oriented programming
+-   **GitHub Actions** - Automated checks
+
+## Learning Outcomes
+
+By the end of this workshop, you will be able to:
+
+✅ Create a basic R package structure\
+✅ Write package-friendly functions\
+✅ Document functions with roxygen2\
+✅ Write unit tests with {testthat}\
+✅ Share your package on GitHub\
+✅ Understand best practices for package development\
+✅ **Have created your own R package!**
+
+## Resources for Continued Learning
+
+-   **R Packages book** (2nd ed): [r-pkgs.org](https://r-pkgs.org)
+-   **usethis documentation**: [usethis.r-lib.org](https://usethis.r-lib.org)
+-   **Writing R Extensions**: Official CRAN manual
+-   **Pharmaverse packages**: Examples of pharma-specific packages
+
+## Next Steps
+
+After this workshop:
+
+-   Practice by packaging your existing code
+-   Contribute to open-source pharma packages
+-   Explore {pkgdown} for beautiful websites
+-   Learn about continuous integration (GitHub Actions)
+-   Join the pharmaverse community!
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

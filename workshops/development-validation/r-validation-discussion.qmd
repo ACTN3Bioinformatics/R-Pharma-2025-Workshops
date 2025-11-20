@@ -1,0 +1,100 @@
+---
+title: "R Validation Discussion: Metric Repos for Open Quality Assessment"
+subtitle: "Building a pre-built database of metrics for software validation"
+author: "Doug Kelkhoff (R Validation Hub)"
+categories: [Validation, Discussion, Advanced]
+---
+
+## Overview
+
+[Advanced]{.badge .badge-advanced} [Validation]{.badge .badge-category} [GxP]{.badge .badge-category}
+
+The R Validation Hub has built a **Metric Repository** - a pre-built database of metrics to support the software validation process. This discussion workshop explores the industry outlook for this open validation database and gathers community input on standardization and implementation.
+
+### Discussion Topics
+
+-   🗄️ **Metric Repository** overview
+-   🔧 **Standardizing compute environments**
+-   📊 **Quality standards** for packages
+-   🏢 **In-house package validation**
+-   🔮 **Future of R validation**
+
+## Key Packages
+
+::: tool-tag
+{riskmetric}
+:::
+
+::: tool-tag
+{riskassessment}
+:::
+
+::: tool-tag
+{riskscore}
+:::
+
+::: tool-tag
+{val.meter}
+:::
+
+::: tool-tag
+{val.criterion}
+:::
+
+## Workshop Links
+
+::: callout-note
+## Resources
+
+**Regulatory Repo WG:** [github.com/pharmaR/regulatory-r-repo-wg](https://github.com/pharmaR/regulatory-r-repo-wg)
+
+**val.meter:** [github.com/pharmaR/val.meter](https://github.com/pharmaR/val.meter)
+
+**val.criterion:** [github.com/pharmaR/val.criterion](https://github.com/pharmaR/val.criterion)
+:::
+
+## Key Questions
+
+### 1. Environment Standardization
+
+How do we standardize compute environments to make metrics useful across organizations?
+
+### 2. Quality Thresholds
+
+What should we do when a package doesn't meet our standards?
+
+### 3. In-House Packages
+
+How can organizations supplement the database with validation of internal packages?
+
+### 4. Industry Adoption
+
+What barriers prevent adoption of shared validation databases?
+
+## Metric Repository Concept
+
+``` r
+library(riskmetric)
+library(riskscore)
+
+# Assess package risk
+pkg_ref <- pkg_ref("dplyr")
+pkg_risk <- pkg_assess(pkg_ref)
+
+# Calculate risk score
+score <- riskscore(pkg_risk)
+
+# Store in shared database
+# Organizations can query and contribute
+```
+
+## Learning Outcomes
+
+✅ Understand metric repository approach\
+✅ Contribute to standardization efforts\
+✅ Plan validation strategy for your organization\
+✅ Network with industry validation experts
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

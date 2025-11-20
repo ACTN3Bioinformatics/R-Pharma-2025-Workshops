@@ -1,0 +1,393 @@
+---
+title: "Supercharge Your Shiny App by Offloading Computations to HPC Cluster"
+subtitle: "Remote job submission and resource management for interactive apps"
+author: "Michael Mayer (Principal Solution Engineer, Posit PBC)"
+categories: [Shiny, HPC, Advanced]
+---
+
+## Overview
+
+[Advanced]{.badge .badge-advanced} [Shiny]{.badge .badge-category} [HPC]{.badge .badge-category}
+
+With increasing data and analysis complexity, developers are tempted to put serious computations into Shiny apps. Given resource limitations and shared infrastructure, this often leads to crashes. This workshop teaches you to interact with remote HPC clusters from your laptop or Posit Connect, offloading computations while keeping apps interactive.
+
+### What You'll Learn
+
+-   🖥️ **HPC cluster interaction** from laptop
+-   🚀 **Remote job submission** from Shiny
+-   ⚡ **Parallel computing** for faster results
+-   📊 **Resource management** and optimization
+-   🔄 **App stability** while leveraging HPC power
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate Shiny development
+-   Basic understanding of HPC concepts
+-   R programming proficiency
+
+**Helpful:**
+
+-   Experience with computational bottlenecks
+-   SSH and remote systems familiarity
+:::
+
+## Key Technologies
+
+::: tool-tag
+Shiny
+:::
+
+::: tool-tag
+HPC Cluster
+:::
+
+::: tool-tag
+Posit Connect
+:::
+
+::: tool-tag
+Job Schedulers
+:::
+
+::: tool-tag
+{future}
+:::
+
+## The Problem
+
+### Typical Scenario
+
+``` r
+# BAD: Heavy computation in Shiny
+server <- function(input, output, session) {
+  output$result <- renderPlot({
+    # This crashes the app!
+    heavy_simulation(
+      iterations = 1000000,
+      samples = input$samples
+    )
+  })
+}
+```
+
+**Issues:**
+
+-   ❌ App becomes unresponsive
+-   ❌ Other users affected (shared server)
+-   ❌ Memory limits exceeded
+-   ❌ Timeouts and crashes
+
+## The Solution
+
+### Offload to HPC
+
+``` r
+# GOOD: Offload to cluster
+server <- function(input, output, session) {
+  observeEvent(input$run, {
+    # Submit job to HPC
+    job_id <- submit_hpc_job(
+      script = "simulation.R",
+      params = list(samples = input$samples)
+    )
+    
+    # Poll for results
+    result <- poll_job_result(job_id)
+    
+    output$result <- renderPlot(result)
+  })
+}
+```
+
+**Benefits:**
+
+-   ✅ App stays responsive
+-   ✅ Leverage massive compute power
+-   ✅ No local resource limits
+-   ✅ Parallel processing
+-   ✅ Other users unaffected
+
+## Workshop Content
+
+### Part 1: HPC Cluster Basics
+
+**Job Schedulers:**
+
+-   SLURM
+-   PBS
+-   SGE
+-   LSF
+
+**Key Concepts:**
+
+-   Job submission
+-   Resource requests (cores, memory, time)
+-   Queue management
+-   Job monitoring
+
+### Part 2: Connecting Shiny to HPC
+
+**Architecture:**
+
+```         
+User → Shiny App → SSH Connection → HPC Cluster
+                        ↓
+                   Job Scheduler
+                        ↓
+                   Compute Nodes
+                        ↓
+                   Results ← Back to Shiny
+```
+
+**Authentication:**
+
+-   SSH keys
+-   Certificates
+-   Secure credential management
+
+### Part 3: Job Submission from R
+
+``` r
+library(ssh)
+
+# Connect to cluster
+session <- ssh_connect("user@hpc.university.edu")
+
+# Submit job
+ssh_exec_wait(session, command = "
+  sbatch --job-name=shiny_analysis \
+         --ntasks=16 \
+         --mem=64G \
+         --time=01:00:00 \
+         analysis_script.R
+")
+
+# Check status
+status <- ssh_exec_internal(session, "squeue --user=myuser")
+
+# Retrieve results
+ssh_scp_download(session, 
+                 files = "results/output.rds",
+                 to = "local_results/")
+```
+
+### Part 4: Building Reactive HPC Shiny App
+
+**Key Components:**
+
+1.  **Job submission UI**
+
+``` r
+ui <- fluidPage(
+  numericInput("n_samples", "Samples:", 1000000),
+  numericInput("n_cores", "Cores:", 16),
+  actionButton("submit", "Run on HPC"),
+  textOutput("status"),
+  plotOutput("results")
+)
+```
+
+2.  **Job management**
+
+``` r
+server <- function(input, output, session) {
+  job_status <- reactiveVal("Idle")
+  
+  observeEvent(input$submit, {
+    job_status("Submitting...")
+    
+    # Submit to HPC
+    job_id <- submit_slurm_job(
+      cores = input$n_cores,
+      memory = "64G",
+      script = generate_script(input$n_samples)
+    )
+    
+    job_status(paste("Running - Job ID:", job_id))
+    
+    # Poll for completion
+    observe({
+      if (is_job_complete(job_id)) {
+        results <- fetch_results(job_id)
+        output$results <- renderPlot(results)
+        job_status("Complete")
+      }
+    })
+  })
+  
+  output$status <- renderText(job_status())
+}
+```
+
+### Part 5: Advanced Patterns
+
+**Parallel Workflows:**
+
+-   Multiple simultaneous jobs
+-   Parameter sweeps
+-   Sensitivity analysis
+
+**Result Caching:**
+
+-   Store results in shared filesystem
+-   Avoid re-computation
+-   Session persistence
+
+**Progress Tracking:**
+
+-   Real-time job monitoring
+-   Log file streaming
+-   Estimated completion
+
+## Practical Example: Pharmacokinetic Simulation
+
+``` r
+# Heavy PK simulation
+pk_simulation <- function(n_subjects, n_doses, n_cores) {
+  # This takes 30 minutes locally
+  # But 2 minutes on HPC with 64 cores!
+  
+  results <- parallel_pk_sim(
+    subjects = n_subjects,
+    doses = n_doses,
+    cores = n_cores
+  )
+  
+  return(results)
+}
+
+# Shiny app
+ui <- fluidPage(
+  titlePanel("PK Simulation (HPC-Powered)"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("subjects", "Subjects:", 100, 10000, 1000),
+      sliderInput("doses", "Doses:", 1, 20, 5),
+      sliderInput("cores", "HPC Cores:", 1, 128, 64),
+      actionButton("run_hpc", "Run on HPC"),
+      hr(),
+      textOutput("job_status")
+    ),
+    
+    mainPanel(
+      plotOutput("concentration_time"),
+      plotOutput("exposure_distribution")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  # HPC job management logic
+  # (See workshop materials for full code)
+}
+```
+
+## Use Cases in Pharma
+
+### Clinical Trial Simulations
+
+-   Design optimization
+-   Power calculations
+-   Scenario analysis
+
+### Pharmacokinetic Modeling
+
+-   Population PK
+-   PBPK simulations
+-   Dose optimization
+
+### Genomics Analysis
+
+-   Variant calling
+-   Pathway analysis
+-   Biomarker discovery
+
+### Real-World Evidence
+
+-   Large database queries
+-   Propensity matching
+-   Survival modeling
+
+## Best Practices
+
+### ✅ Do's
+
+-   Use HPC for genuinely heavy computations
+-   Implement proper error handling
+-   Cache results when possible
+-   Provide user feedback (progress bars)
+-   Set reasonable timeout limits
+
+### ❌ Don'ts
+
+-   Don't submit jobs for trivial computations
+-   Don't ignore job failures
+-   Don't hardcode credentials
+-   Don't monopolize cluster resources
+-   Don't forget to clean up temp files
+
+## Deployment Considerations
+
+### Local Development
+
+-   SSH to institutional HPC
+-   Test with small jobs
+-   Debug locally when possible
+
+### Posit Connect Deployment
+
+-   Configure SSH keys
+-   Network access to HPC
+-   Service account credentials
+-   Monitor resource usage
+
+### Security
+
+-   Encrypted connections
+-   Credential management
+-   Audit trails
+-   Resource quotas
+
+## Learning Outcomes
+
+✅ Connect Shiny apps to HPC clusters\
+✅ Submit and manage remote jobs\
+✅ Build responsive compute-heavy apps\
+✅ Implement parallel workflows\
+✅ Deploy HPC-enabled apps to Posit Connect\
+✅ Optimize resource usage
+
+## Workshop Format
+
+**Part 1 (1 hour):**
+
+-   HPC basics and setup
+-   Simple job submission from R
+-   Monitoring and results
+
+**Part 2 (1 hour):**
+
+-   Building HPC-enabled Shiny app
+-   Live demo and coding
+-   Troubleshooting
+
+**Part 3 (30 min):**
+
+-   Participants' use cases discussion
+-   Q&A and problem-solving
+-   Deployment strategies
+
+## Next Steps
+
+-   Set up SSH access to your HPC
+-   Try example app from workshop
+-   Identify compute bottlenecks in your apps
+-   Consider HPC for heavy workloads
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

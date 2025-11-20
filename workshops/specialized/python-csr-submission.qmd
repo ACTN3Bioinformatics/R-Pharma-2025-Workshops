@@ -1,0 +1,326 @@
+---
+title: "Python for Clinical Study Report and Submission"
+subtitle: "Modern Python toolchain for TFLs and eCTD packages"
+author:
+  - "Nan Xiao (Statistician, Merck)"
+  - "Yilong Zhang (Biostatistician, Meta)"
+categories: [Python, Clinical Reporting, Intermediate]
+---
+
+## Overview
+
+[Intermediate]{.badge .badge-intermediate} [Python]{.badge .badge-category} [Clinical Reporting]{.badge .badge-category}
+
+Open-source Python offers powerful capabilities for clinical trial analysis and reporting. This workshop introduces practical strategies for preparing tables, listings, and figures (TLFs) in a Clinical Study Report (CSR) and assembling submission-ready eCTD packages.
+
+### What You'll Learn
+
+-   🐍 **Python environment setup** with uv
+-   📊 **Clinical data engineering** with polars
+-   📈 **TLF creation** with plotnine and rtflite
+-   📦 **eCTD packages** with py-pkglite
+-   🔄 **Reproducible workflows** end-to-end
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Basic Python programming
+-   Understanding of clinical trial analysis
+-   Familiarity with TFLs
+
+**Helpful:**
+
+-   R experience (for comparison)
+-   CDISC standards knowledge
+:::
+
+## Key Tools
+
+::: tool-tag
+Python
+:::
+
+::: tool-tag
+uv
+:::
+
+::: tool-tag
+polars
+:::
+
+::: tool-tag
+plotnine
+:::
+
+::: tool-tag
+rtflite
+:::
+
+::: tool-tag
+py-pkglite
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**Workshop Slides:** [pycsr.org/slides/workshop-slides.html](https://pycsr.org/slides/workshop-slides.html)
+
+**Online Book:** *Python for Clinical Study Reports and Submission* - [pycsr.org](https://pycsr.org/)
+
+**GitHub:** [github.com/nanxstats/pycsr](https://github.com/nanxstats/pycsr)
+
+**Development:** GitHub Codespaces, VS Code, or Positron
+:::
+
+## Workshop Modules
+
+### Module 1: Python Environment Setup
+
+**Using uv for project management:**
+
+``` bash
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Create project
+uv init my-clinical-trial
+cd my-clinical-trial
+
+# Add dependencies
+uv add polars plotnine rtflite
+
+# Run scripts
+uv run analysis.py
+```
+
+**Benefits:**
+
+-   ✅ Fast dependency resolution
+-   ✅ Reproducible environments
+-   ✅ No conda/virtualenv complexity
+-   ✅ Lock files for exact versions
+
+### Module 2: Clinical Reporting Packages
+
+#### polars - High-Performance DataFrames
+
+``` python
+import polars as pl
+
+# Read CDISC data
+adsl = pl.read_parquet("data/adsl.parquet")
+
+# Fast data manipulation
+demographics = (
+    adsl
+    .filter(pl.col("SAFFL") == "Y")
+    .group_by("ARM")
+    .agg([
+        pl.count().alias("N"),
+        pl.col("AGE").mean().alias("Age_Mean"),
+        pl.col("AGE").std().alias("Age_SD")
+    ])
+)
+```
+
+**Why polars?**
+
+-   10-100x faster than pandas
+-   Lazy evaluation
+-   Better memory efficiency
+-   Expressive API
+
+#### plotnine - Grammar of Graphics
+
+``` python
+from plotnine import *
+
+# Kaplan-Meier plot
+(
+    ggplot(survival_data, aes(x="time", y="survival", color="arm")) +
+    geom_step(size=1) +
+    geom_ribbon(aes(ymin="lower", ymax="upper", fill="arm"), alpha=0.2) +
+    labs(title="Overall Survival", x="Time (months)", y="Probability") +
+    theme_minimal()
+)
+```
+
+**ggplot2 equivalent for Python!**
+
+#### rtflite - RTF Generation
+
+``` python
+from rtflite import *
+
+# Create RTF document
+doc = RtfDocument()
+
+# Add table
+table = create_table(demographics_df)
+doc.add_table(table)
+
+# Save
+doc.save("demographics.rtf")
+```
+
+### Module 3: Complete Project Management
+
+**Project Structure:**
+
+```         
+my-trial/
+├── data/           # CDISC datasets
+├── src/            # Python scripts
+│   ├── tables/
+│   ├── listings/
+│   └── figures/
+├── outputs/        # Generated TFLs
+├── pyproject.toml  # Dependencies
+└── README.md
+```
+
+**Execution:**
+
+``` python
+# main.py
+from src.tables import demographics, adverse_events
+from src.figures import km_plot
+
+# Generate all outputs
+demographics.create()
+adverse_events.create()
+km_plot.create()
+```
+
+### Module 4: eCTD Submission Packages
+
+**py-pkglite for packaging:**
+
+``` python
+from pkglite import *
+
+# Create submission package
+pkg = Package()
+pkg.add_directory("src/", pattern="*.py")
+pkg.add_directory("outputs/", pattern="*.rtf")
+pkg.pack("submission.txt")
+
+# Includes source code + outputs
+# Aligned with eCTD requirements
+```
+
+## Practical Exercises
+
+### Exercise 1: Demographics Table
+
+Create standard demographics table:
+
+-   Age (mean, SD)
+-   Sex (n, %)
+-   Race (n, %)
+-   By treatment arm
+
+### Exercise 2: Adverse Events Listing
+
+Generate AE listing with:
+
+-   Subject ID
+-   AE term
+-   Start/end dates
+-   Severity
+-   Relationship
+
+### Exercise 3: Survival Analysis Figure
+
+Create Kaplan-Meier plot:
+
+-   Survival curves by arm
+-   Confidence intervals
+-   Risk table
+-   Publication quality
+
+### Exercise 4: Full Submission Package
+
+Assemble eCTD package:
+
+-   All TFLs
+-   Source code
+-   Documentation
+-   Validation artifacts
+
+## Data Sources
+
+**CDISC Pilot Study:**
+
+-   Publicly available
+-   Standard structure (SDTM/ADaM)
+-   Realistic scenarios
+-   Pre-converted to Parquet
+
+**Location:** [github.com/nanxstats/pycsr/tree/main/data](https://github.com/nanxstats/pycsr/tree/main/data)
+
+## Python vs R
+
+### When to Use Python
+
+✅ Large datasets (polars performance)\
+✅ ML/AI integration needed\
+✅ Team already uses Python\
+✅ Cloud-native deployments
+
+### When to Use R
+
+✅ Statistical depth required\
+✅ Established R workflows\
+✅ Pharmaverse ecosystem\
+✅ Regulatory precedent
+
+### Best Approach
+
+**Use both!** Many organizations adopting hybrid:
+
+-   R for statistical analysis
+-   Python for data engineering
+-   Shared CDISC data formats
+
+## Learning Outcomes
+
+✅ Set up reproducible Python projects with uv\
+✅ Process clinical data efficiently with polars\
+✅ Create TFLs with plotnine and rtflite\
+✅ Manage A&R projects professionally\
+✅ Prepare eCTD submission packages\
+✅ Understand Python's role in clinical trials
+
+## Resources
+
+**Book Chapters:**
+
+1.  Python Setup and Environment
+2.  Essential Packages for Clinical Reporting
+3.  Project Structure and Workflow
+4.  Creating Tables
+5.  Creating Listings
+6.  Creating Figures
+7.  Submission Package Assembly
+
+**Community:**
+
+-   pharmaverse-py initiative
+-   Python in Pharma meetups
+-   Stack Overflow \[python\] + \[clinical-trials\]
+
+## Next Steps
+
+-   Complete pycsr.org tutorials
+-   Try on your own data
+-   Explore pharmaverse-py
+-   Contribute to open-source Python clinical tools
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

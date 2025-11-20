@@ -1,0 +1,363 @@
+---
+title: "Integrating LLM using R Shiny for Clinical Data Review"
+subtitle: "Ensuring Data Privacy and Validity in AI-Powered Applications"
+author:
+  - "Zhen Wu (CIMS Global)"
+  - "Peng Zhang (CIMS Global)"
+categories: [AI, LLM, Shiny, Privacy]
+---
+
+## Overview
+
+[Intermediate]{.badge .badge-intermediate} [AI/LLM]{.badge .badge-category} [Shiny]{.badge .badge-category} [Data Privacy]{.badge .badge-category}
+
+The pharmaceutical industry is shifting from traditional SAS-based workflows toward the open-source R ecosystem. This workshop presents **{DataChat}**, an innovative R Shiny application that enables users to "chat with data" through a conversational interface while maintaining strict compliance with data privacy requirements and statistical validity standards.
+
+### What You'll Learn
+
+-   🛡️ **Data privacy** in LLM applications
+-   💬 **Conversational interfaces** for clinical data
+-   🔍 **RAG (Retrieval-Augmented Generation)** for pharma domain
+-   ✅ **Statistical validity** in AI-generated results
+-   🎯 **User-friendly design** for non-programmers
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate R and Shiny
+-   Basic understanding of clinical trial data structures
+-   Familiarity with data privacy regulations (GDPR, HIPAA)
+
+**Technical Setup:**
+
+-   R/RStudio with Shiny
+-   Access to sample clinical datasets
+:::
+
+## Key Packages & Tools
+
+::: tool-tag
+{ellmer}
+:::
+
+::: tool-tag
+{shinychat}
+:::
+
+::: tool-tag
+{ragnar}
+:::
+
+::: tool-tag
+{shiny}
+:::
+
+::: tool-tag
+Internal statistical tools
+:::
+
+## The Challenge
+
+Traditional R Shiny applications for clinical data often require:
+
+-   📚 Strong understanding of data structures (SDTM, ADaM)
+-   🖱️ Familiarity with complex UI components (dropdowns, filters)
+-   💻 Programming knowledge for data exploration
+
+This creates barriers for **clinical reviewers, physicians, and medical writers** who need to access insights but lack technical expertise.
+
+## The Solution: {DataChat}
+
+An AI-powered conversational interface that allows natural language interaction with clinical data while ensuring:
+
+-   🔒 **Data never leaves the secure environment**
+-   ✅ **Statistical calculations are validated**
+-   📊 **Results are reproducible and auditable**
+-   👥 **Accessible to non-technical users**
+
+## Architecture Overview
+
+```         
+┌─────────────────────────────────────────────────┐
+│          User Interface (Shiny)                 │
+│  "Show me adverse events for patients >65"      │
+└─────────────────┬───────────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────────┐
+│       LLM Orchestration ({ellmer})              │
+│  • Intent classification                        │
+│  • Tool selection                               │
+│  • Response generation                          │
+└─────────────────┬───────────────────────────────┘
+                  │
+        ┌─────────┴─────────┐
+        │                   │
+┌───────▼──────┐   ┌────────▼────────┐
+│ RAG System   │   │ Statistical     │
+│ ({ragnar})   │   │ Tools           │
+│              │   │ (validated)     │
+│ • Document   │   │ • Summaries     │
+│   retrieval  │   │ • Plots         │
+│ • Context    │   │ • Models        │
+└──────────────┘   └─────────────────┘
+```
+
+## Key Features
+
+### 1. Conversational Data Exploration
+
+Natural language queries like:
+
+-   "What's the average age of patients in the treatment arm?"
+-   "Show me serious adverse events by system organ class"
+-   "Compare baseline demographics between arms"
+
+### 2. RAG for Domain Knowledge
+
+**{ragnar}** provides retrieval-augmented generation capabilities:
+
+``` r
+library(ragnar)
+
+# Create vector database from study documents
+vector_db <- ragnar_db() %>%
+  add_documents(
+    path = "study_protocols/",
+    chunk_size = 500
+  )
+
+# Query with context
+context <- vector_db$search(
+  query = user_question,
+  top_k = 5
+)
+```
+
+### 3. Privacy-Preserving Design
+
+**Critical Privacy Features:**
+
+-   ✅ **On-premise deployment** - No data sent to external APIs
+-   ✅ **Local LLMs supported** - Can use llama.cpp or similar
+-   ✅ **Query sanitization** - Remove PII before processing
+-   ✅ **Audit logging** - Track all data access
+-   ✅ **Role-based access** - Control data visibility
+
+### 4. Statistical Validity
+
+**Ensuring Accurate Results:**
+
+-   All statistical calculations use **validated R functions**
+-   LLM suggests approach, validated code executes
+-   Results include confidence intervals and p-values
+-   Automatic flagging of statistical assumptions
+-   Human review required for critical decisions
+
+## Workshop Content
+
+### Module 1: Setting Up Secure LLM Integration
+
+-   Configuring `{ellmer}` for private deployments
+-   Local vs. cloud LLM considerations
+-   API security and authentication
+
+### Module 2: Building the Conversational Interface
+
+Using `{shinychat}` for user interaction:
+
+``` r
+library(shinychat)
+library(shiny)
+
+ui <- fluidPage(
+  chat_ui("clinical_chat")
+)
+
+server <- function(input, output, session) {
+  chat <- chat_server("clinical_chat",
+    system_prompt = "You are a clinical data assistant.
+                     Only answer questions about the loaded study data.
+                     Never make up information.",
+    tools = list(
+      summarize_demographics,
+      plot_adverse_events,
+      query_database
+    )
+  )
+}
+```
+
+### Module 3: Implementing RAG
+
+Domain-specific context retrieval:
+
+-   Indexing study protocols and SAPs
+-   Medical terminology databases
+-   Previous study reports
+
+### Module 4: Privacy Controls
+
+**Practical Implementation:**
+
+``` r
+# Anonymize data before LLM processing
+sanitize_query <- function(query, data) {
+  # Remove patient identifiers
+  query <- remove_pii(query)
+  
+  # Check for sensitive fields
+  if (contains_sensitive_terms(query)) {
+    return(list(
+      allowed = FALSE,
+      message = "Query contains sensitive information"
+    ))
+  }
+  
+  # Log for audit
+  log_query(query, user_id = session$user)
+  
+  return(list(allowed = TRUE, query = query))
+}
+```
+
+### Module 5: Validation Strategy
+
+**Ensuring Reliability:**
+
+1.  **Tool validation** - Each statistical function tested independently
+2.  **Response validation** - LLM output checked against expected format
+3.  **User verification** - Results shown with source data
+4.  **Expert review** - Critical decisions flagged for human oversight
+
+## Use Cases in Pharma
+
+### 1. Clinical Review Meetings
+
+-   Quick ad-hoc analyses during discussions
+-   Exploration of safety signals
+-   Subgroup identification
+
+### 2. Medical Writing
+
+-   Extracting statistics for CSR
+-   Verifying data consistency
+-   Generating descriptive text
+
+### 3. Safety Monitoring
+
+-   DSMB data reviews
+-   Adverse event trending
+-   Safety signal detection
+
+### 4. Regulatory Queries
+
+-   Rapid response to agency questions
+-   Data subsetting and analysis
+-   Documentation generation
+
+## Privacy Compliance
+
+### GDPR Considerations
+
+-   ✅ Data minimization
+-   ✅ Purpose limitation
+-   ✅ Right to explanation (audit logs)
+-   ✅ Data encryption at rest and in transit
+
+### HIPAA Compliance
+
+-   ✅ Access controls
+-   ✅ Audit trails
+-   ✅ De-identification support
+-   ✅ Business associate agreements (if using cloud LLMs)
+
+### 21 CFR Part 11
+
+-   ✅ Electronic signatures
+-   ✅ Audit trails
+-   ✅ System validation
+-   ✅ Controlled access
+
+## Validation Approach
+
+### IQ (Installation Qualification)
+
+-   Environment setup documentation
+-   Version control
+-   Access controls verification
+
+### OQ (Operational Qualification)
+
+-   Test each statistical tool independently
+-   Verify LLM response formatting
+-   Confirm privacy controls function
+
+### PQ (Performance Qualification)
+
+-   End-to-end testing with real scenarios
+-   User acceptance testing
+-   Performance benchmarking
+
+## Learning Outcomes
+
+By the end of this workshop, you will be able to:
+
+✅ Design privacy-preserving LLM applications\
+✅ Implement RAG for pharmaceutical domain knowledge\
+✅ Build conversational interfaces with `{shinychat}`\
+✅ Ensure statistical validity in AI-generated results\
+✅ Deploy compliant AI solutions in regulated environments\
+✅ Create user-friendly tools for non-technical stakeholders
+
+## Demo Application
+
+Workshop includes hands-on work with **{DataChat}** demo:
+
+-   Sample CDISC SDTM/ADaM datasets
+-   Pre-configured LLM (local or API)
+-   Example queries and workflows
+-   Privacy controls demonstration
+
+## Best Practices
+
+### Do's ✅
+
+-   Always validate statistical outputs
+-   Log all data access for audit
+-   Use validated tools for calculations
+-   Implement role-based access control
+-   Test privacy controls thoroughly
+
+### Don'ts ❌
+
+-   Never send raw clinical data to external APIs (unless approved)
+-   Don't rely solely on LLM for critical decisions
+-   Avoid exposing PII in queries
+-   Don't skip validation documentation
+-   Never deploy without proper testing
+
+## Future Directions
+
+-   Integration with electronic data capture (EDC) systems
+-   Multi-lingual support for global trials
+-   Advanced visualization capabilities
+-   Automated report generation
+-   Real-time safety monitoring
+
+## Additional Resources
+
+-   **CDISC standards:** [cdisc.org](https://www.cdisc.org)
+-   **FDA guidance on AI/ML:** [fda.gov](https://www.fda.gov)
+-   **Privacy regulations:** GDPR, HIPAA guidelines
+
+::: callout-warning
+## Important Note
+
+This workshop demonstrates privacy-preserving approaches but should not be considered legal or regulatory advice. Always consult with your organization's legal, compliance, and IT security teams before deploying AI applications with clinical data.
+:::
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

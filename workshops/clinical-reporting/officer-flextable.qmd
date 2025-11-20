@@ -1,0 +1,471 @@
+---
+title: "Advanced Clinical Reporting with officer and flextable"
+subtitle: "Create sophisticated Word reports programmatically with R"
+author: "David Gohel (Ardata)"
+categories: [Clinical Reporting, Word, Intermediate]
+---
+
+## Overview
+
+[Intermediate]{.badge .badge-intermediate} [Clinical Reporting]{.badge .badge-category} [Word Documents]{.badge .badge-category}
+
+Master the creation of sophisticated clinical reports in Word format using R with a reproducible approach. This workshop covers the complete journey from clinical data to pharmaceutical-grade report generation, focusing on advanced document structure management, complex table creation, and integration of ggplot2 visualizations.
+
+### What You'll Learn
+
+-   📄 **Document structure** management in Word
+-   📊 **Complex tables** following pharmaceutical standards
+-   📈 **ggplot2 integration** for publication-ready figures
+-   🎨 **Styling and formatting** for professional outputs
+-   🔗 **Cross-references** and automated numbering
+-   ✅ **Complete end-to-end** CSR generation
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate R programming
+-   Basic understanding of clinical trial data
+-   Familiarity with data manipulation (dplyr)
+
+**Recommended:**
+
+-   Experience with ggplot2
+-   Knowledge of clinical study report structure
+:::
+
+## Key Packages & Tools
+
+::: tool-tag
+{officer}
+:::
+
+::: tool-tag
+{flextable}
+:::
+
+::: tool-tag
+{ggplot2}
+:::
+
+::: tool-tag
+{officedown}
+:::
+
+::: tool-tag
+Microsoft Word
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**Workshop Website:** <https://ardata.fr/r-in-pharma-2025/>
+
+**GitHub Code:** <https://github.com/ardata-fr/r-in-pharma-2025-codes>
+
+**Full Tutorial:** <https://github.com/ardata-fr/r-in-pharma-reporting-with-officer-flextable>
+:::
+
+## Part 1: Fundamentals
+
+### Introduction to {officer}
+
+**{officer}** allows you to create and manipulate Word documents programmatically:
+
+``` r
+library(officer)
+
+# Create a new document
+doc <- read_docx()
+
+# Add content
+doc <- doc %>%
+  body_add_par("Clinical Study Report", style = "heading 1") %>%
+  body_add_par("Protocol ABC-123", style = "heading 2") %>%
+  body_add_par("This report summarizes the results of...", 
+               style = "Normal")
+
+# Save
+print(doc, target = "clinical_report.docx")
+```
+
+### Introduction to {flextable}
+
+**{flextable}** creates publication-ready tables with fine-grained control:
+
+``` r
+library(flextable)
+library(dplyr)
+
+# Create a demographic table
+demographics %>%
+  flextable() %>%
+  set_header_labels(
+    age = "Age (years)",
+    sex = "Sex, n (%)",
+    race = "Race, n (%)"
+  ) %>%
+  theme_vanilla() %>%
+  autofit()
+```
+
+## Part 2: Advanced Clinical Reporting
+
+### Document Structure Management
+
+**Creating a Structured CSR:**
+
+``` r
+library(officer)
+
+# Start with a template
+doc <- read_docx("csr_template.docx")
+
+# Add title page
+doc <- doc %>%
+  body_add_par("CLINICAL STUDY REPORT", style = "Title") %>%
+  body_add_par(sprintf("Protocol: %s", protocol_id), 
+               style = "Subtitle") %>%
+  body_add_break()
+
+# Table of Contents (auto-updated)
+doc <- doc %>%
+  body_add_toc(level = 3)
+
+# Section structure
+doc <- doc %>%
+  body_add_par("1. Synopsis", style = "heading 1") %>%
+  body_add_par("1.1 Study Objectives", style = "heading 2")
+```
+
+### Complex Table Creation
+
+**Pharmaceutical-Standard Tables:**
+
+``` r
+library(flextable)
+
+# Adverse events table with nested headers
+create_ae_table <- function(data) {
+  data %>%
+    flextable() %>%
+    # Multi-level headers
+    add_header_row(
+      values = c("", "Treatment A", "Treatment B"),
+      colwidths = c(1, 2, 2)
+    ) %>%
+    add_header_row(
+      values = c("System Organ Class", "n", "%", "n", "%"),
+      top = FALSE
+    ) %>%
+    # Merge cells for SOC
+    merge_v(j = 1) %>%
+    # Styling
+    theme_booktabs() %>%
+    bold(part = "header") %>%
+    align(align = "center", part = "header") %>%
+    align(j = 1, align = "left", part = "body") %>%
+    # Borders
+    hline(i = ~ SOC_change, border = fp_border()) %>%
+    # Conditional formatting
+    bg(i = ~ rate > 10, bg = "#FFCCCC") %>%
+    # Footnotes
+    add_footer_lines("SOC = System Organ Class; n = number of subjects") %>%
+    autofit()
+}
+```
+
+### Headers and Footers
+
+**Customized Headers/Footers:**
+
+``` r
+# Define header
+header_text <- fpar(
+  ftext("Protocol ABC-123", prop = fp_text(font.size = 8)),
+  ftext(" | ", prop = fp_text(font.size = 8)),
+  ftext("Page ", prop = fp_text(font.size = 8)),
+  run_pagenum(),
+  ftext(" of ", prop = fp_text(font.size = 8)),
+  run_totalpages()
+)
+
+# Add to document
+doc <- doc %>%
+  add_header(value = as_paragraph(header_text)) %>%
+  add_footer(value = as_paragraph(
+    ftext("Confidential", prop = fp_text(italic = TRUE))
+  ))
+```
+
+### Cross-References
+
+**Automated Table/Figure Numbering:**
+
+``` r
+# Add bookmarked table
+doc <- doc %>%
+  body_add_par("Demographic Characteristics", 
+               style = "Table Caption") %>%
+  body_bookmark("table_demographics") %>%
+  body_add_flextable(demographics_table)
+
+# Reference it elsewhere
+doc <- doc %>%
+  body_add_par(
+    fpar(
+      ftext("As shown in Table "),
+      run_reference("table_demographics"),
+      ftext(", the treatment groups were well balanced...")
+    )
+  )
+```
+
+### Integrating ggplot2 Visualizations
+
+**Publication-Ready Figures:**
+
+``` r
+library(ggplot2)
+
+# Create plot
+survival_plot <- ggplot(survival_data, 
+                        aes(x = time, y = surv, color = arm)) +
+  geom_step(linewidth = 1) +
+  geom_ribbon(aes(ymin = lower, ymax = upper, fill = arm), 
+              alpha = 0.2) +
+  scale_color_manual(values = c("#0072B2", "#D55E00")) +
+  scale_fill_manual(values = c("#0072B2", "#D55E00")) +
+  labs(
+    title = "Kaplan-Meier Survival Curves",
+    x = "Time (months)",
+    y = "Survival Probability",
+    color = "Treatment Arm",
+    fill = "Treatment Arm"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    legend.position = "bottom"
+  )
+
+# Add to document
+doc <- doc %>%
+  body_add_par("Figure 1: Overall Survival", 
+               style = "Figure Caption") %>%
+  body_add_gg(value = survival_plot, 
+              width = 6, height = 4) %>%
+  body_add_par("Shaded areas represent 95% confidence intervals.")
+```
+
+## Workshop Structure
+
+### Session 1: Basics (90 minutes)
+
+-   {officer} fundamentals
+-   {flextable} basics
+-   Simple document creation
+-   Basic styling
+
+### Session 2: Advanced Techniques (90 minutes)
+
+-   Complex table structures
+-   Section management
+-   Headers/footers customization
+-   Cross-reference handling
+
+### Session 3: Complete CSR Example (120 minutes)
+
+-   End-to-end workflow
+-   Template-based approach
+-   Automated report generation
+-   QC considerations
+
+## Practical Examples
+
+### Example 1: Demographics Table
+
+``` r
+create_demographics <- function(data) {
+  summary_stats <- data %>%
+    group_by(ARM) %>%
+    summarise(
+      N = n(),
+      Age_mean = mean(AGE, na.rm = TRUE),
+      Age_sd = sd(AGE, na.rm = TRUE),
+      Sex_M = sum(SEX == "M"),
+      Sex_F = sum(SEX == "F")
+    ) %>%
+    mutate(
+      Age = sprintf("%.1f (%.1f)", Age_mean, Age_sd),
+      `Male, n (%)` = sprintf("%d (%.1f%%)", 
+                              Sex_M, 100 * Sex_M / N),
+      `Female, n (%)` = sprintf("%d (%.1f%%)", 
+                                Sex_F, 100 * Sex_F / N)
+    ) %>%
+    select(ARM, N, Age, `Male, n (%)`, `Female, n (%)`)
+  
+  summary_stats %>%
+    flextable() %>%
+    set_header_labels(ARM = "Treatment Arm") %>%
+    align(j = 2:5, align = "center", part = "all") %>%
+    bold(part = "header") %>%
+    theme_booktabs() %>%
+    autofit()
+}
+```
+
+### Example 2: Adverse Events Summary
+
+``` r
+create_ae_summary <- function(ae_data) {
+  ae_summary <- ae_data %>%
+    group_by(AESOC, AEDECOD, TRTA) %>%
+    summarise(n = n_distinct(USUBJID)) %>%
+    ungroup() %>%
+    pivot_wider(names_from = TRTA, values_from = n, 
+                values_fill = 0)
+  
+  ae_summary %>%
+    flextable() %>%
+    set_header_labels(
+      AESOC = "System Organ Class",
+      AEDECOD = "Preferred Term"
+    ) %>%
+    merge_v(j = "AESOC") %>%
+    valign(valign = "top") %>%
+    bold(j = "AESOC") %>%
+    theme_booktabs() %>%
+    autofit() %>%
+    add_footer_lines(
+      "Table includes treatment-emergent adverse events"
+    )
+}
+```
+
+### Example 3: Complete Report Template
+
+``` r
+generate_csr <- function(data_list, output_path) {
+  doc <- read_docx("templates/csr_template.docx")
+  
+  # Title page
+  doc <- doc %>%
+    body_add_par("CLINICAL STUDY REPORT", style = "Title") %>%
+    body_add_par(data_list$protocol_id, style = "Subtitle")
+  
+  # ToC
+  doc <- doc %>%
+    body_add_break() %>%
+    body_add_toc()
+  
+  # Demographics
+  doc <- doc %>%
+    body_add_break() %>%
+    body_add_par("Demographics", style = "heading 1") %>%
+    body_add_flextable(create_demographics(data_list$adsl))
+  
+  # Efficacy
+  doc <- doc %>%
+    body_add_break() %>%
+    body_add_par("Efficacy Results", style = "heading 1") %>%
+    body_add_gg(create_efficacy_plot(data_list$adtte))
+  
+  # Safety
+  doc <- doc %>%
+    body_add_break() %>%
+    body_add_par("Safety Results", style = "heading 1") %>%
+    body_add_flextable(create_ae_summary(data_list$adae))
+  
+  # Save
+  print(doc, target = output_path)
+}
+```
+
+## Best Practices
+
+### ✅ Do's
+
+-   Use templates for consistency
+-   Separate data processing from formatting
+-   Document your styling choices
+-   Test cross-references thoroughly
+-   Version control your templates
+
+### ❌ Don'ts
+
+-   Hard-code numbers in text
+-   Mix styling approaches
+-   Forget page breaks
+-   Ignore Word template styles
+-   Skip QC on final document
+
+## Advanced Features
+
+### Conditional Formatting
+
+``` r
+table %>%
+  flextable() %>%
+  bg(i = ~ p_value < 0.05, j = "p_value", bg = "yellow") %>%
+  bold(i = ~ significant == TRUE) %>%
+  color(i = ~ trend == "increasing", j = "value", color = "red")
+```
+
+### Custom Themes
+
+``` r
+my_pharma_theme <- function(ft) {
+  ft %>%
+    border_remove() %>%
+    hline_top(border = fp_border(width = 2)) %>%
+    hline_bottom(border = fp_border(width = 2)) %>%
+    font(fontname = "Arial", part = "all") %>%
+    fontsize(size = 10, part = "body") %>%
+    fontsize(size = 11, part = "header")
+}
+```
+
+## Learning Outcomes
+
+By the end of this workshop, you will be able to:
+
+✅ Create professional Word documents programmatically\
+✅ Build complex, pharmaceutical-standard tables\
+✅ Integrate ggplot2 visualizations seamlessly\
+✅ Manage document structure with sections and breaks\
+✅ Implement automated cross-referencing\
+✅ Generate complete CSRs from R scripts\
+✅ Apply best practices for reproducible reporting
+
+## Troubleshooting
+
+**Common Issues:**
+
+1.  **Tables not fitting page width** → Use `autofit()` or manual `width()` settings
+2.  **Plots appear pixelated** → Increase DPI with `body_add_gg(width, height, res = 300)`
+3.  **Cross-references not updating** → Right-click → "Update Field" in Word
+4.  **Styles not applying** → Ensure template has required style definitions
+
+## Integration with Other Tools
+
+-   **{officedown}:** R Markdown → Word via officer
+-   **{gtsummary}:** Statistical tables → flextable
+-   **{officer}** + **{mschart}:** Native Office charts
+-   **{pharmaRTF}:** Alternative for RTF output
+
+## Next Steps
+
+After this workshop:
+
+-   Explore {officedown} for R Markdown integration
+-   Try {mschart} for editable Office charts
+-   Investigate {pharmaRTF} for RTF submissions
+-   Join ardata community for support
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

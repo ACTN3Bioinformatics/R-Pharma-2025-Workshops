@@ -1,0 +1,154 @@
+---
+title: "Flexible Clinical Trial Design, Simulation, and Analysis with rpact"
+subtitle: "Group sequential and adaptive designs"
+author:
+  - "Daniel Sabanes Bove (RCONIS)"
+  - "Friedrich Pahlke (Tech Entrepreneur)"
+categories: [Statistical Methods, Trial Design, Intermediate]
+---
+
+## Overview
+
+[Intermediate]{.badge .badge-intermediate} [Trial Design]{.badge .badge-category} [Statistics]{.badge .badge-category}
+
+Explore the capabilities of **{rpact}** - a comprehensive, validated, open-source R package for clinical trial planning, design simulation, and data analysis. Under continuous development since 2017 with extensive documentation.
+
+### What You'll Learn
+
+-   📊 **Trial design basics** - Group sequential and adaptive designs
+-   🎲 **Simulation** - Design characteristics assessment
+-   🔬 **P-value combination** tests
+-   📈 **Adaptive designs** - Multi-armed and enrichment
+-   💻 **RPACT Cloud** - User-friendly platform
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate statistics
+-   Clinical trial basics
+-   R programming fundamentals
+
+**Recommended:**
+
+-   Experience with trial design
+-   Knowledge of group sequential methods
+:::
+
+## Key Tools
+
+::: tool-tag
+{rpact}
+:::
+
+::: tool-tag
+RPACT Cloud
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**Presentation:** [rpharma.presentation.2025.rpact.com](https://rpharma.presentation.2025.rpact.com/)
+
+**Documentation:** [www.rpact.org](https://www.rpact.org/)
+
+**RPACT Cloud (Free):** [cloud.rpact.com](https://cloud.rpact.com/)
+:::
+
+## Package Features
+
+### Design Types
+
+**Group Sequential Designs:**
+
+-   Multiple interim analyses
+-   Early stopping rules
+-   Alpha spending functions
+-   Futility boundaries
+
+**Adaptive Designs:**
+
+-   Sample size reassessment
+-   Treatment selection
+-   Population enrichment
+-   Combination tests
+
+### Data Types Supported
+
+-   ✅ Continuous endpoints
+-   ✅ Binary outcomes
+-   ✅ Survival data
+-   ✅ Count data
+
+## RPACT Cloud
+
+User-friendly web platform for trial design:
+
+**Features:**
+
+-   No coding required
+-   Interactive design exploration
+-   Automatic documentation
+-   Export to R code
+-   Free version available
+
+**Use Cases:**
+
+-   Quick design evaluation
+-   Stakeholder presentations
+-   Teaching and training
+-   Proposal preparation
+
+## Practical Applications
+
+### Sample Size Calculation
+
+``` r
+library(rpact)
+
+# Group sequential design
+design <- getDesignGroupSequential(
+  kMax = 3,  # 3 interim analyses
+  alpha = 0.025,
+  beta = 0.2,
+  typeOfDesign = "asOF"  # O'Brien-Fleming
+)
+
+# Calculate sample size
+sampleSize <- getSampleSizeMeans(
+  design = design,
+  meanRatio = 1,
+  normalApproximation = FALSE,
+  alternative = 0.5,  # Treatment effect
+  stDev = 1
+)
+```
+
+### Simulation
+
+``` r
+# Simulate adaptive design
+simulation <- getSimulationMultiArmMeans(
+  design = design,
+  activeArms = 3,
+  plannedSubjects = c(50, 100, 150),
+  meanRatio = 1,
+  stDev = 1,
+  maxNumberOfIterations = 10000
+)
+```
+
+## Learning Outcomes
+
+✅ Design group sequential trials\
+✅ Implement adaptive designs\
+✅ Simulate trial characteristics\
+✅ Use RPACT Cloud platform\
+✅ Apply {rpact} to real studies
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

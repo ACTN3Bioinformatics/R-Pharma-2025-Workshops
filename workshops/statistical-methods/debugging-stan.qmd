@@ -1,0 +1,301 @@
+---
+title: "R-Classification: Predictive Power with tidymodels"
+subtitle: "Machine learning classification using the tidymodels framework"
+author: "Harshavardhan Bajoria"
+categories: [Statistical Methods, Machine Learning, Beginner]
+---
+
+## Overview
+
+[Beginner Friendly]{.badge .badge-beginner} [Machine Learning]{.badge .badge-category} [Classification]{.badge .badge-category}
+
+Dive into classification with R and the elegant **tidymodels** framework! Learn to build, evaluate, and refine machine learning models that predict categorical outcomes through practical exercises including a wine classification challenge.
+
+### What You'll Learn
+
+-   🧹 **Data preprocessing** with {recipes}
+-   📊 **Train/test splitting** with {rsample}
+-   🤖 **Model fitting** with {parsnip}
+-   📈 **Performance evaluation** with {yardstick}
+-   🎯 **Complete ML workflow** from data to predictions
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Basic R programming
+-   Understanding of classification concepts
+-   Familiarity with dplyr helpful
+
+**No Prior Experience Needed:**
+
+-   Machine learning
+-   tidymodels framework
+:::
+
+## Key Packages
+
+::: tool-tag
+{tidymodels}
+:::
+
+::: tool-tag
+{recipes}
+:::
+
+::: tool-tag
+{parsnip}
+:::
+
+::: tool-tag
+{rsample}
+:::
+
+::: tool-tag
+{yardstick}
+:::
+
+::: tool-tag
+{tune}
+:::
+
+## The tidymodels Ecosystem
+
+### Core Packages
+
+**{rsample}** - Data splitting and resampling
+
+``` r
+library(tidymodels)
+
+# Split data
+data_split <- initial_split(data, prop = 0.75, strata = outcome)
+train_data <- training(data_split)
+test_data <- testing(data_split)
+```
+
+**{recipes}** - Feature engineering
+
+``` r
+recipe_spec <- recipe(outcome ~ ., data = train_data) %>%
+  step_normalize(all_numeric_predictors()) %>%
+  step_dummy(all_nominal_predictors())
+```
+
+**{parsnip}** - Model specification
+
+``` r
+model_spec <- logistic_reg() %>%
+  set_engine("glm") %>%
+  set_mode("classification")
+```
+
+**{workflows}** - Combine recipe + model
+
+``` r
+workflow_fit <- workflow() %>%
+  add_recipe(recipe_spec) %>%
+  add_model(model_spec) %>%
+  fit(data = train_data)
+```
+
+**{yardstick}** - Performance metrics
+
+``` r
+predictions %>%
+  metrics(truth = outcome, estimate = .pred_class)
+```
+
+## Workshop Content
+
+### 1. Data Preparation
+
+-   Loading and exploring data
+-   Handling missing values
+-   Feature selection
+-   Train/test splitting with stratification
+
+### 2. Preprocessing with Recipes
+
+**Common Steps:**
+
+-   `step_normalize()` - Scale numeric features
+-   `step_dummy()` - Create dummy variables
+-   `step_impute_*()` - Handle missing data
+-   `step_pca()` - Dimensionality reduction
+-   `step_interact()` - Feature interactions
+
+### 3. Model Building
+
+**Classification Algorithms:**
+
+-   Logistic regression
+-   Decision trees
+-   Random forests
+-   Support vector machines
+-   Neural networks
+
+**Consistent Interface:**
+
+``` r
+# Same syntax for different models!
+log_spec <- logistic_reg() %>% set_engine("glm")
+rf_spec <- rand_forest() %>% set_engine("ranger")
+svm_spec <- svm_rbf() %>% set_engine("kernlab")
+```
+
+### 4. Model Evaluation
+
+**Classification Metrics:**
+
+-   Accuracy
+-   Precision/Recall
+-   F1 Score
+-   ROC AUC
+-   Confusion matrix
+
+### 5. Hyperparameter Tuning
+
+``` r
+# Define tuning grid
+rf_spec <- rand_forest(
+  mtry = tune(),
+  trees = tune(),
+  min_n = tune()
+) %>%
+  set_engine("ranger") %>%
+  set_mode("classification")
+
+# Cross-validation
+cv_folds <- vfold_cv(train_data, v = 5)
+
+# Tune
+tune_results <- tune_grid(
+  workflow() %>% add_recipe(recipe_spec) %>% add_model(rf_spec),
+  resamples = cv_folds,
+  grid = 25
+)
+
+# Select best
+best_params <- select_best(tune_results, metric = "roc_auc")
+```
+
+## Hands-On: Wine Classification
+
+**Challenge:** Predict wine quality (Good/Bad) based on chemical properties.
+
+**Steps:**
+
+1.  Explore wine dataset
+2.  Create preprocessing recipe
+3.  Try multiple classification algorithms
+4.  Evaluate and compare models
+5.  Select best performer
+6.  Make final predictions
+
+**Example Workflow:**
+
+``` r
+# Load data
+data(wine_quality)
+
+# Split
+wine_split <- initial_split(wine_quality, strata = quality)
+wine_train <- training(wine_split)
+wine_test <- testing(wine_split)
+
+# Recipe
+wine_recipe <- recipe(quality ~ ., data = wine_train) %>%
+  step_normalize(all_numeric_predictors()) %>%
+  step_corr(all_numeric_predictors(), threshold = 0.9)
+
+# Model
+rf_model <- rand_forest(trees = 1000) %>%
+  set_engine("ranger", importance = "impurity") %>%
+  set_mode("classification")
+
+# Workflow
+wine_wf <- workflow() %>%
+  add_recipe(wine_recipe) %>%
+  add_model(rf_model)
+
+# Fit
+wine_fit <- wine_wf %>% fit(data = wine_train)
+
+# Predict
+wine_pred <- wine_fit %>%
+  predict(wine_test) %>%
+  bind_cols(wine_test)
+
+# Evaluate
+wine_pred %>%
+  metrics(truth = quality, estimate = .pred_class)
+```
+
+## Practical Applications in Pharma
+
+### Clinical Trials
+
+-   Patient risk stratification
+-   Responder identification
+-   Adverse event prediction
+-   Site selection
+
+### Drug Discovery
+
+-   Compound classification
+-   Activity prediction
+-   Toxicity screening
+
+### Operations
+
+-   Trial enrollment prediction
+-   Resource allocation
+-   Quality control
+
+## Best Practices
+
+### ✅ Do's
+
+-   Always use train/test split
+-   Stratify on outcome variable
+-   Use cross-validation for tuning
+-   Check for data leakage
+-   Document preprocessing steps
+
+### ❌ Don'ts
+
+-   Don't peek at test set during development
+-   Don't overfit with too many features
+-   Don't ignore class imbalance
+-   Don't forget to normalize/scale
+-   Don't skip exploratory analysis
+
+## Learning Outcomes
+
+✅ Preprocess data with {recipes}\
+✅ Split data properly with {rsample}\
+✅ Fit classification models with {parsnip}\
+✅ Evaluate performance with {yardstick}\
+✅ Tune hyperparameters systematically\
+✅ Build complete ML pipelines
+
+## Beyond the Workshop
+
+**Next Steps:**
+
+-   Explore other algorithms (XGBoost, neural nets)
+-   Learn advanced feature engineering
+-   Study model interpretation (SHAP, LIME)
+-   Practice with real datasets
+
+**Resources:**
+
+-   [tidymodels.org](https://www.tidymodels.org/)
+-   *Tidy Modeling with R* (book)
+-   tidymodels tag on Stack Overflow
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

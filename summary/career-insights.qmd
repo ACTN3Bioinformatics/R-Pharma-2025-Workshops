@@ -62,7 +62,7 @@ Based on the workshops, presentations, and industry trends from R/Pharma 2025, t
 
 **What to learn:**
 
--   `{devtools}`, `{usethis}`, `{testthat}`\
+-   `{devtools}`, `{usethis}`, `{testthat}`
 -   Package structure and best practices
 -   Documentation with `{roxygen2}`
 -   Risk-based validation approaches

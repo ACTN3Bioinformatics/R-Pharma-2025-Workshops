@@ -71,9 +71,18 @@ I'm passionate about applying data science and bioinformatics to advance pharmac
 
 ## Acknowledgments
 
-**R/Pharma 2025 Conference:** - Conference organizers and speakers - Workshop instructors who shared their expertise - Presentation authors and their organizations
+**R/Pharma 2025 Conference:**
 
-**Open-Source Community:** - Pharmaverse initiative - R Validation Hub - Posit PBC - All package developers
+-   Conference organizers and speakers
+-   Workshop instructors who shared their expertise
+-   Presentation authors and their organizations
+
+**Open-Source Community:**
+
+-   Pharmaverse initiative
+-   R Validation Hub
+-   Posit PBC
+-   All package developers
 
 ------------------------------------------------------------------------
 
@@ -104,9 +113,6 @@ This repository will continue to evolve:
 -   ✅ Complete all workshop documentation
 -   ✅ Add presentation summaries
 -   🔄 Include video links (when available)
--   🔄 Create blog posts on key topics
--   🔄 Develop interactive tools catalog
--   🔄 Add code examples and templates
 
 ------------------------------------------------------------------------
 
@@ -135,6 +141,5 @@ If you find this resource valuable:
 
 ------------------------------------------------------------------------
 
-**Last updated:** November 2025\
-**Repository:** [github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops)\
+**Last updated:** November 2025 **Repository:** [github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops)\
 **Website:** [actn3bioinformatics.github.io/R-Pharma-2025-Workshops](https://actn3bioinformatics.github.io/R-Pharma-2025-Workshops/)

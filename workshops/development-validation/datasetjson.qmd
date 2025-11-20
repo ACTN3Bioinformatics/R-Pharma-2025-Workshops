@@ -11,41 +11,51 @@ categories: [CDISC, Data Exchange, Intermediate]
 
 ## Overview
 
-<span class="badge badge-intermediate">Intermediate</span> <span class="badge badge-category">CDISC</span> <span class="badge badge-category">Data Exchange</span>
+[Intermediate]{.badge .badge-intermediate} [CDISC]{.badge .badge-category} [Data Exchange]{.badge .badge-category}
 
 Join us for an engaging workshop on **Dataset-JSON**, a powerful format for sharing datasets. Learn why Dataset-JSON is preferable to formats like Parquet, explore the specification in detail, and get hands-on experience implementing it in both R and Python.
 
 ### What You'll Learn
 
-- 📋 **Dataset-JSON specification** - Format details
-- 🆚 **Comparison** - vs Parquet, XPT, and other formats
-- 🐍 **R and Python** - Implementation in both languages
-- 🔄 **Adoption plans** - Industry roadmap
-- 🚀 **API integration** - Future developments
-- 🔧 **Practical implementation** - Real-world usage
+-   📋 **Dataset-JSON specification** - Format details
+-   🆚 **Comparison** - vs Parquet, XPT, and other formats
+-   🐍 **R and Python** - Implementation in both languages
+-   🔄 **Adoption plans** - Industry roadmap
+-   🚀 **API integration** - Future developments
+-   🔧 **Practical implementation** - Real-world usage
 
 ## Prerequisites
 
-::: {.requirements}
+::: requirements
 **Required Knowledge:**
-- Basic R or Python programming
-- Understanding of clinical trial data
-- Familiarity with CDISC standards helpful
+
+-   Basic R or Python programming
+-   Understanding of clinical trial data
+-   Familiarity with CDISC standards helpful
 
 **For Hands-on:**
-- Laptop with R or Python installed
-- Workshop materials (provided)
+
+-   Laptop with R or Python installed
+-   Workshop materials (provided)
 :::
 
 ## Key Tools
 
-<div class="tool-tag">{datasetjson} (R)</div>
-<div class="tool-tag">datasetjson (Python)</div>
-<div class="tool-tag">CDISC Dataset-JSON</div>
+::: tool-tag
+{datasetjson} (R)
+:::
+
+::: tool-tag
+datasetjson (Python)
+:::
+
+::: tool-tag
+CDISC Dataset-JSON
+:::
 
 ## Workshop Materials
 
-::: {.callout-note}
+::: callout-note
 ## Resources
 
 **Package Documentation:** [atorus-research.github.io/datasetjson](https://atorus-research.github.io/datasetjson/)
@@ -60,15 +70,16 @@ Join us for an engaging workshop on **Dataset-JSON**, a powerful format for shar
 **Dataset-JSON** is an emerging CDISC standard for representing clinical trial datasets in JSON format.
 
 **Key Features:**
-- 📊 **Self-describing** - Metadata included
-- 🔍 **Human-readable** - Text-based format
-- 🌐 **Web-friendly** - Native JSON support
-- 🔗 **Linked data** - Relationships preserved
-- ✅ **Validated** - Schema-based validation
+
+-   📊 **Self-describing** - Metadata included
+-   🔍 **Human-readable** - Text-based format
+-   🌐 **Web-friendly** - Native JSON support
+-   🔗 **Linked data** - Relationships preserved
+-   ✅ **Validated** - Schema-based validation
 
 ### Example Structure
 
-```json
+``` json
 {
   "datasetJSONVersion": "1.0.0",
   "fileOID": "example.adsl",
@@ -100,52 +111,57 @@ Join us for an engaging workshop on **Dataset-JSON**, a powerful format for shar
 ### Advantages Over Other Formats
 
 #### vs XPT (SAS Transport)
-| Feature | Dataset-JSON | XPT |
-|---------|-------------|-----|
-| **Human-readable** | ✅ Yes | ❌ No |
-| **Self-describing** | ✅ Yes | ⚠️ Limited |
-| **Web APIs** | ✅ Native | ❌ Poor |
-| **Modern tools** | ✅ Excellent | ⚠️ Legacy |
-| **Size efficiency** | ⚠️ Larger | ✅ Smaller |
+
+| Feature             | Dataset-JSON | XPT        |
+|---------------------|--------------|------------|
+| **Human-readable**  | ✅ Yes       | ❌ No      |
+| **Self-describing** | ✅ Yes       | ⚠️ Limited |
+| **Web APIs**        | ✅ Native    | ❌ Poor    |
+| **Modern tools**    | ✅ Excellent | ⚠️ Legacy  |
+| **Size efficiency** | ⚠️ Larger    | ✅ Smaller |
 
 #### vs Parquet
-| Feature | Dataset-JSON | Parquet |
-|---------|-------------|---------|
-| **CDISC standard** | ✅ Yes | ❌ No |
-| **Metadata** | ✅ Rich | ⚠️ Basic |
-| **Human-readable** | ✅ Yes | ❌ Binary |
-| **Query performance** | ⚠️ Slower | ✅ Very fast |
-| **Interoperability** | ✅ Excellent | ⚠️ Tool-specific |
+
+| Feature               | Dataset-JSON | Parquet          |
+|-----------------------|--------------|------------------|
+| **CDISC standard**    | ✅ Yes       | ❌ No            |
+| **Metadata**          | ✅ Rich      | ⚠️ Basic         |
+| **Human-readable**    | ✅ Yes       | ❌ Binary        |
+| **Query performance** | ⚠️ Slower    | ✅ Very fast     |
+| **Interoperability**  | ✅ Excellent | ⚠️ Tool-specific |
 
 ### Use Cases
 
 **Ideal for:**
-- ✅ Regulatory submissions
-- ✅ Data exchange between organizations
-- ✅ Web APIs and services
-- ✅ Documentation and review
-- ✅ Long-term archival
+
+-   ✅ Regulatory submissions
+-   ✅ Data exchange between organizations
+-   ✅ Web APIs and services
+-   ✅ Documentation and review
+-   ✅ Long-term archival
 
 **Not ideal for:**
-- ❌ Big data analytics (use Parquet)
-- ❌ Real-time processing
-- ❌ Embedded systems
+
+-   ❌ Big data analytics (use Parquet)
+-   ❌ Real-time processing
+-   ❌ Embedded systems
 
 ## Workshop Structure
 
 ### Part 1: Introduction (30 min)
 
 **Topics:**
-- Dataset-JSON motivation
-- Format specification walkthrough
-- Comparison with alternatives
-- Industry adoption status
+
+-   Dataset-JSON motivation
+-   Format specification walkthrough
+-   Comparison with alternatives
+-   Industry adoption status
 
 ### Part 2: R Implementation (45 min)
 
 **Hands-on with R package:**
 
-```r
+``` r
 library(datasetjson)
 
 # Read Dataset-JSON
@@ -167,16 +183,17 @@ validate_dataset_json("adsl.json")
 ```
 
 **Features:**
-- Read/write Dataset-JSON files
-- Automatic metadata handling
-- Schema validation
-- Integration with tidyverse
+
+-   Read/write Dataset-JSON files
+-   Automatic metadata handling
+-   Schema validation
+-   Integration with tidyverse
 
 ### Part 3: Python Implementation (45 min)
 
 **Hands-on with Python package:**
 
-```python
+``` python
 import datasetjson as dsj
 import pandas as pd
 
@@ -198,28 +215,31 @@ dsj.validate("adsl.json")
 ```
 
 **Features:**
-- Pandas integration
-- Metadata preservation
-- Schema validation
-- Type handling
+
+-   Pandas integration
+-   Metadata preservation
+-   Schema validation
+-   Type handling
 
 ### Part 4: Advanced Topics (45 min)
 
 **Topics:**
-- Custom metadata
-- Large file handling
-- Compression options
-- Streaming implementations
-- API integration patterns
+
+-   Custom metadata
+-   Large file handling
+-   Compression options
+-   Streaming implementations
+-   API integration patterns
 
 ### Part 5: Future Directions (30 min)
 
 **Discussion:**
-- Regulatory acceptance timeline
-- Tool support roadmap
-- Community adoption
-- API standards
-- Your organization's plans
+
+-   Regulatory acceptance timeline
+-   Tool support roadmap
+-   Community adoption
+-   API standards
+-   Your organization's plans
 
 ## Practical Exercises
 
@@ -228,37 +248,41 @@ dsj.validate("adsl.json")
 Load Dataset-JSON file and explore structure.
 
 **Tasks:**
-- Read ADSL dataset
-- Examine metadata
-- Compare with XPT
-- Validate format
+
+-   Read ADSL dataset
+-   Examine metadata
+-   Compare with XPT
+-   Validate format
 
 ### Exercise 2: Convert Formats
 
 Convert between Dataset-JSON and other formats.
 
 **Tasks:**
-- XPT → Dataset-JSON
-- CSV → Dataset-JSON
-- Dataset-JSON → Parquet
-- Preserve metadata
+
+-   XPT → Dataset-JSON
+-   CSV → Dataset-JSON
+-   Dataset-JSON → Parquet
+-   Preserve metadata
 
 ### Exercise 3: Create from Scratch
 
 Build Dataset-JSON from raw data.
 
 **Tasks:**
-- Define column metadata
-- Set data types
-- Add labels and descriptions
-- Validate output
+
+-   Define column metadata
+-   Set data types
+-   Add labels and descriptions
+-   Validate output
 
 ### Exercise 4: API Integration
 
 Serve Dataset-JSON via REST API.
 
 **R (Plumber):**
-```r
+
+``` r
 library(plumber)
 
 #* Get ADSL dataset
@@ -270,7 +294,8 @@ function() {
 ```
 
 **Python (FastAPI):**
-```python
+
+``` python
 from fastapi import FastAPI
 import datasetjson as dsj
 
@@ -286,135 +311,153 @@ def get_adsl():
 ### Key Components
 
 **File Metadata:**
-- datasetJSONVersion
-- fileOID
-- datasetName
-- datasetLabel
-- records (row count)
+
+-   datasetJSONVersion
+-   fileOID
+-   datasetName
+-   datasetLabel
+-   records (row count)
 
 **Column Definitions:**
-- name
-- label
-- dataType (string, integer, float, datetime)
-- length
-- displayFormat
+
+-   name
+-   label
+-   dataType (string, integer, float, datetime)
+-   length
+-   displayFormat
 
 **Data Rows:**
-- Array of arrays (efficient)
-- Column order matches definitions
-- Null handling
+
+-   Array of arrays (efficient)
+-   Column order matches definitions
+-   Null handling
 
 **Additional Metadata:**
-- Study information
-- Variable relationships
-- Code lists
-- Value-level metadata
+
+-   Study information
+-   Variable relationships
+-   Code lists
+-   Value-level metadata
 
 ## Industry Adoption
 
 ### Current Status
 
 **CDISC:**
-- ✅ Published specification
-- 🔄 Active development
-- 📢 Industry engagement
+
+-   ✅ Published specification
+-   🔄 Active development
+-   📢 Industry engagement
 
 **Tools:**
-- ✅ R package (Atorus)
-- ✅ Python package (CDISC/Atorus)
-- 🔄 SAS support in development
-- 🔄 Validator tools emerging
+
+-   ✅ R package (Atorus)
+-   ✅ Python package (CDISC/Atorus)
+-   🔄 SAS support in development
+-   🔄 Validator tools emerging
 
 **Pharma:**
-- 🔍 Pilot projects underway
-- 📋 Evaluation phase
-- 🎯 2026+ adoption expected
+
+-   🔍 Pilot projects underway
+-   📋 Evaluation phase
+-   🎯 2026+ adoption expected
 
 ### Roadmap
 
 **2025:**
-- Finalize specification v1.0
-- Expand tool support
-- Pilot submissions
+
+-   Finalize specification v1.0
+-   Expand tool support
+-   Pilot submissions
 
 **2026+:**
-- Broader industry adoption
-- Regulatory acceptance
-- Replace XPT in workflows
+
+-   Broader industry adoption
+-   Regulatory acceptance
+-   Replace XPT in workflows
 
 ## Best Practices
 
 ### Creating Dataset-JSON
 
 **✅ Do:**
-- Include comprehensive metadata
-- Use CDISC terminology
-- Validate against schema
-- Document conventions
-- Version your files
+
+-   Include comprehensive metadata
+-   Use CDISC terminology
+-   Validate against schema
+-   Document conventions
+-   Version your files
 
 **❌ Don't:**
-- Omit critical metadata
-- Use inconsistent naming
-- Skip validation
-- Ignore data types
-- Create huge files (split if needed)
+
+-   Omit critical metadata
+-   Use inconsistent naming
+-   Skip validation
+-   Ignore data types
+-   Create huge files (split if needed)
 
 ### Integration
 
 **API Design:**
-- RESTful endpoints
-- Pagination for large datasets
-- Caching strategies
-- Error handling
-- Authentication
+
+-   RESTful endpoints
+-   Pagination for large datasets
+-   Caching strategies
+-   Error handling
+-   Authentication
 
 **Storage:**
-- Compress for archival
-- Index for search
-- Backup metadata separately
-- Version control friendly
+
+-   Compress for archival
+-   Index for search
+-   Backup metadata separately
+-   Version control friendly
 
 ## Learning Outcomes
 
-✅ Understand Dataset-JSON specification  
-✅ Read/write Dataset-JSON in R  
-✅ Read/write Dataset-JSON in Python  
-✅ Convert between formats  
-✅ Integrate with APIs  
-✅ Plan adoption strategy  
+✅ Understand Dataset-JSON specification\
+✅ Read/write Dataset-JSON in R\
+✅ Read/write Dataset-JSON in Python\
+✅ Convert between formats\
+✅ Integrate with APIs\
+✅ Plan adoption strategy\
 ✅ Contribute to development
 
 ## Resources
 
 **Official:**
-- CDISC Dataset-JSON specification
-- CDISC website and wiki
-- Package documentation
+
+-   CDISC Dataset-JSON specification
+-   CDISC website and wiki
+-   Package documentation
 
 **Community:**
-- GitHub repositories
-- CDISC Dataset-JSON working group
-- Stack Overflow tags
+
+-   GitHub repositories
+-   CDISC Dataset-JSON working group
+-   Stack Overflow tags
 
 **Learning:**
-- Workshop materials
-- Example datasets
-- Tutorial notebooks
+
+-   Workshop materials
+-   Example datasets
+-   Tutorial notebooks
 
 ## Getting Involved
 
 **Contribute:**
-- Test packages
-- Report issues
-- Submit use cases
-- Join working groups
+
+-   Test packages
+-   Report issues
+-   Submit use cases
+-   Join working groups
 
 **Stay Informed:**
-- CDISC newsletters
-- Package releases
-- Conference presentations
 
----
+-   CDISC newsletters
+-   Package releases
+-   Conference presentations
 
-*Last updated: November 2025 | R/Pharma 2025 Conference*
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

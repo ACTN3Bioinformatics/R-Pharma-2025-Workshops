@@ -11,7 +11,7 @@
 ## 📊 Quick Stats
 
 -   **16** Hands-on Workshops
--   **8** Europe/US Thematic Sessions\
+-   **8** Europe/US Thematic Sessions
 -   **30+** Presentations
 -   **November 2025** Conference Date
 

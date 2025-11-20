@@ -1,0 +1,289 @@
+---
+title: "A Guided Tour to Building and Integrating LLM Based Tooling with R"
+subtitle: "From prototypes to production: Enterprise AI solutions in pharma"
+author: 
+  - "Devin Pastoor (Chief Technology and Product Officer, A2-AI)"
+  - "Xu Fei (Senior Solutions Engineer, A2-AI)"
+  - "Aathira Anil Kumar (A2-AI)"
+categories: [AI, LLM, AWS, Advanced]
+---
+
+## Overview
+
+[Intermediate]{.badge .badge-intermediate} [AI/LLM]{.badge .badge-category} [Enterprise]{.badge .badge-category} [GxP]{.badge .badge-category}
+
+A practical, 2-hour workshop demonstrating how to integrate Generative AI (GenAI) into pharmaceutical workflows. This session focuses on bridging the R and Python ecosystems to deliver scalable, **GxP-compliant solutions**.
+
+### What You'll Learn
+
+-   🏗️ **Architecture patterns** for LLM-enabled applications
+-   🔐 **Enterprise integration** with AWS Bedrock and internal systems
+-   🤖 **MCP servers** for reproducible analytics
+-   ✅ **GxP compliance** in AI application deployment
+-   🔗 **R-Python interoperability** for GenAI workflows
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate R programming
+-   Basic understanding of APIs
+-   Familiarity with clinical trial workflows
+
+**Recommended:**
+
+-   Experience with Python (helpful but not required)
+-   Knowledge of cloud services (AWS)
+-   Understanding of GxP requirements
+:::
+
+## Key Technologies
+
+::: tool-tag
+{ellmer}
+:::
+
+::: tool-tag
+{mcpr}
+:::
+
+::: tool-tag
+AWS Bedrock
+:::
+
+::: tool-tag
+Python
+:::
+
+::: tool-tag
+LangChain
+:::
+
+::: tool-tag
+MCP (Model Context Protocol)
+:::
+
+## Workshop Content
+
+### 1. From Prototype to Production
+
+**The Reality Check:**
+
+-   Why most AI prototypes fail in production
+-   Common pitfalls in enterprise AI deployment
+-   Testing and validation approaches for GenAI
+-   Maintaining AI applications over time
+
+### 2. Architecture Patterns
+
+**Building Scalable AI Systems:**
+
+``` r
+# Example: MCP Server for Clinical Data
+library(mcpr)
+
+# Define a clinical data tool
+clinical_server <- mcp_server() %>%
+  add_tool(
+    name = "query_adverse_events",
+    description = "Query adverse events from clinical database",
+    parameters = list(
+      study_id = "string",
+      severity = "string"
+    ),
+    handler = function(study_id, severity) {
+      # Connect to database and query
+      query_clinical_db(study_id, severity)
+    }
+  )
+```
+
+### 3. Real-World Applications
+
+#### A. Interactive Chatbots for Clinical Study Reporting
+
+-   Conversational interfaces for study data exploration
+-   Natural language queries on CDISC datasets
+-   Automated report generation from templates
+
+#### B. SOP Management Systems
+
+-   Document retrieval and summarization
+-   Compliance checking against SOPs
+-   Version control and change tracking
+
+#### C. MCP Server Implementations
+
+-   Reproducible analytics workflows
+-   Tool registration and management
+-   Cross-language interoperability (R ↔ Python)
+
+### 4. AWS Bedrock Integration
+
+**Enterprise LLM Deployment:**
+
+-   Model selection and configuration
+-   Security and access control
+-   Cost optimization strategies
+-   Monitoring and logging
+
+``` python
+# Python example: AWS Bedrock with LangChain
+from langchain_aws import ChatBedrock
+
+llm = ChatBedrock(
+    model_id="anthropic.claude-3-sonnet",
+    region_name="us-east-1"
+)
+```
+
+### 5. GxP Compliance Strategies
+
+**Making AI Production-Ready:**
+
+-   ✅ Validation approaches for LLM applications
+-   📝 Documentation requirements
+-   🔍 Audit trails and logging
+-   🧪 Testing strategies (unit, integration, UAT)
+-   📊 Performance monitoring
+
+### 6. Navigating IT Constraints
+
+**Real-World Enterprise Challenges:**
+
+-   Air-gapped environments
+-   Data privacy requirements
+-   Integration with legacy systems
+-   Regulatory approval processes
+
+## Hands-On Exercises
+
+### Exercise 1: Build a Clinical Data Chatbot
+
+Create an interactive chatbot that can:
+
+-   Query SDTM/ADaM datasets
+-   Generate summary statistics
+-   Create basic visualizations
+-   Answer questions about study design
+
+### Exercise 2: Implement an MCP Server
+
+Build a reusable MCP server for:
+
+-   Data validation
+-   Statistical computations
+-   Report generation
+
+### Exercise 3: AWS Bedrock Integration
+
+Connect to AWS Bedrock and:
+
+-   Configure Claude for pharma-specific tasks
+-   Implement rate limiting and error handling
+-   Add logging for audit purposes
+
+## Practical Applications in Pharma
+
+### Clinical Study Reporting
+
+-   Automated CSR generation
+-   Table/Listing/Figure creation from natural language
+-   Cross-referencing and consistency checking
+
+### Regulatory Submissions
+
+-   Document preparation assistance
+-   Compliance verification
+-   Response to regulatory queries
+
+### Data Analysis
+
+-   Exploratory data analysis via natural language
+-   Statistical model selection guidance
+-   Results interpretation and explanation
+
+## Workshop Instructors
+
+::: author-info
+**Devin Pastoor** - Chief Technology and Product Officer at A2-AI, expert in GxP-compliant AI systems and pharmaceutical DevOps.
+
+**Xu Fei** - Senior Solutions Engineer at A2-AI, specializes in LLM-enabled applications across R and Python stacks, with focus on enterprise DevOps and cloud APIs.
+
+**Aathira Anil Kumar** - Engineer at A2-AI, extensive experience with life-science organizations and GenAI integration.
+:::
+
+## Tools & Frameworks Covered
+
+### R Ecosystem
+
+-   `{ellmer}` - LLM integration
+-   `{mcpr}` - Model Context Protocol
+-   `{shinychat}` - Chatbot interfaces
+
+### Python Ecosystem
+
+-   LangChain - LLM application framework
+-   LangGraph - Multi-agent orchestration
+-   AWS SDK - Cloud integration
+
+### Infrastructure
+
+-   AWS Bedrock - Managed LLM service
+-   Docker - Containerization
+-   GitHub Actions - CI/CD
+
+## Learning Outcomes
+
+By the end of this workshop, you will be able to:
+
+✅ Design architecture for production GenAI applications\
+✅ Integrate LLMs with enterprise pharmaceutical systems\
+✅ Implement GxP-compliant AI workflows\
+✅ Build MCP servers for reproducible analytics\
+✅ Navigate IT constraints in regulated environments\
+✅ Bridge R and Python ecosystems for AI solutions
+
+## Real-World Case Studies
+
+### Case Study 1: Clinical Study Report Automation
+
+How A2-AI helped a pharma client reduce CSR preparation time by 60% using LLM-powered automation while maintaining GxP compliance.
+
+### Case Study 2: SOP Management System
+
+Implementation of an enterprise-wide SOP chatbot serving 500+ users across multiple departments.
+
+### Case Study 3: Data Quality Checks
+
+Automated data validation using LLMs to identify anomalies and suggest corrections in clinical trial data.
+
+## Next Steps
+
+After this workshop:
+
+-   [Getting Started with LLM APIs](getting-started-llm-apis.qmd) - For foundational knowledge
+-   [LLM-Powered Clinical Data Review](llm-clinical-data-privacy.qmd) - Privacy considerations
+-   Explore A2-AI's GitHub for example implementations
+
+## Additional Resources
+
+-   **AWS Bedrock documentation:** [aws.amazon.com/bedrock](https://aws.amazon.com/bedrock)
+-   **MCP specification:** [modelcontextprotocol.io](https://modelcontextprotocol.io)
+-   **A2-AI blog:** Industry insights and case studies
+
+::: callout-tip
+## Workshop Materials
+
+This is a hands-on workshop with extensive code examples and exercises. All materials will be provided during the session, including:
+
+-   Starter code templates
+-   Example datasets (CDISC SDTM/ADaM)
+-   AWS sandbox environment access
+-   Reference documentation
+:::
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

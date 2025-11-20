@@ -1,0 +1,105 @@
+---
+title: "Creating Polished, Branded Documents with Quarto"
+subtitle: "Dynamic websites, PDFs, presentations, and dashboards"
+author: "Isabella Velásquez (Sr. Product Marketing Manager, Posit PBC)"
+categories: [Clinical Reporting, Quarto, Beginner]
+---
+
+## Overview
+
+[Beginner Friendly]{.badge .badge-beginner} [Quarto]{.badge .badge-category} [Reporting]{.badge .badge-category}
+
+A hands-on workshop exploring the versatility of Quarto output formats. Learn to create dynamic websites, professional PDF documents, engaging presentations, and interactive dashboards - all with consistent branding using the new **brand.yml** feature.
+
+### What You'll Learn
+
+-   🌐 **Dynamic websites** with Quarto
+-   📄 **Professional PDFs** for reports
+-   📊 **Presentations** with reveal.js
+-   📈 **Interactive dashboards**
+-   🎨 **Brand.yml** for consistent theming
+-   🔄 **Multi-format publishing**
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Basic R or Python
+-   Familiarity with Markdown
+-   No prior Quarto experience needed
+:::
+
+## Key Features
+
+::: tool-tag
+Quarto
+:::
+
+::: tool-tag
+brand.yml
+:::
+
+::: tool-tag
+reveal.js
+:::
+
+::: tool-tag
+LaTeX/PDF
+:::
+
+::: tool-tag
+Observable
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**Posit Cloud Workspace:** [019a4f2d-6b79-72c1-834b-c2a9488f9ec8.share.connect.posit.cloud](https://019a4f2d-6b79-72c1-834b-c2a9488f9ec8.share.connect.posit.cloud/)
+
+**GitHub:** [github.com/ivelasq/2025-11-04_branded-quarto](https://github.com/ivelasq/2025-11-04_branded-quarto)
+:::
+
+## Key Topics
+
+### 1. Brand.yml for Consistent Theming
+
+``` yaml
+# brand.yml
+brand:
+  color:
+    primary: "#276DC2"
+    secondary: "#4A90E2"
+  typography:
+    base: "Arial"
+    headings: "Arial"
+  logo: "logo.png"
+```
+
+### 2. Multi-Format Publishing
+
+-   **HTML** - Interactive websites and dashboards
+-   **PDF** - Publication-ready documents via LaTeX
+-   **Presentations** - Reveal.js slideshows
+-   **Dashboards** - Data visualization apps
+
+### 3. Pharmaceutical Applications
+
+-   Clinical study reports with consistent branding
+-   Regulatory submission documents
+-   Internal dashboards for data monitoring
+-   Presentations for study teams
+
+## Learning Outcomes
+
+✅ Create multiple output formats from single source\
+✅ Apply consistent branding across all outputs\
+✅ Build interactive dashboards\
+✅ Design professional presentations\
+✅ Generate PDF reports with LaTeX quality
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

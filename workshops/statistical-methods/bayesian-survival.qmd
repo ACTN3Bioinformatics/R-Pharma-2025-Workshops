@@ -1,0 +1,308 @@
+---
+title: "Bayesian Survival and Multistate Models using R and Stan"
+subtitle: "Time-to-event analysis with patient preferences"
+author:
+  - "Eric Novik (Founder & CEO, Generable)"
+  - "Jacqueline Buros-Novik (Generable)"
+  - "Juho Timonen (Computational Scientist, Generable)"
+categories: [Statistical Methods, Bayesian, Advanced]
+---
+
+## Overview
+
+[Advanced]{.badge .badge-advanced} [Bayesian]{.badge .badge-category} [Survival Analysis]{.badge .badge-category}
+
+Bayesian inference and Stan offer many advantages for time-to-event data: incorporating prior knowledge, propagating uncertainty, and integrating patient utility functions for optimal decision-making. Learn multistate models for competing events in cardiovascular and oncology trials.
+
+### What You'll Learn
+
+-   🔄 **Bayesian workflow** - Typical analysis steps
+-   ⏱️ **Survival models** - Single and competing events
+-   🔀 **Multistate models** - Bleeding, stroke, death pathways
+-   🎯 **Patient preferences** - Utility function integration
+-   📊 **Decision analysis** - Optimal treatment selection
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate R programming
+-   Basic survival analysis concepts
+-   Some Bayesian exposure helpful
+
+**Recommended:**
+
+-   Stan familiarity (not required)
+-   Clinical trial experience
+:::
+
+## Key Tools
+
+::: tool-tag
+Stan
+:::
+
+::: tool-tag
+{bmstate}
+:::
+
+::: tool-tag
+{rstan}
+:::
+
+::: tool-tag
+{cmdstanr}
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**GitHub Package:** [github.com/generable/bmstate](https://github.com/generable/bmstate)
+:::
+
+## Why Bayesian for Survival Analysis?
+
+### Advantages
+
+**1. Prior Information Integration**
+
+-   Use historical trial data
+-   Expert knowledge incorporation
+-   Borrowing strength across studies
+
+**2. Uncertainty Quantification**
+
+-   Full posterior distributions
+-   Credible intervals
+-   Probability statements
+
+**3. Patient Preferences**
+
+-   Utility function integration
+-   Trade-offs between outcomes
+-   Personalized decision-making
+
+**4. Complex Models**
+
+-   Multistate transitions
+-   Competing risks
+-   Time-varying effects
+
+## Bayesian Workflow
+
+### Step 1: Prior Specification
+
+``` stan
+parameters {
+  real log_baseline_hazard;
+  real treatment_effect;
+}
+
+model {
+  // Priors
+  log_baseline_hazard ~ normal(-2, 1);
+  treatment_effect ~ normal(0, 0.5);
+}
+```
+
+### Step 2: Prior Predictive Checks
+
+Simulate data from priors to verify reasonableness.
+
+### Step 3: Fit Model
+
+``` r
+library(bmstate)
+
+fit <- fit_survival_model(
+  formula = Surv(time, status) ~ treatment,
+  data = clinical_data,
+  prior = prior_spec
+)
+```
+
+### Step 4: Posterior Diagnostics
+
+-   Check convergence (R-hat)
+-   Effective sample size
+-   Trace plots
+-   Posterior predictive checks
+
+### Step 5: Inference
+
+Extract posterior summaries and make decisions.
+
+## Single-Event Survival Models
+
+### Exponential Model
+
+Constant hazard over time.
+
+### Weibull Model
+
+Flexible hazard shape (increasing/decreasing).
+
+### Piecewise Exponential
+
+Different hazards in time intervals.
+
+### Cox-Like Models
+
+Semi-parametric baseline with covariates.
+
+## Multistate Models
+
+### Example: Cardiovascular Trial
+
+**States:**
+
+1.  Healthy
+2.  Bleeding event
+3.  Stroke event
+4.  Death
+
+**Transitions:**
+
+-   Healthy → Bleeding
+-   Healthy → Stroke
+-   Healthy → Death
+-   Bleeding → Death
+-   Stroke → Death
+
+### Oncology Trial
+
+**States:**
+
+1.  Stable disease
+2.  Progressive disease
+3.  Death
+
+**Allows:**
+
+-   Different treatment effects on each transition
+-   Competing risks modeling
+-   Illness-death models
+
+## Patient Utility Functions
+
+### Incorporating Preferences
+
+Patients may value outcomes differently:
+
+-   Prefer minor bleeding over stroke
+-   Trade survival time for quality
+-   Different risk tolerances
+
+### Example Utility
+
+``` r
+# Patient preferences
+utility <- function(state, time) {
+  switch(state,
+    "healthy" = 1.0,
+    "bleeding" = 0.8,  # 20% quality loss
+    "stroke" = 0.3,    # 70% quality loss
+    "death" = 0.0
+  )
+}
+```
+
+### Decision Analysis
+
+Use utilities to:
+
+-   Compare treatment strategies
+-   Calculate quality-adjusted survival
+-   Optimize individual decisions
+
+## Workshop Exercises
+
+### Exercise 1: Single-Event Model
+
+Fit Weibull survival model to trial data.
+
+### Exercise 2: Multistate Model
+
+Cardiovascular trial with bleeding/stroke competing events.
+
+### Exercise 3: Utility Integration
+
+Incorporate patient preferences into decision analysis.
+
+## Practical Example
+
+``` r
+library(bmstate)
+
+# Fit multistate model
+fit <- fit_multistate(
+  formula = list(
+    bleeding ~ treatment + age,
+    stroke ~ treatment + age + prior_stroke,
+    death ~ treatment + age
+  ),
+  data = cardio_data,
+  transitions = transition_matrix
+)
+
+# Extract hazard ratios
+hr_bleeding <- exp(posterior_summary(fit, "treatment_bleeding"))
+hr_stroke <- exp(posterior_summary(fit, "treatment_stroke"))
+
+# Decision analysis with utilities
+qaly <- calculate_qaly(
+  fit = fit,
+  utilities = patient_utilities,
+  horizon = 5  # years
+)
+```
+
+## Advantages in Pharma
+
+### Regulatory
+
+-   Explicit uncertainty quantification
+-   Transparent assumptions (priors)
+-   Flexible for complex designs
+
+### Scientific
+
+-   Accumulate knowledge across trials
+-   Handle small samples better
+-   Natural borrowing of information
+
+### Patient-Centered
+
+-   Individual risk-benefit
+-   Preference integration
+-   Personalized medicine
+
+## Learning Outcomes
+
+✅ Understand Bayesian workflow for survival data\
+✅ Fit single-event survival models in Stan\
+✅ Build multistate models for competing risks\
+✅ Integrate patient utility functions\
+✅ Perform Bayesian decision analysis\
+✅ Interpret and communicate Bayesian results
+
+## Advanced Topics (Time Permitting)
+
+-   Cure models
+-   Recurrent events
+-   Joint models (longitudinal + survival)
+-   Hierarchical models
+
+## Resources
+
+-   **{bmstate} documentation**
+-   *Bayesian Survival Analysis* (Ibrahim et al.)
+-   Stan User's Guide - Survival chapter
+-   *Statistical Rethinking* (McElreath)
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

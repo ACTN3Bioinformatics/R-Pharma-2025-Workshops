@@ -1,0 +1,222 @@
+---
+title: "How to use pointblank to understand, validate, and document your data"
+subtitle: "Data quality and documentation workflows"
+author: "Rich Iannone (Software Engineer, Posit PBC)"
+categories: [Data Quality, Validation, Intermediate]
+---
+
+## Overview
+
+[Intermediate]{.badge .badge-intermediate} [Data Quality]{.badge .badge-category} [Validation]{.badge .badge-category}
+
+Master data quality and documentation workflows with **{pointblank}**. From quick dataset understanding to enterprise-scale validation of 35+ database tables daily.
+
+### What You'll Learn
+
+-   🔍 **Quick dataset understanding**
+-   ✅ **Data validation** with expectation-based rules
+-   📝 **Complete documentation** of tables and variables
+-   📊 **Scaling validation** from small to large
+-   🎯 **Beautiful documentation** generation
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate R programming
+-   Basic understanding of data validation concepts
+-   Familiarity with dplyr helpful
+:::
+
+## Key Package
+
+::: tool-tag
+{pointblank}
+:::
+
+::: tool-tag
+{dplyr}
+:::
+
+::: tool-tag
+{DBI}
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**GitHub Workshop:** [github.com/rich-iannone/pointblank-workshop](https://github.com/rich-iannone/pointblank-workshop)
+:::
+
+## Three Core Workflows
+
+### 1. Understanding New Datasets
+
+Quickly scan and explore unknown data:
+
+``` r
+library(pointblank)
+
+# Get comprehensive data overview
+scan_data(my_dataset)
+```
+
+### 2. Validating Data
+
+Create validation rules based on expectations:
+
+``` r
+# Create validation agent
+agent <- 
+  create_agent(
+    tbl = clinical_data,
+    label = "Clinical Data Validation"
+  ) %>%
+  # Age should be positive
+  col_vals_gt(vars(AGE), value = 0) %>%
+  # Sex should be M or F
+  col_vals_in_set(vars(SEX), set = c("M", "F")) %>%
+  # No missing subject IDs
+  col_vals_not_null(vars(SUBJID)) %>%
+  # Date consistency
+  col_vals_lte(vars(RANDDT), vars(STUDYDT)) %>%
+  interrogate()
+
+# View results
+agent
+```
+
+### 3. Documenting Tables
+
+Create informative data dictionaries:
+
+``` r
+# Create informant
+informant <- 
+  create_informant(
+    tbl = clinical_data,
+    label = "ADSL Dataset"
+  ) %>%
+  info_tabular(
+    Description = "Analysis dataset for subject-level data"
+  ) %>%
+  info_columns(
+    columns = "SUBJID",
+    `Description` = "Unique subject identifier"
+  ) %>%
+  info_columns(
+    columns = "AGE",
+    `Description` = "Age at randomization (years)",
+    `Valid Range` = "18-85"
+  ) %>%
+  incorporate()
+
+# Generate beautiful HTML documentation
+informant
+```
+
+## Scaling Validation
+
+### From Small to Enterprise
+
+**Small Problems:**
+
+``` r
+# Quick check before analysis
+stopifnot_inform(
+  ~ col_vals_not_null(., vars(SUBJID)),
+  ~ col_vals_gt(., vars(AGE), 0)
+)
+```
+
+**Enterprise Scale:**
+
+``` r
+# Daily validation of 35 database tables
+multiagent <- 
+  create_multiagent(
+    agent_1, agent_2, ..., agent_35
+  )
+
+# Automated email reports
+multiagent %>%
+  email_blast(
+    to = "data_quality_team@pharma.com",
+    when = has_any_sev_issues()
+  )
+```
+
+## Practical Applications
+
+### Clinical Trial Data Validation
+
+-   **SDTM compliance checks**
+-   **ADaM dataset verification**
+-   **Cross-domain consistency**
+-   **Longitudinal data integrity**
+
+### Data Documentation
+
+-   **Automated data dictionaries**
+-   **Variable descriptions**
+-   **Valid ranges and constraints**
+-   **Change tracking**
+
+### Quality Monitoring
+
+-   **Daily validation pipelines**
+-   **Alert systems for issues**
+-   **Trend analysis of data quality**
+-   **Audit trail generation**
+
+## Example: Complete Validation Pipeline
+
+``` r
+# Define validation for ADSL
+validate_adsl <- function(adsl_data) {
+  create_agent(adsl_data, label = "ADSL Validation") %>%
+    # Demographics
+    col_vals_not_null(vars(SUBJID, AGE, SEX)) %>%
+    col_vals_gt(vars(AGE), 18) %>%
+    col_vals_lt(vars(AGE), 90) %>%
+    col_vals_in_set(vars(SEX), c("M", "F")) %>%
+    # Dates
+    col_vals_not_null(vars(RANDDT)) %>%
+    col_vals_regex(vars(RANDDT), "^\\d{4}-\\d{2}-\\d{2}$") %>%
+    # Treatment
+    col_vals_in_set(vars(ARM), c("Placebo", "Treatment")) %>%
+    # Execute
+    interrogate()
+}
+
+# Run daily
+agent <- validate_adsl(read_data("adsl.csv"))
+
+# Check results
+if (has_any_issues(agent)) {
+  send_alert(agent)
+}
+```
+
+## Learning Outcomes
+
+✅ Quickly scan and understand new datasets\
+✅ Create robust validation rules\
+✅ Generate beautiful data documentation\
+✅ Scale validation from small to enterprise\
+✅ Automate data quality monitoring\
+✅ Build audit-ready validation pipelines
+
+## Integration with Other Tools
+
+-   **Databases:** Works with DBI-compatible connections
+-   **Arrow:** Validate Parquet files
+-   **Shiny:** Interactive validation dashboards
+-   **GitHub Actions:** Automated validation in CI/CD
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*

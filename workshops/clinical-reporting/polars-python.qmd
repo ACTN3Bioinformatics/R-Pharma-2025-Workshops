@@ -1,0 +1,116 @@
+---
+title: "Polars: Blazing Fast Python Framework for Clinical Trial Data"
+subtitle: "High-performance data exploration with Apache Arrow"
+author:
+  - "Michael Chow (Principal Software Engineer, Posit)"
+  - "Jeroen Janssens (Head of Developer Relations, Posit PBC)"
+categories: [Python, Clinical Reporting, Advanced]
+---
+
+## Overview
+
+[Intermediate]{.badge .badge-intermediate} [Python]{.badge .badge-category} [Performance]{.badge .badge-category}
+
+Polars is a cutting-edge Python DataFrame library with high-performance backend and Apache Arrow columnar format for blazingly fast data manipulation. Learn how it accelerates clinical trial workflows from database querying to TFL preparation.
+
+### What You'll Learn
+
+-   ⚡ **Polars fundamentals** - Lightning-fast data operations
+-   🏗️ **Apache Arrow** - Columnar data format
+-   📊 **Clinical workflows** - CDISC data processing
+-   🔗 **Pharmaverse-py integration**
+-   📈 **Great Tables** - Data presentation
+
+## Prerequisites
+
+::: requirements
+**Required Knowledge:**
+
+-   Intermediate Python
+-   Basic pandas experience helpful
+-   Understanding of clinical trial data
+:::
+
+## Key Technologies
+
+::: tool-tag
+Polars
+:::
+
+::: tool-tag
+Apache Arrow
+:::
+
+::: tool-tag
+Great Tables
+:::
+
+::: tool-tag
+pharmaverse-py
+:::
+
+## Workshop Materials
+
+::: callout-note
+## Resources
+
+**GitHub Examples:** [github.com/machow/examples-great-tables-pharma](https://github.com/machow/examples-great-tables-pharma)
+:::
+
+## Why Polars?
+
+### Performance Advantages
+
+-   🚀 **10-100x faster** than pandas for large datasets
+-   💾 **Memory efficient** with lazy evaluation
+-   🔄 **Parallel processing** out of the box
+-   📦 **Apache Arrow** native format
+
+### Polars vs Pandas
+
+``` python
+# Pandas (traditional)
+df = pd.read_csv("adsl.csv")
+result = df[df['AGE'] > 65].groupby('ARM')['AGE'].mean()
+
+# Polars (fast)
+result = (
+    pl.scan_csv("adsl.csv")
+    .filter(pl.col('AGE') > 65)
+    .group_by('ARM')
+    .agg(pl.col('AGE').mean())
+    .collect()  # Lazy evaluation
+)
+```
+
+## Clinical Trial Applications
+
+### 1. Database Querying
+
+-   Fast SQL-like operations
+-   Efficient joins across SDTM domains
+-   Lazy evaluation for large queries
+
+### 2. Complex Data Wrangling
+
+-   Grouping and aggregation
+-   Window functions for time-series
+-   Pivoting and reshaping
+
+### 3. TFL Preparation
+
+-   Data summarization
+-   Creating analysis datasets
+-   Integration with Great Tables
+
+## Learning Outcomes
+
+✅ Master Polars DataFrame operations\
+✅ Leverage Apache Arrow for performance\
+✅ Process clinical trial data efficiently\
+✅ Integrate with pharmaverse-py ecosystem\
+✅ Create TFLs with Great Tables
+
+------------------------------------------------------------------------
+
+*Last updated: November 2025 \| R/Pharma 2025 Conference*
