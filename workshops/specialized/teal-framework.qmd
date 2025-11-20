@@ -1,0 +1,396 @@
+---
+title: "From Data to Insights: A Hands-On Workshop with {teal}"
+subtitle: "Interactive clinical trial data exploration framework"
+author:
+  - "Nina Qi (Principal Data Scientist, Genentech)"
+  - "Dony Unardi (Data Scientist, Genentech)"
+categories: [Shiny, Clinical Data, Intermediate]
+---
+
+## Overview
+
+<span class="badge badge-intermediate">Intermediate</span> <span class="badge badge-category">Shiny</span> <span class="badge badge-category">Interactive Apps</span>
+
+**{teal}** is an innovative open-source R-Shiny framework that has transformed clinical trial data analysis and visualization. This hands-on workshop, built on the latest {teal} 1.0 release, will progressively cover practical topics for building interactive applications that deliver insights faster while promoting efficiency, transparency, and reproducibility.
+
+### What You'll Learn
+
+- 🎯 **{teal} fundamentals** - Core concepts and architecture
+- 🧩 **Building blocks** - Modules and components
+- 📊 **Clinical applications** - Real-world use cases
+- 🔧 **Hands-on exercises** - Step-by-step building
+- 🚀 **Best practices** - Production-ready apps
+
+## Prerequisites
+
+::: {.requirements}
+**Required Knowledge:**
+- Basic R programming
+- Understanding of clinical trial data (CDISC helpful)
+- No prior Shiny or {teal} experience required!
+
+**All R users welcome** - from beginners to experienced developers
+:::
+
+## Key Tools
+
+<div class="tool-tag">{teal}</div>
+<div class="tool-tag">{teal.modules.clinical}</div>
+<div class="tool-tag">{teal.data}</div>
+<div class="tool-tag">Shiny</div>
+
+## Workshop Materials
+
+::: {.callout-note}
+## Resources
+
+**GitHub Workshop:** [github.com/pharmaverse/tealworkshop-rinpharma2025](https://github.com/pharmaverse/tealworkshop-rinpharma2025/tree/main)
+
+**{teal} Website:** [insightsengineering.github.io/teal](https://insightsengineering.github.io/teal)
+:::
+
+## What is {teal}?
+
+### Framework Overview
+
+**{teal}** provides a modular framework for building interactive data exploration applications:
+
+- 🧩 **Modular** - Plug-and-play components
+- 🔄 **Reactive** - Built on Shiny
+- 📊 **Clinical-focused** - Pharma use cases
+- ✅ **Validated** - GxP-ready
+- 🌐 **Pharmaverse** - Part of ecosystem
+
+### Key Features
+
+**Data Management:**
+- Multiple dataset support
+- Filtering and subsetting
+- Data relationships
+- Reproducible states
+
+**Modules:**
+- Pre-built clinical modules
+- Custom module creation
+- Module composition
+- Shared state management
+
+**Reproducibility:**
+- Code generation
+- Session state export
+- Report generation
+- Audit trails
+
+## The {teal} 1.0 Release
+
+### What's New
+
+- ✨ Stable API
+- 📦 Improved module system
+- 🎨 Better UI/UX
+- 📚 Enhanced documentation
+- 🔧 Performance improvements
+
+### Ecosystem
+
+**Core packages:**
+- `{teal}` - Framework core
+- `{teal.data}` - Data management
+- `{teal.code}` - Code tracking
+- `{teal.modules.clinical}` - Clinical modules
+- `{teal.modules.general}` - General modules
+
+## Building Your First {teal} App
+
+### Minimal Example
+
+```r
+library(teal)
+
+# Create app
+app <- init(
+  data = teal_data(ADSL = pharmaverseadam::adsl),
+  modules = modules(
+    tm_data_table("Data Table"),
+    tm_variable_browser("Variable Browser")
+  )
+)
+
+# Run
+shinyApp(app$ui, app$server)
+```
+
+### With Clinical Modules
+
+```r
+library(teal)
+library(teal.modules.clinical)
+
+# Prepare data
+data <- teal_data(
+  ADSL = pharmaverseadam::adsl,
+  ADAE = pharmaverseadam::adae,
+  ADTTE = pharmaverseadam::adtte
+)
+
+# Build app
+app <- init(
+  data = data,
+  modules = modules(
+    # Demographics
+    tm_t_summary(
+      label = "Demographics Table",
+      dataname = "ADSL",
+      arm_var = choices_selected("ARM", "ARM"),
+      summarize_vars = choices_selected(
+        c("AGE", "SEX", "RACE"),
+        c("AGE", "SEX")
+      )
+    ),
+    
+    # Adverse Events
+    tm_t_events_summary(
+      label = "Adverse Events",
+      dataname = "ADAE",
+      arm_var = choices_selected("ARM", "ARM"),
+      flag_var_anl = choices_selected("ANL01FL", "ANL01FL")
+    ),
+    
+    # Kaplan-Meier
+    tm_g_km(
+      label = "Survival Analysis",
+      dataname = "ADTTE",
+      arm_var = choices_selected("ARM", "ARM"),
+      paramcd = choices_selected("PARAMCD", "OS")
+    )
+  ),
+  title = "Clinical Trial Explorer"
+)
+
+shinyApp(app$ui, app$server)
+```
+
+## Workshop Exercises
+
+### Exercise 1: Basic App (30 min)
+
+**Goal:** Create simple data exploration app
+
+**Tasks:**
+- Load ADSL dataset
+- Add data table module
+- Add variable browser
+- Run and explore
+
+### Exercise 2: Demographics Module (45 min)
+
+**Goal:** Build demographics summary
+
+**Tasks:**
+- Configure demographics module
+- Select variables to summarize
+- Add treatment arm comparison
+- Generate table
+
+### Exercise 3: Adverse Events (45 min)
+
+**Goal:** Create AE summary app
+
+**Tasks:**
+- Load ADAE dataset
+- Configure AE module
+- Filter by severity
+- Add system organ class view
+
+### Exercise 4: Survival Analysis (45 min)
+
+**Goal:** Add Kaplan-Meier plots
+
+**Tasks:**
+- Load ADTTE dataset
+- Configure KM module
+- Add risk tables
+- Customize plot appearance
+
+### Exercise 5: Complete Clinical App (60 min)
+
+**Goal:** Combine everything
+
+**Tasks:**
+- Multiple modules
+- Data filtering
+- Custom styling
+- Code generation
+- Export capabilities
+
+## Advanced Topics
+
+### Custom Modules
+
+Create your own {teal} modules:
+
+```r
+tm_my_custom_module <- function(label, dataname) {
+  module(
+    label = label,
+    server = function(input, output, session, data) {
+      # Your server logic
+    },
+    ui = function(id) {
+      # Your UI
+    }
+  )
+}
+```
+
+### Data Filtering
+
+Global filters across all modules:
+
+```r
+app <- init(
+  data = data,
+  modules = modules(...),
+  filter = teal_slices(
+    teal_slice(dataname = "ADSL", varname = "SAFFL", selected = "Y"),
+    teal_slice(dataname = "ADAE", varname = "AESER", selected = "Y")
+  )
+)
+```
+
+### Code Generation
+
+Users can extract R code for reproducibility:
+
+```r
+# Built-in "Show R Code" button
+# Generates exact code to reproduce current view
+# Can be run independently
+```
+
+## Real-World Applications
+
+### Clinical Study Reports
+- Interactive data review
+- Ad-hoc analyses
+- Quality checks
+- Stakeholder presentations
+
+### Safety Monitoring
+- Real-time AE tracking
+- Signal detection
+- Dose-escalation decisions
+- DSMB reports
+
+### Efficacy Analysis
+- Endpoint visualization
+- Subgroup exploration
+- Sensitivity analyses
+- Forest plots
+
+### Exploratory Analysis
+- Hypothesis generation
+- Biomarker discovery
+- Population characterization
+- Covariate relationships
+
+## Benefits of {teal}
+
+### For Statisticians
+- ✅ Fast exploration without coding
+- ✅ Reproducible analyses
+- ✅ Code generation
+- ✅ Publication-ready outputs
+
+### For Programmers
+- ✅ Modular development
+- ✅ Reusable components
+- ✅ Validated framework
+- ✅ Extensible architecture
+
+### For Organizations
+- ✅ Consistency across studies
+- ✅ Reduced development time
+- ✅ GxP compliance ready
+- ✅ Lower training burden
+
+## Deployment
+
+### Local
+```r
+# Run locally
+shinyApp(app$ui, app$server)
+```
+
+### Posit Connect
+```r
+# Deploy to Connect
+rsconnect::deployApp(
+  appDir = "path/to/app",
+  appTitle = "Clinical Trial Explorer"
+)
+```
+
+### Docker
+Package as Docker container for enterprise deployment.
+
+## Best Practices
+
+### Design
+- Keep modules focused
+- Use meaningful labels
+- Provide helpful tooltips
+- Test with real users
+
+### Performance
+- Pre-process data when possible
+- Use reactive expressions wisely
+- Implement caching
+- Monitor memory usage
+
+### Validation
+- Document module behavior
+- Test edge cases
+- Version control
+- Maintain change log
+
+## Learning Outcomes
+
+✅ Understand {teal} architecture  
+✅ Build basic {teal} applications  
+✅ Use clinical modules effectively  
+✅ Create custom modules  
+✅ Implement data filtering  
+✅ Deploy production-ready apps  
+✅ Ensure reproducibility
+
+## Resources
+
+**Documentation:**
+- {teal} website with vignettes
+- Module reference guides
+- API documentation
+
+**Community:**
+- Pharmaverse Slack (#teal channel)
+- GitHub discussions
+- Monthly office hours
+
+**Examples:**
+- Gallery of {teal} apps
+- Template repositories
+- Use case studies
+
+## Next Steps
+
+After the workshop:
+
+1. **Practice** - Build an app for your data
+2. **Explore** - Try different modules
+3. **Customize** - Create custom modules
+4. **Deploy** - Share with your team
+5. **Contribute** - Join pharmaverse community
+
+---
+
+*Last updated: November 2025 | R/Pharma 2025 Conference*

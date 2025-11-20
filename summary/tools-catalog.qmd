@@ -1,0 +1,775 @@
+---
+title: "Tools & Packages Catalog"
+subtitle: "Complete A-Z reference of tools mentioned at R/Pharma 2025"
+toc: true
+---
+
+## Overview
+
+This catalog documents all R packages, Python libraries, and tools mentioned across the 16 workshops and 30+ presentations at R/Pharma 2025. Entries include descriptions, primary use cases, and links to where they were discussed.
+
+::: {.callout-note}
+## Popularity Indicators
+
+Packages are marked with mentions:
+- 🔥🔥🔥 **5+ mentions** - Hot topic, widespread interest
+- 🔥🔥 **3-4 mentions** - Multiple sessions
+- 🔥 **1-2 mentions** - Emerging or specialized
+:::
+
+---
+
+## R Packages
+
+### A
+
+#### {admiral} 🔥🔥
+**ADaM in R Asset Library**
+
+Modular R package for creating ADaM datasets. Part of pharmaverse ecosystem, transitioning from active development to stable maintenance.
+
+- **Use Cases:** ADaM dataset creation, CDISC compliance
+- **Mentioned in:** [Presentations - admiral's Journey](../presentations/europe-us-sessions.qmd#r-we-there-yet-admirals-journey-to-stability)
+- **Links:** [pharmaverse.github.io/admiral](https://pharmaverse.github.io/admiral/)
+
+---
+
+### B
+
+#### {beeca} 🔥
+**Bayesian Covariate Adjustment**
+
+Lightweight R package implementing FDA 2023 covariate adjustment guidance.
+
+- **Use Cases:** Covariate adjustment, regulatory compliance
+- **Mentioned in:** [Presentations - Covariate Adjustment](../presentations/europe-us-sessions.qmd#adapting-to-regulatory-guidance)
+- **Developer:** Novartis
+
+#### {bmstate} 🔥
+**Bayesian Multistate Models**
+
+Stan-based package for Bayesian survival and multistate models in clinical trials.
+
+- **Use Cases:** Time-to-event analysis, competing risks
+- **Mentioned in:** [Workshop - Bayesian Survival](../workshops/statistical-methods/bayesian-survival.qmd)
+- **Links:** [github.com/generable/bmstate](https://github.com/generable/bmstate)
+
+---
+
+### C
+
+#### {cardinal} 🔥🔥
+**Standardized Clinical TLG Templates**
+
+Open-source collection of table, listing, and graph templates aligned with CDISC standards.
+
+- **Use Cases:** TFLs, CSRs, meta-analysis, harmonized outputs
+- **Mentioned in:** [Workshop - Cardinal](../workshops/clinical-reporting/cardinal-tlgs.qmd)
+- **Links:** [pharmaverse.github.io/cardinal](https://pharmaverse.github.io/cardinal/)
+
+#### {cards} 🔥🔥🔥
+**Analysis Results Data Objects**
+
+Creates language-agnostic Analysis Results Data (ARD) objects for clinical reporting.
+
+- **Use Cases:** ARD generation, QC, multi-language results
+- **Mentioned in:** Cardinal workshop, {crane}, PMDA inquiries, LLM-powered tables
+- **Links:** Part of {gtsummary} ecosystem
+
+#### {cgmguru} 🔥
+**Continuous Glucose Monitoring Analysis**
+
+Automated glycemic event detection from CGM data.
+
+- **Use Cases:** Diabetes trials, CGM analysis
+- **Mentioned in:** [Asia/Pacific Presentations](../presentations/asia-pacific-sessions.qmd#cgmguru-automated-glycemic-event-detection)
+
+#### {chromote} 🔥
+**Chrome Remote Interface**
+
+Headless Chrome control for testing Shiny apps.
+
+- **Use Cases:** Shiny app testing, validation, ATDD
+- **Mentioned in:** [Presentations - ATDD](../presentations/europe-us-sessions.qmd#r-library-validation-using-atdd)
+
+#### {crane} 🔥🔥
+**Extension to {gtsummary}**
+
+Pharmaceutical-specific extensions to {gtsummary} with ARD-based QC.
+
+- **Use Cases:** Clinical tables, regulatory submissions, QC workflows
+- **Mentioned in:** [Presentations - Beyond gtsummary](../presentations/europe-us-sessions.qmd#beyond-gtsummary-the-crane-package)
+- **Developer:** Genentech
+- **Links:** [danieldsjoberg.com/RinPharma-crane-2025](https://www.danieldsjoberg.com/RinPharma-crane-2025/)
+
+---
+
+### D
+
+#### {datasetjson} 🔥
+**CDISC Dataset-JSON Support**
+
+Read and write CDISC Dataset-JSON format in R and Python.
+
+- **Use Cases:** Modern data exchange, CDISC compliance
+- **Mentioned in:** [Workshop - datasetjson](../workshops/development-validation/datasetjson.qmd)
+- **Links:** [atorus-research.github.io/datasetjson](https://atorus-research.github.io/datasetjson/)
+
+#### {devtools} 🔥🔥
+**Package Development Tools**
+
+Essential package for R package development.
+
+- **Use Cases:** Package creation, testing, documentation
+- **Mentioned in:** [Workshop - Building R Packages](../workshops/development-validation/building-r-packages.qmd)
+- **Links:** [devtools.r-lib.org](https://devtools.r-lib.org/)
+
+#### {dplyr} 🔥🔥
+**Data Manipulation**
+
+Core tidyverse package for data transformation.
+
+- **Use Cases:** Data wrangling, pipelines
+- **Mentioned in:** Multiple workshops (implicit in many examples)
+
+#### {duckplyr} 🔥
+**DuckDB with dplyr Syntax**
+
+dplyr backend using DuckDB for performance.
+
+- **Use Cases:** Large data, Parquet files, performance
+- **Mentioned in:** [Presentations - duckplyr](../presentations/europe-us-sessions.qmd#duckplyr-analyze-large-data-with-duckdb)
+- **Links:** Stable v1.1.2 on CRAN
+
+---
+
+### E
+
+#### {ellmer} 🔥🔥🔥🔥🔥
+**LLM Integration for R**
+
+Unified interface for working with Large Language Models from R.
+
+- **Use Cases:** AI integration, chatbots, tool calling
+- **Mentioned in:** [Workshop - LLM APIs](../workshops/ai-llm/getting-started-llm-apis.qmd), [Workshop - LLM Tooling](../workshops/ai-llm/guided-tour-llm-tooling.qmd), multiple presentations
+- **Developer:** Posit
+- **Links:** [posit-dev.github.io/ellmer](https://posit-dev.github.io/ellmer)
+
+---
+
+### F
+
+#### {flextable} 🔥🔥🔥
+**Flexible Tables**
+
+Create publication-quality tables with fine-grained control.
+
+- **Use Cases:** Clinical reports, Word documents, pharmaceutical tables
+- **Mentioned in:** [Workshop - officer/flextable](../workshops/clinical-reporting/officer-flextable.qmd), multiple presentations
+- **Developer:** David Gohel (Ardata)
+- **Links:** [ardata.fr/flextable-book](https://ardata.fr/packages/flextable/)
+
+---
+
+### G
+
+#### {ggplot2} 🔥🔥
+**Grammar of Graphics**
+
+The standard for data visualization in R.
+
+- **Use Cases:** Publication-ready plots, clinical graphics
+- **Mentioned in:** officer/flextable workshop, multiple examples
+
+#### {gt} 🔥
+**Grammar of Tables**
+
+Modern table creation with flexible styling.
+
+- **Use Cases:** HTML tables, dashboards
+- **Mentioned in:** Cardinal workshop (gt backend for gtsummary)
+- **Links:** [gt.rstudio.com](https://gt.rstudio.com/)
+
+#### {gtsummary} 🔥🔥🔥🔥
+**Summary Tables**
+
+Create publication-ready summary tables with minimal code.
+
+- **Use Cases:** Demographics, safety, efficacy tables
+- **Mentioned in:** [Workshop - Cardinal](../workshops/clinical-reporting/cardinal-tlgs.qmd), {crane}, LLM-powered tables, multiple presentations
+- **Links:** [danieldsjoberg.com/gtsummary](https://www.danieldsjoberg.com/gtsummary/)
+
+---
+
+### L
+
+#### {llumen} 🔥🔥
+**Agentic LLM Framework (Internal)**
+
+Merck KGaA's internal package for biomedical documents, databases, and foundation models.
+
+- **Use Cases:** Document extraction, database querying, RAG, histopathology
+- **Mentioned in:** [Presentations - llumen](../presentations/europe-us-sessions.qmd#llumen-agentic-llm-framework-for-biomedical-documents)
+- **Status:** Internal Merck package
+
+---
+
+### M
+
+#### {mcpr} 🔥🔥
+**Model Context Protocol in R**
+
+R implementation of Model Context Protocol for AI integration.
+
+- **Use Cases:** AI tool servers, MCP clients, standardized AI interfaces
+- **Mentioned in:** [Workshop - LLM Tooling](../workshops/ai-llm/guided-tour-llm-tooling.qmd), [Presentations - MCP](../presentations/europe-us-sessions.qmd#build-model-context-protocol-servers-in-r)
+- **Links:** Standards-based AI integration
+
+#### {meRlin} 🔥
+**AI Assistant for Clinical Programming**
+
+Context-aware AI assistant specifically for clinical programming.
+
+- **Use Cases:** Code suggestions, clinical programming patterns
+- **Mentioned in:** [Asia/Pacific Presentations](../presentations/asia-pacific-sessions.qmd#merlin-context-aware-ai-assistant-for-clinical-programming)
+
+---
+
+### O
+
+#### {officer} 🔥🔥🔥
+**Manipulate Microsoft Word Documents**
+
+Create and modify Word documents programmatically.
+
+- **Use Cases:** CSRs, clinical reports, automated documentation
+- **Mentioned in:** [Workshop - officer/flextable](../workshops/clinical-reporting/officer-flextable.qmd)
+- **Developer:** David Gohel (Ardata)
+- **Links:** [ardata.fr/officer-book](https://ardata.fr/packages/officer/)
+
+---
+
+### P
+
+#### {parsnip} 🔥
+**Unified ML Interface**
+
+Part of tidymodels, provides consistent interface for models.
+
+- **Use Cases:** Machine learning, classification, regression
+- **Mentioned in:** [Workshop - tidymodels](../workshops/statistical-methods/r-classification-tidymodels.qmd)
+
+#### {pkgdown} 🔥
+**Package Websites**
+
+Generate websites from R package documentation.
+
+- **Use Cases:** Package documentation, user guides
+- **Mentioned in:** [Workshop - Building Packages](../workshops/development-validation/building-r-packages.qmd)
+
+#### {PKNCA} 🔥
+**Pharmacokinetic Non-Compartmental Analysis**
+
+Calculate 200+ PK parameters for NCA.
+
+- **Use Cases:** PK analysis, NCA studies
+- **Mentioned in:** [Presentations - aNCA](../presentations/europe-us-sessions.qmd#implementing-end-to-end-nca-software)
+- **Links:** Powers aNCA app
+
+#### {pointblank} 🔥🔥
+**Data Validation and Documentation**
+
+Comprehensive data quality and documentation workflows.
+
+- **Use Cases:** Data validation, quality checks, documentation, SDTM compliance
+- **Mentioned in:** [Workshop - pointblank](../workshops/clinical-reporting/pointblank.qmd)
+- **Developer:** Rich Iannone (Posit)
+- **Links:** [github.com/rich-iannone/pointblank-workshop](https://github.com/rich-iannone/pointblank-workshop)
+
+---
+
+### R
+
+#### {ragnar} 🔥🔥
+**Retrieval-Augmented Generation**
+
+Vector database and RAG functionality for R.
+
+- **Use Cases:** Document search, context retrieval, AI applications
+- **Mentioned in:** [Workshop - LLM Clinical Data](../workshops/ai-llm/llm-clinical-data-privacy.qmd), {DataChat}
+
+#### {recipes} 🔥
+**Preprocessing for Modeling**
+
+Part of tidymodels, feature engineering and preprocessing.
+
+- **Use Cases:** Data preprocessing, ML pipelines
+- **Mentioned in:** [Workshop - tidymodels](../workshops/statistical-methods/r-classification-tidymodels.qmd)
+
+#### {riskassessment} 🔥🔥
+**Package Risk Assessment**
+
+Shiny app for package validation and risk assessment.
+
+- **Use Cases:** Validation workflows, package quality assessment
+- **Mentioned in:** [Workshop - R Validation](../workshops/development-validation/r-validation-discussion.qmd)
+- **Links:** R Validation Hub
+
+#### {riskmetric} 🔥🔥
+**Risk Metrics for Packages**
+
+Calculate risk metrics for R package validation.
+
+- **Use Cases:** Package assessment, validation
+- **Mentioned in:** [Workshop - R Validation](../workshops/development-validation/r-validation-discussion.qmd)
+- **Links:** R Validation Hub
+- **Links:** [pharmar.github.io/riskmetric](https://pharmar.github.io/riskmetric/)
+
+#### {RobinCar2} 🔥
+**Covariate Adjustment Methods**
+
+ASA-BIOP working group package for covariate adjustment.
+
+- **Use Cases:** FDA guidance compliance, covariate adjustment
+- **Mentioned in:** [Presentations - Covariate Adjustment](../presentations/europe-us-sessions.qmd#adapting-to-regulatory-guidance)
+
+#### {roxygen2} 🔥🔥
+**Documentation Generation**
+
+Generate R documentation from code comments.
+
+- **Use Cases:** Package documentation, help pages
+- **Mentioned in:** [Workshop - Building Packages](../workshops/development-validation/building-r-packages.qmd)
+
+#### {rpact} 🔥
+**Clinical Trial Design and Simulation**
+
+Comprehensive package for adaptive and group sequential designs.
+
+- **Use Cases:** Trial design, simulation, sample size
+- **Mentioned in:** [Workshop - rpact](../workshops/statistical-methods/rpact-trial-design.qmd)
+- **Links:** [rpact.org](https://www.rpact.org/)
+
+#### {rsample} 🔥
+**Data Splitting and Resampling**
+
+Part of tidymodels, train/test splitting and cross-validation.
+
+- **Use Cases:** ML workflows, resampling
+- **Mentioned in:** [Workshop - tidymodels](../workshops/statistical-methods/r-classification-tidymodels.qmd)
+
+---
+
+### S
+
+#### {sdtm.oak} 🔥
+**SDTM Programming Framework**
+
+EDC-agnostic SDTM dataset creation with reusable algorithms.
+
+- **Use Cases:** SDTM programming, CDISC compliance
+- **Mentioned in:** [Workshop - SDTM oak](../workshops/specialized/sdtm-oak.qmd)
+- **Links:** Pharmaverse
+
+#### {shiny} 🔥🔥🔥
+**Interactive Web Applications**
+
+Framework for building interactive web apps in R.
+
+- **Use Cases:** Dashboards, clinical data exploration, interactive tools
+- **Mentioned in:** Multiple workshops (teal, HPC, DataChat, validating Shiny)
+
+#### {shinychat} 🔥🔥🔥
+**Chatbot Interface for Shiny**
+
+Add conversational interfaces to Shiny apps.
+
+- **Use Cases:** LLM interfaces, chatbots, conversational UIs
+- **Mentioned in:** [Workshop - LLM APIs](../workshops/ai-llm/getting-started-llm-apis.qmd), DataChat
+- **Developer:** Posit
+
+#### {synthpop} 🔥
+**Synthetic Data Generation**
+
+Generate synthetic datasets using machine learning.
+
+- **Use Cases:** Privacy-preserving data, testing, sharing
+- **Mentioned in:** [Presentations - Synthetic Data](../presentations/europe-us-sessions.qmd#generating-synthetic-data-with-synthpop)
+
+---
+
+### T
+
+#### {teal} 🔥🔥
+**Interactive Clinical Trial Apps**
+
+Framework for building interactive data exploration apps.
+
+- **Use Cases:** Clinical data exploration, interactive analysis
+- **Mentioned in:** [Workshop - teal](../workshops/specialized/teal-framework.qmd)
+- **Version:** 1.0 released
+- **Developer:** Roche/Genentech
+- **Links:** Part of pharmaverse
+
+#### {testthat} 🔥🔥
+**Unit Testing**
+
+Standard testing framework for R packages.
+
+- **Use Cases:** Package testing, validation, QC
+- **Mentioned in:** [Workshop - Building Packages](../workshops/development-validation/building-r-packages.qmd)
+
+#### {tidymodels} 🔥🔥
+**Machine Learning Framework**
+
+Comprehensive ecosystem for modeling and ML in R.
+
+- **Use Cases:** Classification, regression, ML workflows
+- **Mentioned in:** [Workshop - tidymodels Classification](../workshops/statistical-methods/r-classification-tidymodels.qmd)
+- **Links:** [tidymodels.org](https://www.tidymodels.org/)
+
+---
+
+### U
+
+#### {usethis} 🔥🔥
+**Package Development Workflow**
+
+Automate package setup and development tasks.
+
+- **Use Cases:** Package creation, git setup, GitHub integration
+- **Mentioned in:** [Workshop - Building Packages](../workshops/development-validation/building-r-packages.qmd)
+- **Links:** [usethis.r-lib.org](https://usethis.r-lib.org/)
+
+---
+
+### V
+
+#### {val.criterion} 🔥
+**Validation Criteria**
+
+Define validation criteria for package assessment.
+
+- **Use Cases:** Validation standards, quality thresholds
+- **Mentioned in:** [Workshop - R Validation](../workshops/development-validation/r-validation-discussion.qmd)
+- **Links:** R Validation Hub
+
+#### {val.meter} 🔥
+**Validation Metrics**
+
+Store and retrieve validation metrics.
+
+- **Use Cases:** Metric repository, shared validation database
+- **Mentioned in:** [Workshop - R Validation](../workshops/development-validation/r-validation-discussion.qmd)
+- **Links:** R Validation Hub
+
+---
+
+### Y
+
+#### {yardstick} 🔥
+**Model Performance Metrics**
+
+Part of tidymodels, calculate model performance metrics.
+
+- **Use Cases:** Model evaluation, ML metrics
+- **Mentioned in:** [Workshop - tidymodels](../workshops/statistical-methods/r-classification-tidymodels.qmd)
+
+---
+
+## Python Libraries
+
+### polars 🔥🔥
+**High-Performance DataFrames**
+
+Blazingly fast DataFrame library with Apache Arrow backend.
+
+- **Use Cases:** Large data processing, clinical trial data exploration
+- **Mentioned in:** [Workshop - Polars Python](../workshops/clinical-reporting/polars-python.qmd), [Workshop - Python CSR](../workshops/specialized/python-csr-submission.qmd)
+- **Links:** [pola.rs](https://pola.rs/)
+
+### plotnine 🔥
+**Grammar of Graphics for Python**
+
+ggplot2 equivalent for Python.
+
+- **Use Cases:** Data visualization, TFLs
+- **Mentioned in:** [Workshop - Python CSR](../workshops/specialized/python-csr-submission.qmd)
+
+### Great Tables 🔥🔥
+**Modern Table Creation**
+
+Python package for creating publication-ready tables.
+
+- **Use Cases:** TFLs, clinical reporting
+- **Mentioned in:** [Workshop - Polars](../workshops/clinical-reporting/polars-python.qmd)
+- **Developer:** Posit
+- **Links:** Launched at conference
+
+### rtflite 🔥
+**RTF Generation**
+
+Python library for RTF document generation.
+
+- **Use Cases:** Regulatory submissions, CSRs
+- **Mentioned in:** [Workshop - Python CSR](../workshops/specialized/python-csr-submission.qmd)
+
+### LangChain 🔥
+**LLM Application Framework**
+
+Popular Python framework for building LLM applications.
+
+- **Use Cases:** AI agents, tool orchestration
+- **Mentioned in:** [Workshop - LLM Tooling](../workshops/ai-llm/guided-tour-llm-tooling.qmd)
+
+### LangGraph 🔥
+**Multi-Agent Orchestration**
+
+Framework for building multi-agent LLM systems.
+
+- **Use Cases:** Complex AI workflows, agent networks
+- **Mentioned in:** [Presentations - R AI Assistant](../presentations/europe-us-sessions.qmd#building-the-ultimate-r-ai-assistant)
+- **Developer:** LangChain team
+
+### uv 🔥
+**Python Package Manager**
+
+Fast Python package and project manager.
+
+- **Use Cases:** Python environment management, reproducibility
+- **Mentioned in:** [Workshop - Python CSR](../workshops/specialized/python-csr-submission.qmd)
+
+---
+
+## External Tools & Platforms
+
+### Quarto 🔥🔥🔥🔥
+**Publishing System**
+
+Modern scientific publishing system supporting multiple formats.
+
+- **Use Cases:** Reports, presentations, websites, dashboards, brand.yml
+- **Mentioned in:** [Workshop - Branded Quarto](../workshops/clinical-reporting/branded-quarto.qmd), multiple examples
+- **Links:** [quarto.org](https://quarto.org/)
+
+### Stan 🔥🔥
+**Bayesian Inference**
+
+Platform for statistical modeling and Bayesian inference.
+
+- **Use Cases:** Bayesian models, MCMC, complex hierarchical models
+- **Mentioned in:** [Workshop - Debugging Stan](../workshops/statistical-methods/debugging-stan.qmd), [Workshop - Bayesian Survival](../workshops/statistical-methods/bayesian-survival.qmd), BayesERtools
+- **Links:** [mc-stan.org](https://mc-stan.org/)
+
+### AWS Bedrock 🔥🔥
+**Managed LLM Service**
+
+Amazon's managed service for foundational models.
+
+- **Use Cases:** Enterprise LLM deployment, GxP compliance
+- **Mentioned in:** [Workshop - LLM Tooling](../workshops/ai-llm/guided-tour-llm-tooling.qmd)
+
+### Docker 🔥🔥
+**Containerization**
+
+Platform for deploying applications in containers.
+
+- **Use Cases:** Reproducibility, deployment, validation
+- **Mentioned in:** [Presentations - Traceability](../presentations/europe-us-sessions.qmd#integrating-collaborative-programming-with-traceability)
+
+### GitHub Actions 🔥🔥
+**CI/CD**
+
+Automation platform for building, testing, and deploying.
+
+- **Use Cases:** Automated testing, validation, deployment
+- **Mentioned in:** Multiple workshops (package dev, validation)
+
+### Posit Workbench 🔥🔥
+**Development Platform**
+
+Commercial RStudio IDE for teams (formerly RStudio Workbench).
+
+- **Use Cases:** Team collaboration, enterprise R/Python development
+- **Mentioned in:** GSK journey, multiple enterprise examples
+- **Links:** [posit.co](https://posit.co/)
+
+### Posit Connect 🔥
+**Publishing Platform**
+
+Share R/Python content (Shiny, reports, APIs).
+
+- **Use Cases:** Shiny deployment, report distribution
+- **Mentioned in:** HPC workshop, enterprise deployments
+
+### RPACT Cloud 🔥
+**Trial Design Platform**
+
+User-friendly platform for {rpact} trial design.
+
+- **Use Cases:** Clinical trial design, simulations
+- **Mentioned in:** [Workshop - rpact](../workshops/statistical-methods/rpact-trial-design.qmd)
+- **Links:** [cloud.rpact.com](https://cloud.rpact.com/)
+
+### MCP (Model Context Protocol) 🔥🔥
+**AI Integration Standard**
+
+Standardized protocol for AI tool integration.
+
+- **Use Cases:** Cross-platform AI tools, standardized interfaces
+- **Mentioned in:** Multiple AI/LLM workshops and presentations
+- **Links:** [modelcontextprotocol.io](https://modelcontextprotocol.io)
+
+### Claude Code 🔥
+**AI Coding Assistant**
+
+Anthropic's coding assistant using Claude.
+
+- **Use Cases:** AI-assisted coding, MCP integration
+- **Mentioned in:** MCP presentations
+
+### Cursor 🔥
+**AI Code Editor**
+
+AI-powered code editor with MCP support.
+
+- **Use Cases:** AI-assisted development
+- **Mentioned in:** MCP presentations, Roche AI assistant
+
+---
+
+## Specialized Applications
+
+### aNCA 🔥
+**Non-Compartmental Analysis App**
+
+Open-source Shiny app for PK analysis.
+
+- **Status:** Upcoming CRAN release
+- **Backend:** {PKNCA}
+- **Mentioned in:** [Presentations - NCA](../presentations/europe-us-sessions.qmd#implementing-end-to-end-nca-software)
+- **Links:** [github.com/pharmaverse/aNCA](https://github.com/pharmaverse/aNCA)
+
+### autoslideR 🔥🔥
+**Slide Deck Automation**
+
+R package for automating clinical reporting slide decks.
+
+- **Developer:** Roche
+- **Mentioned in:** [Presentations - autoslideR](../presentations/europe-us-sessions.qmd#autoslider-streamlining-slide-deck-generation)
+- **Links:** [pharmaverse.github.io/examples/digit_files/autoslider.html](https://pharmaverse.github.io/examples/digit_files/autoslider.html)
+
+### DataChat 🔥
+**Conversational Clinical Data Interface**
+
+Shiny app for natural language queries on clinical data.
+
+- **Developer:** CIMS Global
+- **Mentioned in:** [Workshop - LLM Clinical Data](../workshops/ai-llm/llm-clinical-data-privacy.qmd)
+
+### Databot 🔥
+**Data Analysis Assistant**
+
+Posit's LLM-powered data analysis tool.
+
+- **Mentioned in:** [Presentations - LLM Lounge](../presentations/europe-us-sessions.qmd#the-llm-lounge-live-coding-with-databot)
+- **Links:** [github.com/posit-dev/querychat](https://github.com/posit-dev/querychat)
+
+### Mosaic 🔥
+**ARS-Driven TFL Platform**
+
+Novartis platform for automated TFL generation.
+
+- **Architecture:** YAML → Python → R → React UI
+- **Mentioned in:** [Presentations - Mosaic](../presentations/europe-us-sessions.qmd#mosaic-ars-driven-automation-of-standard-tfls)
+
+### Litmusverse 🔥
+**Shiny Validation Suite**
+
+Jumping Rivers' suite for Shiny app validation.
+
+- **Mentioned in:** [Presentations - Validating Shiny](../presentations/europe-us-sessions.qmd#validating-shiny-apps-in-regulated-environments)
+
+---
+
+## Standards & Specifications
+
+### CDISC ARS/ARM 🔥🔥🔥
+**Analysis Results Standard**
+
+Emerging standard for machine-readable analysis results.
+
+- **Impact:** Driving automation (Mosaic, {cards}, {crane})
+- **Mentioned in:** Multiple workshops and presentations
+
+### CDISC SDTM 🔥🔥
+**Study Data Tabulation Model**
+
+Standard for clinical trial data submission.
+
+- **Mentioned in:** Multiple workshops ({sdtm.oak}, validation, data handling)
+
+### CDISC ADaM 🔥🔥
+**Analysis Data Model**
+
+Standard for analysis datasets.
+
+- **Mentioned in:** {admiral}, multiple analysis workshops
+
+---
+
+## 📊 Most Mentioned Tools
+
+### Top 10 by Mentions
+
+1. **{ellmer}** - 5+ mentions (AI/LLM integration)
+2. **Quarto** - 4+ mentions (Publishing)
+3. **{gtsummary}** - 4+ mentions (Clinical tables)
+4. **{cards}** - 3+ mentions (ARD)
+5. **{officer}/{flextable}** - 3+ mentions (Word reports)
+6. **{shinychat}** - 3+ mentions (Chatbots)
+7. **{teal}** - 2+ mentions (Interactive apps)
+8. **Stan** - 2+ mentions (Bayesian)
+9. **{tidymodels}** - 2+ mentions (ML)
+10. **{pointblank}** - 2+ mentions (Validation)
+
+---
+
+## 🎯 By Use Case
+
+### AI/LLM Integration
+{ellmer}, {mcpr}, {shinychat}, {ragnar}, {llumen}, LangChain, LangGraph, AWS Bedrock, MCP
+
+### Clinical Reporting
+{gtsummary}, {crane}, {cardinal}, {cards}, {officer}, {flextable}, Quarto, Great Tables, autoslideR
+
+### Data Validation
+{pointblank}, {riskmetric}, {riskassessment}, Litmusverse
+
+### Package Development
+{devtools}, {usethis}, {testthat}, {roxygen2}, {pkgdown}
+
+### Statistical Analysis
+Stan, {rpact}, {tidymodels}, {bmstate}, BayesERtools
+
+### CDISC Compliance
+{admiral}, {sdtm.oak}, {datasetjson}, ARS/ARM
+
+### High Performance
+polars, {duckplyr}, Apache Arrow, HPC integration
+
+---
+
+::: {.callout-tip}
+## Finding the Right Tool
+
+Use this catalog to:
+- Discover tools for your specific use case
+- Compare alternatives (e.g., {officer} vs Quarto for reports)
+- Identify dependencies (e.g., {gtsummary} uses {cards})
+- Plan your learning path (prerequisites and related tools)
+:::
+
+---
+
+*Compiled from R/Pharma 2025 Conference materials | Last updated: November 2025*

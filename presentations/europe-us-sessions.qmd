@@ -1,0 +1,429 @@
+---
+title: "Europe/US Sessions"
+subtitle: "8 thematic sessions with 30+ presentations"
+toc: true
+---
+
+## Session 1: Practical AI & Industry Adoption
+
+### Practical AI for Data Science
+**Simon Couch** (Posit)
+
+Focus on unglamorous but practical AI uses in pharma: structured data extraction, tool calling, and coding assistance. Using `{ellmer}` for secure, on-premise deployments that protect proprietary information.
+
+**Key Points:**
+- Most AI discourse focuses on flashy applications, but practical uses dominate daily work
+- Secure deployments enable AI even with confidential data
+- Three core use cases: extraction, tool calling, coding
+
+**Resources:** [github.com/simonpcouch](https://github.com/simonpcouch)
+
+---
+
+## Session 2: Data Engineering & Training
+
+### duckplyr: Analyze Large Data with DuckDB
+**Kirill Muller** (Cynkra)
+
+Stable release (v1.1.2) of `{duckplyr}` brings DuckDB's performance to dplyr syntax. Handle larger-than-memory data from disk or cloud with familiar tidyverse semantics.
+
+**Key Features:**
+- Speed up existing dplyr code
+- Analyze Parquet/CSV directly
+- Access DuckDB functionality
+- Maintain R/tidyverse compatibility
+
+### Beyond Training: Teaching R Adoption at GSK
+**Alanah Jonas** (GSK)
+
+GSK's evolution from basic R courses to **Rburst** - a comprehensive support model embedding R into daily workflows across Biostatistics.
+
+**Evolution:**
+1. Two core courses in bookdown
+2. Self-certification and Resource Hub
+3. AccelerateR for early adopters
+4. Rburst for cross-functional integration
+
+### Validating Shiny Apps in Regulated Environments
+**Pedro Silva** (Jumping Rivers)
+
+Practical validation approaches for Shiny in clinical/healthcare settings using **Litmusverse** suite.
+
+**Key Topics:**
+- Traceability and documentation
+- Risk-based validation
+- Versioning strategies
+- Code quality assessment tools
+
+### Beyond {gtsummary}: The {crane} Package
+**Daniel Sjoberg, Davide Garolini** (Genentech)
+
+`{crane}` extends `{gtsummary}` for pharmaceutical reporting with ARD-based QC and LLM summarization.
+
+**Advantages:**
+1. Instant upgrades when `{crane}` is loaded
+2. ARD-based QC is straightforward
+3. LLMs summarize results for medical writers
+4. Adapt for your needs or build your own
+
+**Resources:** [danieldsjoberg.com/RinPharma-crane-2025](https://www.danieldsjoberg.com/RinPharma-crane-2025/)
+
+---
+
+## Session 3: Advanced AI Systems
+
+### {llumen}: Agentic LLM Framework for Biomedical Documents
+**Sven-Eric Schelhorn** (Merck KGaA)
+
+Internal package at Merck enabling pharmaceutical researchers to work with biomedical documents, databases, and foundation models using LLMs as orchestrators.
+
+**Capabilities:**
+- Multi-source LLMs (Azure, OpenAI, local)
+- Vector DB with office document support (Word, Excel, PDF)
+- RAG with PaperQA2 approach
+- Database querying (SQL, Cypher, GraphQL)
+- Foundation models (e.g., TxGemma)
+- Histopathology image analysis
+
+**Use Cases:**
+1. Extract results from clinical trial documents
+2. Query tabular databases and knowledge graphs
+3. Biological foundation models integration
+4. Automated literature review
+5. Histopathology analysis
+6. Drug discovery support
+
+**Resources:** [Drive presentation](https://drive.google.com/file/d/1g0_O_wSoeBHzeXl6DF3-NIY7gT2Bk62_/view)
+
+### Build Model Context Protocol Servers in R
+**John Coene** (Opifex)
+
+`{mcpr}` provides R implementation of Model Context Protocol (MCP) - standardized JSON-RPC interface for AI models.
+
+**Features:**
+- Schema-based tool definitions
+- Multi-modal responses
+- Integration with Claude Code, Cursor, VS Code
+- Server and client functionality
+
+**Impact:** Democratizes AI-R integration with standards-based approach.
+
+---
+
+## Session 4: Automation & Innovation
+
+### Mosaic: ARS-Driven Automation of Standard TFLs
+**Conor Moloney** (Novartis)
+
+CDISC Analysis Results Standard (ARS) coupled with open-source stack for automated TFL generation.
+
+**Architecture:**
+1. YAML captures ARD requirements (ARS-aligned)
+2. LinkML validation
+3. Python storage via SQL Alchemy
+4. R derives ARD (language-agnostic rules)
+5. React UI for customization and export
+
+**Benefits:**
+- Replaces ad-hoc programming
+- Standards-based pipeline
+- Accelerates delivery
+- Safeguards traceability
+
+### Integrating Collaborative Programming with Traceability
+**Jennifer Dusendang, Sundeep Bath** (Graticule Inc)
+
+Adapting DevOps best practices for epidemiological studies and RWD projects.
+
+**Implementation:**
+- Parameterized pipelines in Docker containers
+- CI/CD for automatic reanalysis
+- Code review with validated outputs
+- Automated traceability and audit trails
+
+**Tools:** Git, GitHub Actions, SQL, Python, R, Docker, AWS S3
+
+**Resources:** [PharmaSUG 2025 Paper](https://www.lexjansen.com/pharmasug/2025/OS/PharmaSUG-2025-OS-111.pdf)
+
+---
+
+## Session 5: Machine Learning & AI Tools
+
+### TabPFN: Deep Learning for Tabular Data
+**Max Kuhn** (Posit)
+
+Version 2 of TabPFN offers Bayesian-like approach for tabular data with significant advantages.
+
+**Key Points:**
+- Trained on simulated tabular datasets
+- Fast inference (no training needed)
+- Emulates Bayesian posterior
+- Notable trade-offs to consider
+
+**Resources:** [topepo.github.io/2025-r-pharma](https://topepo.github.io/2025-r-pharma/#/title-slide)
+
+### The LLM Lounge: Live Coding with Databot
+**Joe Cheng, Eric Nantz**
+
+Interactive demonstration of **Databot** for exploratory data analysis.
+
+**Topics:**
+- Databot origin story
+- AI trends in life sciences
+- Guiding principles for AI tools
+- Audience Q&A format
+
+**Resources:** [github.com/posit-dev/querychat](https://github.com/posit-dev/querychat)
+
+### LLM-Powered {gtsummary}: QC-Ready Tables
+**Davide Garolini** (Roche/NEST)
+
+Workflow fusing `{gtsummary}`, `{cards}` validation, and offline LLM helper.
+
+**Process:**
+1. Create table with `{gtsummary}`
+2. Validate with `{cards}`
+3. LLM explains steps and results
+4. Generate descriptive log
+5. Rerun with real data unchanged
+
+**Benefits:** Submission-ready tables in minutes with enhanced clarity.
+
+### Post-Approval Drug Exposure Estimation
+**Feifei Yang, Yu Zhang** (AstraZeneca)
+
+R Shiny app automating post-marketing exposure calculations.
+
+**Results:**
+- Report generation: 1 week → 1 day
+- Built-in QC functions
+- Trend visualization
+- Team accessibility without training
+
+### Implementing End-to-End NCA Software
+**Gerardo Rodriguez, Jana Spinner** (Lucid Analytics)
+
+**aNCA** - open-source Non-Compartmental Analysis app within Pharmaverse.
+
+**Features:**
+- Interactive plots for exploration
+- Half-life customization
+- TLGs and report generation
+- 100% testing coverage
+- Uses PKNCA (200+ PK parameters)
+- Industry-standard validation (±0.1%)
+
+**Resources:** [github.com/pharmaverse/aNCA](https://github.com/pharmaverse/aNCA)
+
+### Integrating LLM for Clinical Data Review
+**Zhen Wu, Peng Zhang** (CIMS Global)
+
+`{DataChat}` - conversational interface for clinical data with privacy and validity emphasis.
+
+**Technologies:** `{ellmer}`, `{shinychat}`, `{ragnar}`, RAG capabilities
+
+### R We There Yet? {admiral}'s Journey to Stability
+**Edoardo Mancini** (Roche)
+
+Discussion on transitioning mature packages from active development to maintenance.
+
+**Questions Addressed:**
+- Sustaining team momentum at stability
+- New priorities post-feature completeness
+- Lessons from `{admiral}` evolution
+
+---
+
+## Session 6: Enterprise Transformation
+
+### GSK's Journey to Clinical Study Reporting Using Open Source
+**Sam Warden, Tim Colman** (GSK)
+
+Chronicles GSK's transformation from SAS-dominated era to open-source innovation.
+
+**Key Milestones:**
+- FDA clarification on software neutrality
+- Rise of R and open-source platforms
+- GSK's 50%+ open-source code commitment
+- COVID-19 acceleration
+
+**Challenges:**
+- Technical validation
+- Regulatory uncertainty
+- Cultural resistance
+- Governance and training needs
+
+**Success Factors:** Growth mindset, adaptability, collaborative vision
+
+---
+
+## Session 7: AI Integration Case Studies
+
+### Leveraging ellmer and GPT in Shiny for Trials
+**Xing Chen, Xiaolin Chang** (Moderna)
+
+AI-enhanced Shiny app for CMI data across mRNA infectious disease programs.
+
+**Features:**
+- Natural language queries → R operations
+- Interactive data exploration
+- Customizable visualizations
+- No manual coding required
+
+**Results:**
+- Faster insight extraction
+- Reduced ad-hoc programming
+- Enhanced cross-functional collaboration
+
+### autoslideR: Streamlining Slide Deck Generation
+**Yolanda Zhou, Joe Zhu** (Roche)
+
+R package automating slide decks for clinical reporting events.
+
+**Benefits:**
+- 0.5-4 days saved per deck
+- Customized layout from templates
+- Placeholder slides for rapid prep
+- Multiple event types supported
+
+**Resources:** [pharmaverse.github.io/examples/digit_files/autoslider.html](https://pharmaverse.github.io/examples/digit_files/autoslider.html)
+
+### Putting the 'R' in RWD
+**Sachin Heerah, Darren Jeng** (Pfizer)
+
+Pfizer RWD team's R package and tools for programmers with varying backgrounds.
+
+**Tools:**
+- Custom R package for database queries
+- Dual R/SAS syntax support
+- Shiny apps for workflow support
+- Code snippets in RStudio
+- Quarto website for documentation
+
+### Generating Synthetic Data with synthpop
+**Sophie Furlow** (Abbott Diagnostics)
+
+Introduction to synthetic data generation for pharma and diagnostics.
+
+**Topics:**
+- Synthetic vs simulated vs resampled data
+- Healthcare applications
+- `{synthpop}` machine learning algorithms
+- Quality evaluation features
+- Generation caveats
+
+---
+
+## Session 8: Innovation & Advanced Methods
+
+### GenAI in Production
+**Devin Pastoor** (A2-AI)
+
+Moving beyond prototypes to production AI applications in GxP contexts.
+
+**Topics:**
+- Testing approaches for GenAI
+- Validation strategies
+- Handling user interaction flexibility
+- Release and maintenance
+
+### Building the Ultimate R AI Assistant
+**Pawel Rucki** (Roche)
+
+Multi-agent R co-pilot with LangGraph framework.
+
+**Architecture:**
+- Each R package gets its own AI agent
+- Network of specialized agents
+- Context-aware code generation
+- Integration with cursor via MCP
+
+**Features:** Write, debug, and explain complex R code for clinical trials
+
+### The Dependency Whisperer: AI for Impact Analysis
+**Ming Yan, Vina Ro** (Eli Lilly)
+
+AI-powered tool for identifying dependencies in clinical programming.
+
+**Problem:** Traditional tools can't distinguish active code from comments or identify indirect dependencies.
+
+**Solution:**
+- Parses SDTM, ADaM, TFL specs/programs
+- Learns dependency structure
+- Generates graphical impact reports
+- Ensures accurate refreshes
+
+### BayesERtools: Bayesian Exposure-Response Analysis
+**Kenta Yoshida** (Genentech)
+
+New R package for Bayesian ER analysis with user-friendly interface.
+
+**Features:**
+- Linear and Emax models
+- Continuous and binary endpoints
+- Based on Stan ecosystem
+- Comprehensive online book (BayesERbook)
+
+**Resources:** [genentech.github.io/BayesERtools](https://genentech.github.io/BayesERtools/)
+
+### Adapting to Regulatory Guidance
+**Alex Przybylski** (Novartis)
+
+FDA 2023 guidance on covariate adjustment and R-enabled submissions.
+
+**Case Study:**
+- Strategic response to FDA feedback
+- Lightweight R solutions (`{beeca}`)
+- ASA-BIOP collaboration (`{RobinCar2}`)
+- Benefits of open-source community
+
+### R Library Validation using ATDD
+**Brian Repko** (ex-Novartis)
+
+Acceptance-Test Driven Development for R package libraries.
+
+**Approach:**
+- Tests written in Quarto markdown
+- "Given-when-then" format
+- Regex-matched against annotated functions
+- Can drive Shiny apps with `{chromote}`
+
+**Benefits:** Plain-language tests shareable with regulators
+
+---
+
+## 🔑 Key Themes Across Sessions
+
+### 1. AI Integration
+- Practical, secure implementations
+- Agentic systems and MCP
+- Privacy-preserving approaches
+- Production-ready validation
+
+### 2. Open Source Adoption
+- GSK leading with 50%+ R code
+- Industry-wide shift from SAS
+- Collaborative development (pharmaverse)
+- FDA acceptance growing
+
+### 3. Automation & Efficiency
+- ARS-driven TFL generation
+- Automated slide decks
+- One-day turnaround for reports
+- CI/CD for clinical workflows
+
+### 4. Validation & Compliance
+- GxP-ready AI applications
+- Risk-based validation approaches
+- Shared validation repositories
+- ATDD for package libraries
+
+### 5. Advanced Analytics
+- Bayesian methods with Stan
+- Machine learning (TabPFN)
+- Synthetic data generation
+- High-performance computing
+
+---
+
+*Europe/US Sessions from R/Pharma 2025 Conference | Last updated: November 2025*

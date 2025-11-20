@@ -1,0 +1,418 @@
+---
+title: "Career Insights"
+subtitle: "Skills, strategies, and opportunities for R professionals in pharma"
+toc: true
+---
+
+## Overview
+
+Based on the workshops, presentations, and industry trends from R/Pharma 2025, this guide provides actionable career advice for R professionals working in (or aspiring to work in) the pharmaceutical industry.
+
+------------------------------------------------------------------------
+
+## 🔥 Skills in High Demand
+
+### 1. AI/LLM Integration (🔥🔥🔥 Hot!)
+
+**Why it matters:** 8+ sessions focused on AI, representing the biggest shift in pharma programming since R adoption began.
+
+**What to learn:**
+
+-   `{ellmer}` package for LLM integration
+-   Prompt engineering basics
+-   RAG (Retrieval-Augmented Generation) concepts
+-   Model Context Protocol (MCP)
+-   Privacy-preserving AI approaches
+
+**Getting started:**
+
+-   [Workshop: Getting Started with LLM APIs](../workshops/ai-llm/getting-started-llm-apis.qmd)
+-   Experiment with ChatGPT/Claude API for data analysis tasks
+-   Build a simple Shiny chatbot with `{shinychat}`
+
+**Career impact:** Early adopters will be positioned as AI specialists in their organizations.
+
+------------------------------------------------------------------------
+
+### 2. Clinical Reporting Automation
+
+**Why it matters:** Industry moving from manual coding to template-based, automated TFL generation.
+
+**What to learn:**
+
+-   `{gtsummary}` and `{crane}` for tables
+-   `{officer}` and `{flextable}` for Word reports
+-   Quarto for multi-format publishing
+-   CDISC ARS/ARM standards
+-   `{cards}` for Analysis Results Data
+
+**Getting started:**
+
+-   [Workshop: Advanced Clinical Reporting](../workshops/clinical-reporting/officer-flextable.qmd)
+-   [Workshop: Cardinal TLGs](../workshops/clinical-reporting/cardinal-tlgs.qmd)
+-   Create a personal TFL template library
+
+**Career impact:** Ability to reduce TFL turnaround time from weeks to days makes you invaluable.
+
+------------------------------------------------------------------------
+
+### 3. Package Development & Validation
+
+**Why it matters:** Internal package development is standard practice. Validation expertise is critical for GxP environments.
+
+**What to learn:**
+
+-   `{devtools}`, `{usethis}`, `{testthat}`\
+-   Package structure and best practices
+-   Documentation with `{roxygen2}`
+-   Risk-based validation approaches
+-   `{riskmetric}` for package assessment
+
+**Getting started:**
+
+-   [Workshop: Building R Packages](../workshops/development-validation/building-r-packages.qmd)
+-   Package one of your current projects
+-   Contribute to a pharmaverse package
+
+**Career impact:** Package developers and validation experts command premium salaries and have job security.
+
+------------------------------------------------------------------------
+
+### 4. Shiny Application Development
+
+**Why it matters:** Interactive apps for clinical data exploration, AI interfaces, and decision support are proliferating.
+
+**What to learn:**
+
+-   Shiny fundamentals (reactive programming)
+-   `{teal}` framework for clinical apps
+-   Shiny app validation strategies
+-   Performance optimization
+-   Deployment (Posit Connect)
+
+**Getting started:**
+
+-   [Workshop: teal Framework](../workshops/specialized/teal-framework.qmd)
+-   Build a simple adverse event explorer
+-   Learn about Shiny app testing (`{shinytest2}`)
+
+**Career impact:** Shiny developers with validation experience are in short supply.
+
+------------------------------------------------------------------------
+
+### 5. Bayesian Methods
+
+**Why it matters:** FDA increasingly accepting Bayesian approaches. Powerful for small samples and adaptive designs.
+
+**What to learn:**
+
+-   Stan basics
+-   `{brms}` for applied modeling
+-   Bayesian workflow principles
+-   Prior specification
+-   MCMC diagnostics
+
+**Getting started:**
+
+-   [Workshop: Bayesian Survival Models](../workshops/statistical-methods/bayesian-survival.qmd)
+-   [Workshop: Debugging Stan](../workshops/statistical-methods/debugging-stan.qmd)
+-   Statistical Rethinking book/course
+
+**Career impact:** Bayesian expertise opens doors to advanced analytics roles and consulting.
+
+------------------------------------------------------------------------
+
+### 6. Data Validation & Quality
+
+**Why it matters:** Data quality is paramount in regulated environments. Validation is non-negotiable.
+
+**What to learn:**
+
+-   `{pointblank}` for data validation
+-   GxP requirements (21 CFR Part 11, EU Annex 11)
+-   IQ/OQ/PQ documentation
+-   Automated testing strategies
+
+**Getting started:**
+
+-   [Workshop: pointblank](../workshops/clinical-reporting/pointblank.qmd)
+-   Implement validation checks on your datasets
+-   Learn about validation documentation
+
+**Career impact:** Quality/validation specialists are always in demand.
+
+------------------------------------------------------------------------
+
+## 🚀 Career Paths
+
+### Entry Level → Mid Career
+
+**Typical progression:**
+
+1.  **Junior Statistical Programmer** (0-2 years)
+    -   Focus: Learn CDISC standards, basic R programming
+    -   Skills to develop: dplyr, ggplot2, SDTM/ADaM basics
+    -   Goal: Independently create simple TFLs
+2.  **Statistical Programmer** (2-5 years)
+    -   Focus: Complex TFLs, package development, validation
+    -   Skills to develop: {gtsummary}, {admiral}, git/GitHub
+    -   Goal: Lead TFL development for studies
+3.  **Senior Statistical Programmer** (5-8 years)
+    -   Focus: Automation, AI integration, team leadership
+    -   Skills to develop: Shiny, AI/LLM, validation strategies
+    -   Goal: Architect solutions, mentor juniors
+
+### Specialization Paths
+
+#### Path 1: AI/Data Science Specialist
+
+-   Focus on LLM integration, advanced analytics, ML
+-   Learn Python, Stan, cloud platforms (AWS)
+-   Become the "AI expert" in your organization
+
+#### Path 2: Clinical Reporting Architect
+
+-   Master reporting automation (officer, Quarto, ARS)
+-   Design template systems and workflows
+-   Lead efficiency initiatives
+
+#### Path 3: Validation & Compliance Lead
+
+-   Deep dive into GxP, validation frameworks
+-   Become risk assessment expert
+-   Interface with regulators and auditors
+
+#### Path 4: Open-Source Contributor
+
+-   Contribute to pharmaverse packages
+-   Build reputation in community
+-   Opportunities at Posit, pharma, consulting
+
+------------------------------------------------------------------------
+
+## 💼 For Experienced Professionals
+
+### Transitioning from SAS to R
+
+**Reality:** SAS experience is still valuable! Many organizations need people who know both.
+
+**Strategy:**
+
+1.  **Leverage your domain knowledge**
+    -   You understand clinical trials, regulations, CDISC
+    -   R syntax is learnable in weeks; expertise takes years
+2.  **Start with parallel development**
+    -   Create R versions of your SAS programs
+    -   Compare outputs (builds confidence)
+    -   Document differences and learnings
+3.  **Focus on R strengths**
+    -   Interactive visualizations (ggplot2, plotly)
+    -   Shiny apps (impossible in SAS)
+    -   Modern reporting (Quarto)
+    -   AI integration (trivial in R, hard in SAS)
+4.  **Get formal training**
+    -   GSK's success built on structured training
+    -   Invest in courses (R/Pharma workshops, Posit)
+    -   Join internal R user groups
+
+**Timeline:** 6-12 months to become productive; 18-24 months to become expert.
+
+------------------------------------------------------------------------
+
+### Moving into Leadership
+
+**Requirements for technical leadership:**
+
+-   **Technical depth:** Can solve complex problems
+-   **Strategic vision:** Understand industry trends
+-   **Communication:** Explain technical concepts to non-technical stakeholders
+-   **Mentorship:** Develop junior team members
+-   **Business acumen:** Connect technology to outcomes (cost savings, time reduction)
+
+**Positioning yourself:**
+
+1.  **Lead high-visibility projects**
+    -   AI pilot programs
+    -   Automation initiatives
+    -   Validation frameworks
+2.  **Present at conferences**
+    -   R/Pharma
+    -   PharmaSUG
+    -   Internal symposiums
+3.  **Publish and share**
+    -   Blog posts
+    -   GitHub repositories
+    -   White papers
+4.  **Build your network**
+    -   LinkedIn presence
+    -   Conference attendance
+    -   Industry working groups
+
+------------------------------------------------------------------------
+
+## 🎓 Learning Resources
+
+### Free Resources
+
+**Online Courses:**
+
+-   R for Data Science (book + online)
+-   Statistical Rethinking (lectures on YouTube)
+-   Posit Recipes & How-Tos
+
+**Communities:**
+
+-   Pharmaverse Slack
+-   R/Pharma conference
+-   Posit Community
+-   Stack Overflow
+
+**Practice:**
+
+-   CDISC Pilot datasets
+-   Kaggle pharma competitions
+-   Personal projects on GitHub
+
+### Paid Resources
+
+**Courses:**
+
+-   Posit Academy
+-   Statistical Rethinking course
+-   DataCamp / Coursera specializations
+
+**Books:**
+
+-   R Packages (2nd edition)
+-   Advanced R
+-   Clinical Trial Data Analysis using R
+-   Biostatistics textbooks
+
+**Conferences:**
+
+-   PharmaSUG
+-   UseR!
+-   rstudio::conf (now posit::conf)
+
+------------------------------------------------------------------------
+
+## 🤝 Networking Strategies
+
+### Build Your Reputation
+
+1.  **Contribute to open source**
+    -   Fix bugs in pharmaverse packages
+    -   Add features
+    -   Improve documentation
+    -   Your GitHub is your portfolio
+2.  **Present your work**
+    -   Internal brown bag sessions
+    -   R/Pharma lightning talks
+    -   Regional R user groups
+3.  **Write about your experiences**
+    -   Company blog (if allowed)
+    -   LinkedIn posts
+    -   Medium articles
+    -   Personal website
+
+### Engage with Community
+
+**Online:**
+
+-   Join pharmaverse Slack
+-   Answer questions on Stack Overflow (r+pharma tags)
+-   Comment on relevant LinkedIn posts
+-   Participate in working groups (R Validation Hub, ASA-BIOP)
+
+**In-Person:**
+
+-   Attend R/Pharma (even virtually)
+-   Local R user groups
+-   Company data science meetups
+
+------------------------------------------------------------------------
+
+## 🎯 Job Search Tips
+
+### For Your Resume
+
+**Highlight:**
+
+-   R packages you've developed (link to GitHub)
+-   Automation you've implemented (quantify time savings)
+-   Validation experience (GxP compliance)
+-   AI/Shiny projects
+-   Contributions to open-source projects
+
+**Include:**
+
+-   Link to GitHub profile
+-   Link to personal website/portfolio
+-   Specific technologies (not just "R")
+
+### For Interviews
+
+**Prepare to discuss:**complex technical problem you solved - How you approach validation - Experience with clinical data - Contributions to efficiency - Learning new technologies quickly
+
+**Ask about:** - Open-source contribution policies - Training budget and opportunities - Technology stack and roadmap - Team culture around R adoption - Career development paths
+
+### Companies to Watch
+
+**Actively hiring R professionals:**
+
+-   **Big Pharma:** GSK, Roche/Genentech, Novartis, Pfizer, Moderna
+-   **Technology:** Posit PBC
+-   **CROs:** Many transitioning to R
+-   **Consulting:** A2-AI, Jumping Rivers, Ardata
+-   **Startups:** Biotech companies using modern stacks
+
+------------------------------------------------------------------------
+
+## 📊 Industry Outlook
+
+### Positive Trends
+
+✅ **R adoption accelerating** (GSK 50%+ is proof)\
+✅ **AI creating new roles** (LLM specialists)\
+✅ **Regulatory acceptance** (FDA neutrality)\
+✅ **Open-source momentum** (pharmaverse thriving)\
+✅ **Remote work normalized** (global opportunities)
+
+### Challenges
+
+⚠️ **Validation complexity** (but solvable)\
+⚠️ **Skills gap** (more demand than supply - good for you!)\
+⚠️ **Rapid change** (must commit to continuous learning)
+
+### Bottom Line
+
+**The next 5 years will see explosive growth in demand for R professionals in pharma.** Early adopters with AI/automation/validation skills will have their pick of opportunities.
+
+------------------------------------------------------------------------
+
+## 💡 Final Thoughts
+
+The R/Pharma 2025 conference made clear: **this is the golden age for R professionals in pharma**. With AI integration, open-source adoption, and regulatory acceptance converging, opportunities are abundant for those willing to:
+
+-   **Learn continuously** (technology changes fast)
+-   **Contribute generously** (open source is key)
+-   **Communicate effectively** (technical + business)
+-   **Validate rigorously** (quality is non-negotiable)
+-   **Innovate boldly** (early adopters win)
+
+**Your R skills are valuable. Make them invaluable.**
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## Stay Informed
+
+-   Subscribe to pharmaverse newsletter
+-   Follow key people on LinkedIn (Joe Zhu, Daniel Sjoberg, others from conference)
+-   Bookmark this site and check back for updates
+-   Join r-pharma mailing list
+:::
+
+------------------------------------------------------------------------
+
+*Career guidance compiled from R/Pharma 2025 trends and industry insights \| Last updated: November 2025*

@@ -1,8 +1,13 @@
-/* R Blue accent color */
+/*-- scss:defaults --*/
+$r-blue: #276DC2;
+$r-blue-light: #4A90E2;
+$r-blue-dark: #1E5A9B;
+
+/*-- scss:rules --*/
 :root {
-  --r-blue: #276DC2;
-  --r-blue-light: #4A90E2;
-  --r-blue-dark: #1E5A9B;
+  --r-blue: #{$r-blue};
+  --r-blue-light: #{$r-blue-light};
+  --r-blue-dark: #{$r-blue-dark};
 }
 
 /* Navbar */
