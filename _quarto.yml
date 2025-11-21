@@ -76,7 +76,7 @@ website:
         - presentations/asia-pacific-sessions.qmd
 
   page-footer:
-    left: "© 2025 [Szymon Myrta](https://www.linkedin.com/in/myrta/)"
+    left: "© 2025 [Szymon Myrta](https://www.linkedin.com/in/myrta/) | [🎓 11 R/Pharma Workshop Certificates](about.qmd#rpharma-2025-workshop-certificates)"
     right: 
       - icon: linkedin
         href: https://www.linkedin.com/in/myrta/

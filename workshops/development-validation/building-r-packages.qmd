@@ -341,4 +341,18 @@ After this workshop:
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [R Validation Discussion](r-validation-discussion.qmd) - Validation for packages
+- [datasetjson](datasetjson.qmd) - Example of well-built package
+
+### Related Presentations
+- [GSK's Open Source Journey](../presentations/europe-us-sessions.qmd#gsks-journey-to-clinical-study-reporting-using-open-source) - Industry adoption
+
+### Next Steps
+- **After building:** Learn [validation](r-validation-discussion.qmd)
+- **Career impact:** [Package Development skills](../summary/career-insights.qmd#3-package-development--validation)
+- **Contribute:** Join [pharmaverse](https://pharmaverse.org)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

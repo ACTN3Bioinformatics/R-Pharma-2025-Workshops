@@ -182,4 +182,27 @@ After this workshop, consider:
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+
+-   [Guided Tour to Building LLM-Based Tooling](guided-tour-llm-tooling.qmd) - Advanced enterprise AI implementation
+-   [Integrating LLM with Clinical Data Review](llm-clinical-data-privacy.qmd) - Privacy-preserving AI applications
+
+### Related Presentations
+
+-   [Practical AI for Data Science](../presentations/europe-us-sessions.qmd#practical-ai-for-data-science) - Real-world use cases
+-   [GenAI in Production](../presentations/europe-us-sessions.qmd#genai-in-production) - Moving beyond prototypes
+
+### Tools & Resources
+
+-   [{ellmer} in Tools Catalog](../summary/tools-catalog.qmd#ellmer) - Complete package reference
+-   [{shinychat}](../summary/tools-catalog.qmd#shinychat) - Chatbot interface details
+
+### Next Steps
+
+-   **If you liked this:** Try [Guided Tour to LLM Tooling](guided-tour-llm-tooling.qmd) for enterprise patterns
+-   **For Shiny integration:** See [Integrating LLM with Clinical Data](llm-clinical-data-privacy.qmd)
+-   **Career impact:** [AI/LLM Skills](../summary/career-insights.qmd#1-aillm-integration-hot) are in high demand
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

@@ -6,7 +6,7 @@ toc: true
 
 ## Overview
 
-This catalog documents all R packages, Python libraries, and tools mentioned across the 16 workshops and 30+ presentations at R/Pharma 2025. Entries include descriptions, primary use cases, and links to where they were discussed.
+This catalog documents all R packages, Python libraries, and tools mentioned across the 19 workshops and 30+ presentations at R/Pharma 2025. Entries include descriptions, primary use cases, and links to where they were discussed.
 
 ::: callout-note
 ## Popularity Indicators
@@ -845,7 +845,12 @@ polars, {duckplyr}, Apache Arrow, HPC integration
 ::: callout-tip
 ## Finding the Right Tool
 
-Use this catalog to: - Discover tools for your specific use case - Compare alternatives (e.g., {officer} vs Quarto for reports) - Identify dependencies (e.g., {gtsummary} uses {cards}) - Plan your learning path (prerequisites and related tools)
+Use this catalog to:
+
+-   Discover tools for your specific use case
+-   Compare alternatives (e.g., {officer} vs Quarto for reports)
+-   Identify dependencies (e.g., {gtsummary} uses {cards})
+-   Plan your learning path (prerequisites and related tools)
 :::
 
 ------------------------------------------------------------------------

@@ -240,4 +240,16 @@ write_xpt(ae, "ae.xpt")
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [datasetjson](../development-validation/datasetjson.qmd) - Modern CDISC formats
+- [Building R Packages](../development-validation/building-r-packages.qmd) - Package structure
+
+### Related Presentations
+- [Mosaic: ARS-Driven Automation](../presentations/europe-us-sessions.qmd#mosaic-ars-driven-automation-of-standard-tfls) - SDTM to TFLs
+
+### Next Steps
+- **After SDTM:** Learn [Cardinal for TFLs](../clinical-reporting/cardinal-tlgs.qmd)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

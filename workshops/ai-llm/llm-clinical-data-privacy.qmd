@@ -360,4 +360,20 @@ This workshop demonstrates privacy-preserving approaches but should not be consi
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+
+-   [Getting Started with LLM APIs](getting-started-llm-apis.qmd) - LLM basics
+-   [pointblank: Data Validation](../clinical-reporting/pointblank.qmd) - Data quality for AI
+
+### Related Presentations
+
+-   [Integrating LLM for Clinical Data Review](../presentations/europe-us-sessions.qmd#integrating-llm-for-clinical-data-review) - DataChat presentation
+
+### Next Steps
+
+-   **For validation:** See [pointblank workshop](../clinical-reporting/pointblank.qmd)
+-   **Industry trends:** [AI Revolution analysis](../summary/trends-insights.qmd#1-the-aillm-revolution-)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

@@ -390,4 +390,14 @@ server <- function(input, output, session) {
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [From Data to Insights with {teal}](teal-framework.qmd) - Shiny framework
+- [Getting Started with LLM APIs](../ai-llm/getting-started-llm-apis.qmd) - Another compute-heavy use case
+
+### Next Steps
+- **Build Shiny apps first:** [{teal} workshop](teal-framework.qmd)
+- **Advanced Shiny:** [Validating Shiny Apps](../presentations/europe-us-sessions.qmd#validating-shiny-apps-in-regulated-environments)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

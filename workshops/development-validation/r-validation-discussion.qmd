@@ -97,4 +97,13 @@ score <- riskscore(pkg_risk)
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Building R Packages](building-r-packages.qmd) - Create packages to validate
+- [pointblank](../clinical-reporting/pointblank.qmd) - Data validation
+
+### Next Steps
+- **Industry standards:** [Validation Maturity trends](../summary/trends-insights.qmd#3-regulatory-evolution-)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

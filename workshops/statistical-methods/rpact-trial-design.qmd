@@ -151,4 +151,13 @@ simulation <- getSimulationMultiArmMeans(
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Bayesian Survival Models](bayesian-survival.qmd) - Alternative statistical approach
+- [Debugging Stan](debugging-stan.qmd) - For Bayesian designs
+
+### Next Steps
+- **For Bayesian designs:** Try [Bayesian Survival workshop](bayesian-survival.qmd)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

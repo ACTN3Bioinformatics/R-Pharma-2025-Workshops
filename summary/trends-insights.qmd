@@ -6,7 +6,7 @@ toc: true
 
 ## Executive Summary
 
-R/Pharma 2025 marked a pivotal moment in pharmaceutical R adoption, with three dominant themes emerging: **AI/LLM integration**, **open-source transformation**, and **regulatory acceptance**. The conference showcased 16 workshops and 30+ presentations revealing an industry in rapid transition from proprietary tools to collaborative, standards-based approaches.
+R/Pharma 2025 marked a pivotal moment in pharmaceutical R adoption, with three dominant themes emerging: **AI/LLM integration**, **open-source transformation**, and **regulatory acceptance**. The conference showcased 19 workshops and 30+ presentations revealing an industry in rapid transition from proprietary tools to collaborative, standards-based approaches.
 
 **Key Statistics:**
 
@@ -299,9 +299,8 @@ Pioneering work on validating AI applications:
 
 ### Machine Learning
 
-**TabPFN**
+**TabPFN** - Novel deep learning for tabular data:
 
--   Novel deep learning for tabular data:
 -   No training required (pre-trained on priors)
 -   Fast inference
 -   Bayesian-like uncertainty
@@ -469,18 +468,25 @@ Conference demonstrated truly global R pharma community:
 **Transformative Possibilities:**
 
 1.  **AI-Designed Clinical Trials**
+
     -   LLMs suggesting optimal designs
     -   Automated SAP generation
     -   Real-time adaptation
+
 2.  **Fully Automated TFLs**
+
     -   From data lock to submission package
     -   Human review only, no coding
     -   Multi-language outputs for global submissions
+
 3.  **Real-Time Safety Monitoring**
+
     -   Continuous analysis during trials
     -   AI-detected signals
     -   Predictive adverse event modeling
+
 4.  **Personalized Trial Design**
+
     -   Bayesian adaptive with real-time learning
     -   Biomarker-driven enrollment
     -   Precision medicine integration
@@ -539,17 +545,42 @@ Conference demonstrated truly global R pharma community:
 
 Based on successful implementations presented:
 
-**1. Executive Sponsorship** - Clear targets (GSK's 50%) - Resource commitment - Long-term vision
+**1. Executive Sponsorship**
 
-**2. Gradual Transformation** - Multi-wave approach - Pilot programs - Learn and adapt
+-   Clear targets (GSK's 50%)
+-   Resource commitment
+-   Long-term vision
 
-**3. Support Infrastructure** - Training programs (not just one-time) - Help desks and office hours - Documentation and resources
+**2. Gradual Transformation**
 
-**4. Community Building** - Internal R user groups - External pharmaverse participation - Shared learning culture
+-   Multi-wave approach
+-   Pilot programs
+-   Learn and adapt
 
-**5. Platform Investment** - Posit Workbench - Version control (Git/GitHub) - CI/CD pipelines - Cloud infrastructure
+**3. Support Infrastructure**
 
-**6. Standards Adoption** - CDISC ARS/ARM - Pharmaverse conventions - Style guides and linters
+-   Training programs (not just one-time)
+-   Help desks and office hours
+-   Documentation and resources
+
+**4. Community Building**
+
+-   Internal R user groups
+-   External pharmaverse participation
+-   Shared learning culture
+
+**5. Platform Investment**
+
+-   Posit Workbench
+-   Version control (Git/GitHub)
+-   CI/CD pipelines
+-   Cloud infrastructure
+
+**6. Standards Adoption**
+
+-   CDISC ARS/ARM
+-   Pharmaverse conventions
+-   Style guides and linters
 
 ------------------------------------------------------------------------
 
@@ -629,9 +660,213 @@ This conference revealed an industry at an **inflection point**:
 
 ------------------------------------------------------------------------
 
-## Conclusion
+## 14. How R/Pharma Has Evolved 📈
 
-R/Pharma 2025 demonstrated that open-source pharmaceutical analytics is not the future—**it's the present**. With AI integration, regulatory acceptance, and enterprise adoption converging, the question is no longer "Should we adopt R?" but "How fast can we transform?"
+### Conference Evolution (2018-2025)
+
+Based on publicly available information and this year's content, here's how the conference themes have shifted:
+
+#### **2018-2020: Foundation Years**
+
+**Key Themes:**
+
+-   📦 **Package development basics** - Building pharma packages
+-   📊 **Basic Shiny apps** - Interactive visualizations
+-   🔄 **SAS vs R debates** - "Should we switch?"
+-   📝 **Simple reporting** - Basic TFLs
+
+**Sentiment:** Cautious optimism, early adopters sharing success stories
+
+**Notable:**
+
+-   Pharmaverse not yet established
+-   Validation was major concern
+-   FDA software neutrality clarification (2015) still fresh
+
+------------------------------------------------------------------------
+
+#### **2021-2022: Acceleration Phase**
+
+**Key Themes:**
+
+-   🚀 **COVID acceleration** - Remote work drove R adoption
+-   🤝 **Pharmaverse launch** - Collaborative ecosystem born
+-   ✅ **Validation frameworks** - {riskmetric}, R Validation Hub
+-   📦 **Production packages** - {admiral}, {teal} gaining traction
+
+**Sentiment:** Growing confidence, momentum building
+
+**Milestones:**
+
+-   Major pharma (Roche, Novartis) sharing production solutions
+-   Regulatory submissions with R increasing
+-   Training programs formalized (GSK example)
+
+------------------------------------------------------------------------
+
+#### **2023-2024: Mainstream Adoption**
+
+**Key Themes:**
+
+-   📊 **CDISC integration** - Analysis Results Standard (ARS/ARM)
+-   🔧 **Automation focus** - Template-based TFL generation
+-   📈 **Advanced analytics** - Bayesian methods, ML
+-   🌐 **Multi-language** - R + Python workflows
+
+**Sentiment:** R is mainstream, focus shifts to optimization
+
+**Evidence:**
+
+-   Multiple talks on automation (not just feasibility)
+-   Validation becoming standardized, less controversial
+-   Advanced topics (multistate models, Stan) gaining space
+
+------------------------------------------------------------------------
+
+#### **2025: AI Revolution Year**
+
+**Dominant Themes:**
+
+-   🤖 **AI/LLM explosion** - 8+ sessions (50% increase)
+-   🏢 **Enterprise transformation** - GSK's 50%+ achievement
+-   ✅ **Regulatory maturity** - GxP-ready AI, validated Shiny
+-   🚀 **Production at scale** - From "can we?" to "how fast?"
+
+**Shift in Discourse:**
+
+-   **2018:** "Is R viable for pharma?"
+-   **2022:** "How do we migrate from SAS?"
+-   **2025:** "How do we integrate AI with R?"
+
+**What's New in 2025:**
+
+1.  **AI Dominance**
+
+    -   2018-2022: Barely mentioned
+    -   2023: Experimental projects
+    -   2024: Pilot implementations
+    -   **2025: Production systems** ({llumen}, multi-agent copilots, enterprise frameworks)
+
+2.  **Regulatory Confidence**
+
+    -   2018-2020: "Will FDA accept this?"
+    -   2021-2022: "Here's how we validated"
+    -   2023-2024: "Validation frameworks established"
+    -   **2025: "Validated AI in GxP"** - previously unthinkable
+
+3.  **Speed of Innovation**
+
+    -   2018: Yearly package updates
+    -   2022: Quarterly releases (pharmaverse)
+    -   **2025: Real-time AI integration** - tools released months ago
+
+4.  **Collaboration Level**
+
+    -   2018: Individual company solutions
+    -   2020: Pharmaverse begins
+    -   2023: Cross-company working groups
+    -   **2025: Shared AI infrastructure** (MCP, metric repos)
+
+------------------------------------------------------------------------
+
+### Topic Frequency Evolution
+
+| Topic                   | 2020   | 2022   | 2024   | **2025**     |
+|-------------------------|--------|--------|--------|--------------|
+| **Package Development** | 🔥🔥🔥 | 🔥🔥   | 🔥     | 🔥           |
+| **Validation**          | 🔥🔥🔥 | 🔥🔥🔥 | 🔥🔥   | 🔥           |
+| **Shiny Apps**          | 🔥🔥   | 🔥🔥🔥 | 🔥🔥   | 🔥🔥         |
+| **Clinical Reporting**  | 🔥🔥   | 🔥🔥   | 🔥🔥🔥 | 🔥🔥🔥       |
+| **Bayesian Methods**    | 🔥     | 🔥     | 🔥🔥   | 🔥🔥         |
+| **AI/LLM**              | \-     | \-     | 🔥     | **🔥🔥🔥🔥** |
+| **Automation**          | 🔥     | 🔥🔥   | 🔥🔥   | **🔥🔥🔥**   |
+| **Python Integration**  | 🔥     | 🔥     | 🔥🔥   | **🔥🔥**     |
+
+**Interpretation:**
+
+-   Traditional topics (package dev, validation) declining as they become **solved problems**
+-   AI/LLM emerged from nowhere to **dominate** the conversation
+-   Automation shifted from "nice to have" to **strategic imperative**
+-   Python integration normalized (not R vs Python, but R **and** Python)
+
+------------------------------------------------------------------------
+
+### What Changed Between 2024 and 2025?
+
+**Major Shifts:**
+
+1.  **{ellmer} Package Launch** (2024)
+
+    -   Made LLM integration trivial in R
+    -   Multiple workshops/presentations built on it
+    -   Enterprise adoption accelerated
+
+2.  **Claude/ChatGPT API Maturity**
+
+    -   Function calling standardized
+    -   MCP protocol emerged
+    -   Privacy-preserving deployments viable
+
+3.  **GSK Milestone**
+
+    -   50%+ R code achieved
+    -   Proof that full transformation possible
+    -   Other pharma following suit
+
+4.  **CDISC ARS Adoption**
+
+    -   Analysis Results Standard gaining traction
+    -   Mosaic (Novartis) and others automating TFLs
+    -   Machine-readable results enabling AI
+
+5.  **Posit Product Evolution**
+
+    -   Positron IDE launched (VS Code + R)
+    -   Better Python support
+    -   AI assistants integrated
+
+**What Stayed Constant:**
+
+-   ✅ Pharmaverse continues thriving
+-   ✅ Validation remains priority (but less controversial)
+-   ✅ Collaboration over competition
+-   ✅ Open-source commitment
+
+------------------------------------------------------------------------
+
+### Predictions for R/Pharma 2026
+
+Based on the trajectory, expect:
+
+**Likely Topics:**
+
+1.  **"AI in Submissions"** - First AI-powered analysis in regulatory filing
+2.  **"Real-time Clinical Trial Analysis"** - Adaptive designs with AI
+3.  **"Synthetic Patient Generation"** - Privacy-preserving AI for trials
+4.  **"Quantum ML for Drug Discovery"** - Cutting edge
+5.  **"Fully Automated Study Reports"** - From data lock to CSR in hours
+
+**Maturing Topics:**
+
+-   LLM integration will be **assumed** (not taught from scratch)
+-   Validation frameworks **standardized** across industry
+-   Python-R **seamless** interop (not separate tracks)
+
+**Declining Topics:**
+
+-   "Intro to R packages" (basics widely known)
+-   "Why leave SAS?" (decision already made)
+-   "Can we validate R?" (settled question)
+
+**Bold Prediction:**
+
+R/Pharma 2026 will feature the **first fully AI-generated clinical study report** accepted by a regulatory agency. The discussion will shift from "Is this possible?" to "What should humans still review?"
+
+------------------------------------------------------------------------
+
+## 15. Conclusion
+
+R/Pharma 2025 demonstrated that open-source pharmaceutical analytics is not the future **it's the present**. With AI integration, regulatory acceptance, and enterprise adoption converging, the question is no longer "Should we adopt R?" but "How fast can we transform?"
 
 The conference showcased:
 

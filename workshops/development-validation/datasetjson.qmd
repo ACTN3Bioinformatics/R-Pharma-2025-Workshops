@@ -460,4 +460,17 @@ def get_adsl():
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [SDTM Programming](../specialized/sdtm-oak.qmd) - SDTM dataset creation
+- [Python for CSR](../specialized/python-csr-submission.qmd) - Modern data formats
+
+### Related Presentations
+- [Mosaic: ARS-Driven Automation](../presentations/europe-us-sessions.qmd#mosaic-ars-driven-automation-of-standard-tfls) - CDISC standards
+
+### Next Steps
+- **For SDTM:** See [{sdtm.oak} workshop](../specialized/sdtm-oak.qmd)
+- **Standards evolution:** [ARS/ARM trends](../summary/trends-insights.qmd#4-automation--efficiency-)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

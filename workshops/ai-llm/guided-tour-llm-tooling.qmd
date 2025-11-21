@@ -286,4 +286,21 @@ This is a hands-on workshop with extensive code examples and exercises. All mate
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+
+-   [Getting Started with LLM APIs](getting-started-llm-apis.qmd) - Foundation concepts
+-   [Integrating LLM with Clinical Data](llm-clinical-data-privacy.qmd) - Privacy focus
+
+### Related Presentations
+
+-   [{llumen}: Agentic Framework](../presentations/europe-us-sessions.qmd#llumen-agentic-llm-framework-for-biomedical-documents) - Merck's internal solution
+-   [Building the Ultimate R AI Assistant](../presentations/europe-us-sessions.qmd#building-the-ultimate-r-ai-assistant) - Roche's multi-agent system
+
+### Next Steps
+
+-   **Prerequisites:** Start with [Getting Started with LLM APIs](getting-started-llm-apis.qmd)
+-   **Career path:** [AI Specialist Track](../summary/career-insights.qmd#path-1-aidata-science-specialist)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

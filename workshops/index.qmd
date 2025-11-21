@@ -1,6 +1,6 @@
 ---
 title: "Workshops"
-subtitle: "16 hands-on sessions from R/Pharma 2025"
+subtitle: "19 hands-on sessions from R/Pharma 2025"
 toc: false
 ---
 
@@ -292,7 +292,7 @@ Development
 :::
 
 ::: stats-box
-**5**
+**8**
 
 Statistical/Specialized
 :::
@@ -305,8 +305,8 @@ Statistical/Specialized
 **By Experience Level:**
 
 -   🟢 **Beginner** (5 workshops) - No prior specialized knowledge required
--   🟡 **Intermediate** (9 workshops) - Some experience with topic area
--   🔴 **Advanced** (3 workshops) - Significant experience recommended
+-   🟡 **Intermediate** (10 workshops) - Some experience with topic area
+-   🔴 **Advanced** (4 workshops) - Significant experience recommended
 
 **By Topic:**
 

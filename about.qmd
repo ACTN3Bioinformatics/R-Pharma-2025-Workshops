@@ -9,7 +9,7 @@ This repository provides comprehensive documentation of the **R/Pharma 2025 conf
 
 ### What's Inside
 
--   **16 Workshop Pages** - Detailed documentation with prerequisites, learning outcomes, and resources
+-   **19 Workshop Pages** - Detailed documentation with prerequisites, learning outcomes, and resources
 -   **30+ Presentations** - Summaries from 8 Europe/US sessions and Asia/Pacific presentations
 -   **Trend Analysis** - Key themes, future directions, and industry insights
 -   **Tools Catalog** - A-Z reference of all mentioned packages and technologies
@@ -43,8 +43,8 @@ This site is built using modern web technologies:
 
 ## About the Author
 
-::::: columns
-::: {.column width="70%"}
+::::::::::::::::: columns
+::::::::::::::: {.column width="70%"}
 ### Szymon Myrta
 
 I'm passionate about applying data science and bioinformatics to advance pharmaceutical research and precision medicine. This repository reflects my commitment to continuous learning, knowledge sharing, and contributing to the open-source R community in pharma.
@@ -61,11 +61,129 @@ I'm passionate about applying data science and bioinformatics to advance pharmac
 **Connect with me:**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/myrta/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ACTN3) [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0000-0003-1714-6105)
+
+### R/Pharma 2025 Workshop Certificates
+
+I actively participated in 11 workshops at the R/Pharma 2025 conference, gaining hands-on experience with cutting-edge tools and methodologies:
+
+:::::::::::::: certificates-grid
+::: certificate-badge
+<a href="https://credsverse.com/credentials/167ea152-9e54-4960-abab-abfa339fc073" target="_blank"> <img src="https://img.shields.io/badge/🎓_LLM_APIs-Completed-276DC2?style=flat-square" alt="LLM APIs Certificate"/> </a>
+
+<p class="cert-desc">
+
+Getting Started with LLM APIs in R
+
+</p>
 :::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/925a5ee4-6a61-4609-8b5c-0e58fd87ef52" target="_blank"> <img src="https://img.shields.io/badge/🎓_Cardinal-Completed-276DC2?style=flat-square" alt="Cardinal Certificate"/> </a>
+
+<p class="cert-desc">
+
+Hands on with Cardinal: Clinical Reporting
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/f9768fed-9bef-40a8-80ef-522089333f68" target="_blank"> <img src="https://img.shields.io/badge/🎓_R_Packages-Completed-276DC2?style=flat-square" alt="R Packages Certificate"/> </a>
+
+<p class="cert-desc">
+
+Introduction to Building R Packages
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/295abb2c-db6e-4c70-8339-81e546668839" target="_blank"> <img src="https://img.shields.io/badge/🎓_Polars-Completed-276DC2?style=flat-square" alt="Polars Certificate"/> </a>
+
+<p class="cert-desc">
+
+Polars: Blazing Fast Python Framework
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/21bc12bd-dedb-4441-b877-153ffd191487" target="_blank"> <img src="https://img.shields.io/badge/🎓_Pointblank-Completed-276DC2?style=flat-square" alt="Pointblank Certificate"/> </a>
+
+<p class="cert-desc">
+
+Data Validation with pointblank
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/c07f1373-7b8b-4357-be32-ef620afa4b03" target="_blank"> <img src="https://img.shields.io/badge/🎓_Stan-Completed-276DC2?style=flat-square" alt="Stan Certificate"/> </a>
+
+<p class="cert-desc">
+
+Debugging Stan Programs
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/3730b764-e354-49cb-ab5c-7e40a99c04ad" target="_blank"> <img src="https://img.shields.io/badge/🎓_rpact-Completed-276DC2?style=flat-square" alt="rpact Certificate"/> </a>
+
+<p class="cert-desc">
+
+Clinical Trial Design with rpact
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/c5d3e661-c00a-4d36-89db-79bd3a18c8c7" target="_blank"> <img src="https://img.shields.io/badge/🎓_Validation-Completed-276DC2?style=flat-square" alt="Validation Certificate"/> </a>
+
+<p class="cert-desc">
+
+R Validation Discussion
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/0ee6da70-725d-498d-b045-2af73ba7216d" target="_blank"> <img src="https://img.shields.io/badge/🎓_Dataset_JSON-Completed-276DC2?style=flat-square" alt="Dataset JSON Certificate"/> </a>
+
+<p class="cert-desc">
+
+CDISC Dataset-JSON in R & Python
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/8e6ddf14-fca0-4870-b039-5a2b32a5b908" target="_blank"> <img src="https://img.shields.io/badge/🎓_SDTM-Completed-276DC2?style=flat-square" alt="SDTM Certificate"/> </a>
+
+<p class="cert-desc">
+
+SDTM Programming with sdtm.oak
+
+</p>
+:::
+
+::: certificate-badge
+<a href="https://credsverse.com/credentials/1ae620b2-6de8-4a2e-b10a-d2dcf3d08a2f" target="_blank"> <img src="https://img.shields.io/badge/🎓_Python_CSR-Completed-276DC2?style=flat-square" alt="Python CSR Certificate"/> </a>
+
+<p class="cert-desc">
+
+Python for Clinical Study Reports
+
+</p>
+:::
+::::::::::::::
+
+**Topics covered:** AI/LLM Integration, Clinical Reporting, Package Development, Data Validation, Bayesian Methods, CDISC Standards, and Python for Pharma
+:::::::::::::::
 
 ::: {.column width="30%"}
 :::
-:::::
+:::::::::::::::::
 
 ------------------------------------------------------------------------
 
@@ -141,5 +259,6 @@ If you find this resource valuable:
 
 ------------------------------------------------------------------------
 
-**Last updated:** November 2025 **Repository:** [github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops)\
+**Last updated:** November 2025\
+**Repository:** [github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops)\
 **Website:** [actn3bioinformatics.github.io/R-Pharma-2025-Workshops](https://actn3bioinformatics.github.io/R-Pharma-2025-Workshops/)

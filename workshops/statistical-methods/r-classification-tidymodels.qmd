@@ -298,4 +298,16 @@ wine_pred %>%
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Bayesian Survival Models](bayesian-survival.qmd) - Advanced modeling
+- [Python for CSR](../specialized/python-csr-submission.qmd) - Python ML with polars
+
+### Related Presentations
+- [TabPFN: Deep Learning for Tabular Data](../presentations/europe-us-sessions.qmd#tabpfn-deep-learning-for-tabular-data) - Novel ML approach
+
+### Next Steps
+- **Advanced ML:** Explore TabPFN and other methods in [presentations](../presentations/europe-us-sessions.qmd)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

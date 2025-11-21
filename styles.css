@@ -221,3 +221,46 @@ a:hover {
     font-size: 2rem;
   }
 }
+
+/* Certificates Grid */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.certificate-badge {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.certificate-badge:hover {
+  border-color: var(--r-blue);
+  box-shadow: 0 4px 12px rgba(39, 109, 194, 0.15);
+  transform: translateY(-2px);
+}
+
+.certificate-badge img {
+  margin: 0 auto;
+  display: block;
+}
+
+.cert-desc {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.certificate-badge a {
+  text-decoration: none;
+}
+
+.certificate-badge a:hover {
+  text-decoration: none;
+}

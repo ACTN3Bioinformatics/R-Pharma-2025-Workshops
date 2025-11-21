@@ -113,4 +113,17 @@ result = (
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Python for CSR and Submission](../specialized/python-csr-submission.qmd) - Complete Python workflow
+- [pointblank: Data Validation](pointblank.qmd) - R equivalent for data quality
+
+### Related Presentations
+- [Polars workshop presentation](../presentations/europe-us-sessions.qmd) - Context
+
+### Next Steps
+- **Full Python workflow:** [Python CSR workshop](../specialized/python-csr-submission.qmd)
+- **High-performance in R:** See [duckplyr presentation](../presentations/europe-us-sessions.qmd#duckplyr-analyze-large-data-with-duckdb)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

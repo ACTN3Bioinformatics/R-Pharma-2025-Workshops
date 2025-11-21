@@ -10,7 +10,7 @@
 
 ## 📊 Quick Stats
 
--   **16** Hands-on Workshops
+-   **19** Hands-on Workshops
 -   **8** Europe/US Thematic Sessions
 -   **30+** Presentations
 -   **November 2025** Conference Date
@@ -26,7 +26,7 @@
 
 ### [📚 Workshops](https://actn3bioinformatics.github.io/R-Pharma-2025-Workshops/workshops/)
 
-Detailed documentation of 16 workshops covering:
+Detailed documentation of 19 workshops covering:
 
 -   **AI & LLM** - Getting started with `{ellmer}`, building agentic systems, privacy-preserving implementations
 -   **Clinical Reporting** - `{officer}`, `{flextable}`, `{cardinal}`, `{gtsummary}`, Quarto

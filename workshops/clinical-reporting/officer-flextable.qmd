@@ -468,4 +468,18 @@ After this workshop:
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Cardinal: Clinical Reporting](cardinal-tlgs.qmd) - Standardized TLG templates
+- [Branded Documents with Quarto](branded-quarto.qmd) - Alternative approach
+
+### Related Presentations
+- [autoslideR](../presentations/europe-us-sessions.qmd#autoslider-streamlining-slide-deck-generation) - Automated slide decks
+
+### Next Steps
+- **For tables:** See [Cardinal workshop](cardinal-tlgs.qmd)
+- **For multi-format:** Try [Quarto workshop](branded-quarto.qmd)
+- **Industry adoption:** [Automation trends](../summary/trends-insights.qmd#4-automation--efficiency-)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

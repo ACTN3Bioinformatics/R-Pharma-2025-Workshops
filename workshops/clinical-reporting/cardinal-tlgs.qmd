@@ -376,4 +376,22 @@ After this workshop:
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Advanced Clinical Reporting](officer-flextable.qmd) - Word documents with officer/flextable
+- [Polished Documents with Quarto](branded-quarto.qmd) - Multi-format publishing
+
+### Related Presentations
+- [Beyond {gtsummary}: {crane}](../presentations/europe-us-sessions.qmd#beyond-gtsummary-the-crane-package) - Extension for pharma
+- [LLM-Powered {gtsummary}](../presentations/europe-us-sessions.qmd#llm-powered-gtsummary-qc-ready-tables) - AI-enhanced tables
+
+### Tools & Resources
+- [{gtsummary}](../summary/tools-catalog.qmd#gtsummary) - Most mentioned package
+- [{cardinal}](../summary/tools-catalog.qmd#cardinal) - Full catalog entry
+
+### Next Steps
+- **For Word output:** Try [officer/flextable workshop](officer-flextable.qmd)
+- **Career skills:** [Clinical Reporting Automation](../summary/career-insights.qmd#2-clinical-reporting-automation)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

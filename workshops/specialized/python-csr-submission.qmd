@@ -323,4 +323,13 @@ Assemble eCTD package:
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Polars: Python Framework](../clinical-reporting/polars-python.qmd) - Deep dive on polars
+- [datasetjson](../development-validation/datasetjson.qmd) - Data exchange
+
+### Next Steps
+- **R equivalent:** See [officer/flextable](../clinical-reporting/officer-flextable.qmd) and [Cardinal](../clinical-reporting/cardinal-tlgs.qmd)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

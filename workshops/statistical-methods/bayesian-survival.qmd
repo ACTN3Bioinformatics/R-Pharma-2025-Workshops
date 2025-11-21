@@ -305,4 +305,17 @@ qaly <- calculate_qaly(
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Debugging Stan](debugging-stan.qmd) - Stan troubleshooting skills
+- [rpact Trial Design](rpact-trial-design.qmd) - Frequentist designs
+
+### Related Presentations
+- [BayesERtools](../presentations/europe-us-sessions.qmd#bayesertools-bayesian-exposure-response-analysis) - Exposure-response with Stan
+
+### Next Steps
+- **Prerequisites:** [Debugging Stan workshop](debugging-stan.qmd) highly recommended
+- **Career value:** [Bayesian expertise](../summary/career-insights.qmd#5-bayesian-methods) opens doors
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

@@ -219,4 +219,17 @@ if (has_any_issues(agent)) {
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [R Validation Discussion](../development-validation/r-validation-discussion.qmd) - Package validation
+- [Building R Packages](../development-validation/building-r-packages.qmd) - Testing best practices
+
+### Related Presentations
+- [Data Quality discussions](../presentations/europe-us-sessions.qmd)
+
+### Next Steps
+- **For validation:** [R Validation workshop](../development-validation/r-validation-discussion.qmd)
+- **Career skills:** [Data Validation expertise](../summary/career-insights.qmd#6-data-validation--quality)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

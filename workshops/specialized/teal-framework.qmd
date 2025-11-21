@@ -430,4 +430,17 @@ After the workshop:
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Cardinal: Clinical Reporting](../clinical-reporting/cardinal-tlgs.qmd) - Related to TFLs
+- [HPC Cluster with Shiny](hpc-cluster-shiny.qmd) - Advanced Shiny
+
+### Related Presentations
+- [admiral's Journey to Stability](../presentations/europe-us-sessions.qmd#r-we-there-yet-admirals-journey-to-stability) - Related pharmaverse package
+
+### Next Steps
+- **For validation:** [Validating Shiny Apps presentation](../presentations/europe-us-sessions.qmd#validating-shiny-apps-in-regulated-environments)
+- **Career skills:** [Shiny Development](../summary/career-insights.qmd#4-shiny-application-development)
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*

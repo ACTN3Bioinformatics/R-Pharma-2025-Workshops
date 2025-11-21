@@ -17,7 +17,7 @@ Your guide to the cutting-edge of R in pharmaceutical research and development
 
 ::::::: {layout-ncol="4"}
 ::: stats-box
-**16**
+**19**
 
 Workshops
 :::
@@ -69,7 +69,7 @@ Multiple talks on validation in GxP contexts, FDA guidance implementation, and p
 ::: {.column width="48%"}
 ### [📚 Workshops](workshops/index.qmd) {.workshop-card}
 
-**16 hands-on sessions** covering:
+**19 hands-on sessions** covering:
 
 -   🤖 **AI & LLM Integration** (3 workshops)
 -   📊 **Clinical Reporting** (5 workshops)

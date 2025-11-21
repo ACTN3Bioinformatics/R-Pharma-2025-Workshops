@@ -102,4 +102,16 @@ brand:
 
 ------------------------------------------------------------------------
 
+### Similar Workshops
+- [Advanced Clinical Reporting](officer-flextable.qmd) - Word-focused approach
+- [pointblank](pointblank.qmd) - Data documentation with Quarto
+
+### Tools & Resources
+- [Quarto in Tools Catalog](../summary/tools-catalog.qmd#quarto) - 4+ mentions across conference
+
+### Next Steps
+- **This site uses Quarto!** Check the [GitHub repo](https://github.com/ACTN3Bioinformatics/R-Pharma-2025-Workshops) for examples
+
+------------------------------------------------------------------------
+
 *Last updated: November 2025 \| R/Pharma 2025 Conference*
