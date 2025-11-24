@@ -51,12 +51,15 @@ I'm passionate about applying data science and bioinformatics to advance pharmac
 
 **Interests:**
 
--   Bioinformatics and computational biology
--   Data science in pharmaceutical research
--   Open-source tool development
--   Reproducible research and documentation
--   AI-driven bioinformatics solutions
--   Data visualization
+-   8+ years of experience in bioinformatics in pharmaceutical and biotech settings
+-   NGS data analysis (RNAseq, scRNA-seq, ChIP-seq, TCR/BCR-seq, WES/WGS etc.) \[Bioconductor, Seurat, edgeR, DESeq2, limma\]
+-   Functional genomics data analysis (CRISPR / ORF overexpression screens)
+-   Strong R programming skills, including development of R packages and Shiny apps
+-   Developer of NGS data analysis pipelines and reproducible research workflows and documentation (RMarkdown, Quarto, Snakemake, Bash, Git, CI/CD, Docker)
+-   Data visualization and interpretation of results \[ggplot2, Shiny, ComplexHeatmap\]
+-   Background in computational biology, cancer genomics, immuno-oncology
+-   Co-author of multiple peer-reviewed scientific publications in top-tier journals
+-   [Interested in multi-omics data integration, precision medicine, AI-powered analyses]{.underline}
 
 **Connect with me:**
 
