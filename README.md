@@ -140,6 +140,16 @@ This repository was created to document and share knowledge from the R/Pharma 20
 
 **Szymon Myrta**
 
+-   8+ years of experience in bioinformatics in pharmaceutical and biotech settings
+-   NGS data analysis (RNAseq, scRNA-seq, ChIP-seq, TCR/BCR-seq, WES/WGS etc.) \[Bioconductor, Seurat, edgeR, DESeq2, limma\]
+-   Functional genomics data analysis (CRISPR / ORF overexpression screens)
+-   Strong R programming skills, including development of R packages and Shiny apps
+-   Developer of NGS data analysis pipelines and reproducible research workflows and documentation (RMarkdown, Quarto, Snakemake, Bash, Git, CI/CD, Docker)
+-   Data visualization and interpretation of results \[ggplot2, Shiny, ComplexHeatmap\]
+-   Background in computational biology, cancer genomics, immuno-oncology
+-   Co-author of multiple peer-reviewed scientific publications in top-tier journals
+-   [Interested in multi-omics data integration, precision medicine, AI-powered analyses]{.underline}
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/myrta/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/ACTN3) [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0003-1714-6105)
 
 ## 🤝 Contributing
